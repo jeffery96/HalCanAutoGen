@@ -1,7 +1,9 @@
 import cantools
 
-can0_dbc = cantools.database.load_file(r'./KLNEV-TXXY001_V1.07-0315.dbc', encoding='gb2312')
+# can0_dbc = cantools.database.load_file(r'./KLNEV-TXXY001_V1.07-0315.dbc', encoding='gb2312')
+can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
 
+# 对报文排序，VCU发送报文在前
 messages = [m for m in can0_dbc.messages if 'VCU' in m.senders] + \
            [m for m in can0_dbc.messages if 'VCU' not in m.senders]
 
@@ -88,11 +90,15 @@ with open('./io_vars.c', 'w') as iovars_c_file:
     for msg in messages:
 
         for sig in msg.signals:
+            bsw_var_signal_name = sig_prefix + sig.name.split("_")[-1]
+            if len(bsw_var_signal_name) >= 32:
+                print('超过长度的变量: ' + bsw_var_signal_name)
+
             sig_type = 'uint8_t' if sig.length <= 8 else 'uint16_t' if sig.length <= 16 else 'uint32_t'
             sig_initvalue = hex(int(-sig.offset / sig.scale)) + \
                 'u' if sig.initial is None else hex(sig.initial) + 'u'
             iovars_c_file.write(
-                f'{sig_type.ljust(12)}{sig_prefix}{sig.name.ljust(44)}={sig_initvalue.rjust(12)};\n')
+                f'{sig_type.ljust(12)}{sig_prefix}{sig.name.split("_")[-1].ljust(44)}={sig_initvalue.rjust(12)};\n')
         iovars_c_file.write('\n')
     iovars_c_file.write('/*-------------------------------------EOF--------------------------------------*/\n\n')
 
@@ -125,25 +131,25 @@ with open('./io_vars.h', 'w') as iovars_h_file:
             # VCU发送的报文
             iovars_h_file.write(comment)
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_msgReady;'.ljust(44) + '\n')
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_msgTxFailed;'.ljust(44) + '\n\n')
         else:
             # VCU接收的报文
             iovars_h_file.write(comment)
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_received;'.ljust(44) + '\n')
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_msgOverRun;'.ljust(44) + '\n')
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_timeout;'.ljust(44) + '\n')
             iovars_h_file.write(
-                'extern uint8_t'.ljust(12) +
+                'extern uint8_t ' +
                 f'{msgbuf_prefix}{chn}_{hex(msg.frame_id)}_msgValid;'.ljust(44) + '\n\n')
 
     for msg in can0_dbc.messages:
@@ -156,7 +162,7 @@ with open('./io_vars.h', 'w') as iovars_h_file:
             sig_initvalue = hex(int(-sig.offset / sig.scale)) + \
                 'u' if sig.initial is None else hex(sig.initial) + 'u'
             iovars_h_file.write(
-                f'{sig_type.ljust(16)}{sig_prefix}{sig.name};\n')
+                f'{sig_type.ljust(16)}{sig_prefix}{sig.name.split("_")[-1]};\n')
         iovars_h_file.write('\n')
     iovars_h_file.write('\n\n')
 
@@ -216,7 +222,7 @@ with open('./hacg_can.c', 'w') as hacg_can_c_file:
                     shift_num = len(filter_bit_in_bin) - len(filter_bit_in_bin.rstrip('0'))
                     shift_num = shift_num if i == 0 else 8
 
-                    hacg_can_c_file.write(f'    {msg.name}_buf[{byte_index}] |= ((uint8_t)(pfc_{sig.name} {shift_dir} {shift_num}u) & {filter_bit_in_hex}u);\n')
+                    hacg_can_c_file.write(f'    {msg.name}_buf[{byte_index}] |= ((uint8_t)(pfc_{sig.name.split("_")[-1]} {shift_dir} {shift_num}u) & {filter_bit_in_hex}u);\n')
 
             hacg_can_c_file.write(f'}}\n\n')
         else:
@@ -231,7 +237,7 @@ with open('./hacg_can.c', 'w') as hacg_can_c_file:
                 lenth = sig.length
                 end = start + lenth
                 hacg_can_c_file.write(
-                    f'    /*signalName:pfc_{sig.name}, DataOrder:{sig.byte_order}, startBit: {sig.start}, length: {sig.length} */\n')
+                    f'    /*signalName:pfc_{sig.name.split("_")[-1]}, DataOrder:{sig.byte_order}, startBit: {sig.start}, length: {sig.length} */\n')
 
                 filter_bit_in_64 = '{:064b}'.format(int('1' * lenth, 2) << (start % 8))
                 for i, j in enumerate(range(start, end, 8)):
@@ -245,7 +251,7 @@ with open('./hacg_can.c', 'w') as hacg_can_c_file:
                     shift_num = len(filter_bit_in_bin) - len(filter_bit_in_bin.rstrip('0'))
                     shift_num = shift_num if i == 0 else i*8
                     # print(shift_num)
-                    hacg_can_c_file.write(f'    pfc_{sig.name} {assignment_symbol} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n')
+                    hacg_can_c_file.write(f'    pfc_{sig.name.split("_")[-1]} {assignment_symbol} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n')
 
             hacg_can_c_file.write(f'}}\n\n')
     hacg_can_c_file.write('\n')

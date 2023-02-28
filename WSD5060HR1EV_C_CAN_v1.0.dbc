@@ -1,0 +1,348 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Others VCU
+
+
+BO_ 2348875518 PDU_Status1: 8 Others
+ SG_ PDUStatus1_7B67b_PDUPreChargeRel : 62|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_7B45b_PDUPreChargeRel : 60|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_7B23b_PDUMainPositive : 58|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_7B01b_PDUMainPositive : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_6B67b_PDUOilPumpRelay : 54|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_6B45b_PDUOilPumpRelay : 52|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_6B23b_PDUDefrostingRe : 50|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_6B01b_PDUDefrostingRe : 48|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_5B67b_PDUAirCondition : 46|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_5B45b_PDUAirCondition : 44|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_5B23b_PDUStepUpDCDCRe : 42|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_5B01b_PDUStepUpDCDCRe : 40|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_2B23b_PDUPumpPreCharg : 18|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_2B01b_PDUPumpPreCharg : 16|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_1B67b_PDUPTCRelayFaul : 14|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_1B45b_PDUPTCRelayStat : 12|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_1B23b_PDUHeaterRelayF : 10|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_1B01b_PDUHeaterRelayS : 8|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_0B67b_PDUAirPumpRelay : 6|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_0B45b_PDUAirPumpRelay : 4|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_0B23b_PDUStepDownDCDC : 2|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PDUStatus1_0B01b_PDUStepDownDCDC : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2365537831 EVCU3_EACCmd: 8 VCU
+ SG_ EVCU3EACCmd_3B67b_PDUPTCRelayCmd : 30|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_3B45b_PDUHeaterRelay : 28|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_3B23b_PDUStepDownDCD : 26|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_3B01b_PDUAirPumpRela : 24|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_2B23b_PDUPumpPreChar : 18|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_2B01b_PDUOilPumpEnab : 16|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_1B67b_PDUPreChargeRe : 14|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_1B45b_PDUMainPositiv : 12|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_1B23b_PDUAirPumpRela : 10|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_1B01b_PDUStepDownDCD : 8|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_0B67b_PDUStepUpDCDCR : 6|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_0B45b_PDUDefrostingR : 4|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_0B23b_PDUOilPumpRela : 2|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU3EACCmd_0B01b_PDUAirConditio : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2550263795 B2V_RQ: 8 Others
+ SG_ B2V_RQ_0B_BMSRequestVIN : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2558783475 B2V_ST1: 8 Others
+ SG_ B2VST1_5B12b_BMSChargeState : 57|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_4B34b_BMSChargeGunConnect : 35|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_4B01b_BMSCurrentHighVolta : 32|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_2B01b_BMSHeaterNegativeRe : 16|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_1B67b_BMSHeaterPositiveRe : 14|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_1B45b_BMSChargeNegativeRe : 12|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_1B23b_BMSChargePositiveRe : 10|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_1B01b_BMSChargeNegativeRe : 8|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_0B67b_BMSChargePositiveRe : 6|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST1_0B23b_BMSMainNegetiveRela : 2|2@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2563047155 B2V_CurrentLimit: 8 Others
+ SG_ B2VCurrentLimit_67B_BMSAllowSust : 48|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ B2VCurrentLimit_45B_BMSAllowSust : 32|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ B2VCurrentLimit_23B_BMSAllowChar : 16|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ B2VCurrentLimit_01B_BMSAllowDisC : 0|16@1+ (0.1,0) [0|0] "" Vector__XXX
+
+BO_ 2558849011 B2V_ST2: 8 Others
+ SG_ B2VST2_7B47b_BMSLife : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_7B23b_BMSRequestHighVoltP : 58|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_7B01b_BMSHighestFaultLeve : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_6B_BMSFaultCode : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_45B_BMSVoltage : 32|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_23B_BMSCurrent : 16|16@1+ (0.1,-1000) [0|0] "" Vector__XXX
+ SG_ B2VST2_1B_BMSSOH : 8|8@1+ (0.4,0) [0|0] "" Vector__XXX
+ SG_ B2VST2_0B_BMSSOC : 0|8@1+ (0.4,0) [0|0] "" Vector__XXX
+
+BO_ 2564944879 V2B_VIN: 8 VCU
+ SG_ V2BVIN_3B_VehicleVINCharacter310 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_7B_VehicleVINCharacter714 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_6B_VehicleVINCharacter613 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_5B_VehicleVINCharacter512 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_4B_VehicleVINCharacter411 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_2B_VehicleVINCharacter291 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_1B_VehicleVINCharacter181 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ V2BVIN_0B_SerialNumberOfFrameVIN : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2550330351 VCU_Battery_Control: 8 VCU
+ SG_ VCUBatteryControl_7B67b_PDUDefro : 62|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_7B45b_PDUDefro : 60|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_7B23b_PDUPreCh : 58|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_7B01b_PDUPreCh : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_6B67b_PDUAirPu : 54|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_6B45b_PDUAirPu : 52|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_6B23b_PDUOilPu : 50|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_6B01b_PDUOilPu : 48|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_5B67b_PDUStepD : 46|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_5B45b_PDUStepD : 44|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_5B23b_PDUHeate : 42|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_5B01b_PDUHeate : 40|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_4B67b_PDUHeate : 38|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_4B45b_PDUHeate : 36|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_4B23b_PDUCharg : 34|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_4B01b_PDUCharg : 32|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_3B67b_BMSMainN : 30|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_3B45b_BMSMainN : 28|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_3B23b_PDUMainP : 26|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_3B01b_PDUMainP : 24|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_2B_VehicleVelo : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_1B67b_BMSStepD : 14|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_1B45b_BMSStepU : 12|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_1B23b_BMSDCACR : 10|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_1B01b_BMSMainN : 8|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUBatteryControl_0B_VCULife : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566864423 EVCU_MCU3: 8 VCU
+ SG_ EVCUMCU3_1B_MCUFaultCode : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566864167 EVCU_MCU2: 8 VCU
+ SG_ EVCUMCU2_7B57b_Motor1FunctionInd : 61|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_7B01b_Motor1State : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_6B67b_MotorOrderNumber : 54|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_6B45b_MotorNumber : 52|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_6B23b_MCU1TempAlarm : 50|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_6B01b_Motor1TempAlarm : 48|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_45B_Motor1Torque : 32|16@1+ (0.1,-3200) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_3B_MCU1Temperature : 24|8@1+ (1,-40) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_2B_Motor1Temperature : 16|8@1+ (1,-40) [0|0] "" Vector__XXX
+ SG_ EVCUMCU2_01B_Motor1Speed : 0|16@1+ (1,-15000) [0|0] "" Vector__XXX
+
+BO_ 2566863911 EVCU_MCU1: 8 VCU
+ SG_ EVCUMCU1_45B_MCUACCurrent : 32|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU1_23B_MCUDCVoltage : 16|16@1+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ EVCUMCU1_01B_MCUDCCurrent : 0|16@1+ (0.1,-1000) [0|0] "" Vector__XXX
+
+
+
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigILSupport" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 100000;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 3600000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 1000000;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 2147483647;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","NotUsed","IfActive","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","noMsgSendType";
+BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_  "GenSigILSupport" "Yes";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "NmStationAddress" 254;
+BA_DEF_DEF_  "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_  "GenMsgRequestable" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "ProtocolType" "J1939";
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "DBName" "WSD5060HR1EV_C_CAN_v10";
+BA_ "NmStationAddress" BU_ Others 0;
+BA_ "NmStationAddress" BU_ VCU 0;
+BA_ "VFrameFormat" BO_ 2348875518 3;
+BA_ "VFrameFormat" BO_ 2365537831 3;
+BA_ "VFrameFormat" BO_ 2550263795 3;
+BA_ "VFrameFormat" BO_ 2558783475 3;
+BA_ "VFrameFormat" BO_ 2563047155 3;
+BA_ "VFrameFormat" BO_ 2558849011 3;
+BA_ "VFrameFormat" BO_ 2564944879 3;
+BA_ "VFrameFormat" BO_ 2550330351 3;
+BA_ "VFrameFormat" BO_ 2566864423 3;
+BA_ "VFrameFormat" BO_ 2566864167 3;
+BA_ "VFrameFormat" BO_ 2566863911 3;
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_7B67b_PDUPreChargeRel "PDUStatus1_7B67b_PDUPreChargeRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_7B45b_PDUPreChargeRel "PDUStatus1_7B45b_PDUPreChargeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_7B23b_PDUMainPositive "PDUStatus1_7B23b_PDUMainPositiveRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_7B01b_PDUMainPositive "PDUStatus1_7B01b_PDUMainPositiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_6B67b_PDUOilPumpRelay "PDUStatus1_6B67b_PDUOilPumpRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_6B45b_PDUOilPumpRelay "PDUStatus1_6B45b_PDUOilPumpRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_6B23b_PDUDefrostingRe "PDUStatus1_6B23b_PDUDefrostingRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_6B01b_PDUDefrostingRe "PDUStatus1_6B01b_PDUDefrostingRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_5B67b_PDUAirCondition "PDUStatus1_5B67b_PDUAirConditionRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_5B45b_PDUAirCondition "PDUStatus1_5B45b_PDUAirConditionRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_5B23b_PDUStepUpDCDCRe "PDUStatus1_5B23b_PDUStepUpDCDCRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_5B01b_PDUStepUpDCDCRe "PDUStatus1_5B01b_PDUStepUpDCDCRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_2B23b_PDUPumpPreCharg "PDUStatus1_2B23b_PDUPumpPreChargeRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_2B01b_PDUPumpPreCharg "PDUStatus1_2B01b_PDUPumpPreChargeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_1B67b_PDUPTCRelayFaul "PDUStatus1_1B67b_PDUPTCRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_1B45b_PDUPTCRelayStat "PDUStatus1_1B45b_PDUPTCRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_1B23b_PDUHeaterRelayF "PDUStatus1_1B23b_PDUHeaterRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_1B01b_PDUHeaterRelayS "PDUStatus1_1B01b_PDUHeaterRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_0B67b_PDUAirPumpRelay "PDUStatus1_0B67b_PDUAirPumpRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_0B45b_PDUAirPumpRelay "PDUStatus1_0B45b_PDUAirPumpRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_0B23b_PDUStepDownDCDC "PDUStatus1_0B23b_PDUStepDownDCDCRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2348875518 PDUStatus1_0B01b_PDUStepDownDCDC "PDUStatus1_0B01b_PDUStepDownDCDCRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_3B45b_PDUHeaterRelay "EVCU3EACCmd_3B45b_PDUHeaterRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_3B23b_PDUStepDownDCD "EVCU3EACCmd_3B23b_PDUStepDownDCDCRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_3B01b_PDUAirPumpRela "EVCU3EACCmd_3B01b_PDUAirPumpRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_2B23b_PDUPumpPreChar "EVCU3EACCmd_2B23b_PDUPumpPreChargeRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_2B01b_PDUOilPumpEnab "EVCU3EACCmd_2B01b_PDUOilPumpEnable";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_1B67b_PDUPreChargeRe "EVCU3EACCmd_1B67b_PDUPreChargeRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_1B45b_PDUMainPositiv "EVCU3EACCmd_1B45b_PDUMainPositiveRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_1B23b_PDUAirPumpRela "EVCU3EACCmd_1B23b_PDUAirPumpRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_1B01b_PDUStepDownDCD "EVCU3EACCmd_1B01b_PDUStepDownDCDCEnable";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_0B67b_PDUStepUpDCDCR "EVCU3EACCmd_0B67b_PDUStepUpDCDCRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_0B45b_PDUDefrostingR "EVCU3EACCmd_0B45b_PDUDefrostingRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_0B23b_PDUOilPumpRela "EVCU3EACCmd_0B23b_PDUOilPumpRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2365537831 EVCU3EACCmd_0B01b_PDUAirConditio "EVCU3EACCmd_0B01b_PDUAirConditionRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_4B34b_BMSChargeGunConnect "B2VST1_4B34b_BMSChargeGunConnectState";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_4B01b_BMSCurrentHighVolta "B2VST1_4B01b_BMSCurrentHighVoltageState";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_2B01b_BMSHeaterNegativeRe "B2VST1_2B01b_BMSHeaterNegativeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_1B67b_BMSHeaterPositiveRe "B2VST1_1B67b_BMSHeaterPositiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_1B45b_BMSChargeNegativeRe "B2VST1_1B45b_BMSChargeNegativeRelay2State";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_1B23b_BMSChargePositiveRe "B2VST1_1B23b_BMSChargePositiveRelay2State";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_1B01b_BMSChargeNegativeRe "B2VST1_1B01b_BMSChargeNegativeRelay1State";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_0B67b_BMSChargePositiveRe "B2VST1_0B67b_BMSChargePositiveRelay1State";
+BA_ "SystemSignalLongSymbol" SG_ 2558783475 B2VST1_0B23b_BMSMainNegetiveRela "B2VST1_0B23b_BMSMainNegetiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2563047155 B2VCurrentLimit_67B_BMSAllowSust "B2VCurrentLimit_67B_BMSAllowSustainDisChargeCurr";
+BA_ "SystemSignalLongSymbol" SG_ 2563047155 B2VCurrentLimit_45B_BMSAllowSust "B2VCurrentLimit_45B_BMSAllowSustainChargeCurr";
+BA_ "SystemSignalLongSymbol" SG_ 2563047155 B2VCurrentLimit_23B_BMSAllowChar "B2VCurrentLimit_23B_BMSAllowChargeCurr";
+BA_ "SystemSignalLongSymbol" SG_ 2563047155 B2VCurrentLimit_01B_BMSAllowDisC "B2VCurrentLimit_01B_BMSAllowDisChargeCurr";
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_7B47b_BMSLife 0;
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_7B23b_BMSRequestHighVoltP 0;
+BA_ "SystemSignalLongSymbol" SG_ 2558849011 B2VST2_7B23b_BMSRequestHighVoltP "B2VST2_7B23b_BMSRequestHighVoltPowerOff";
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_7B01b_BMSHighestFaultLeve 0;
+BA_ "SystemSignalLongSymbol" SG_ 2558849011 B2VST2_7B01b_BMSHighestFaultLeve "B2VST2_7B01b_BMSHighestFaultLevel";
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_6B_BMSFaultCode 0;
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_45B_BMSVoltage 0;
+BA_ "GenSigStartValue" SG_ 2558849011 B2VST2_23B_BMSCurrent 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2564944879 V2BVIN_3B_VehicleVINCharacter310 "V2BVIN_3B_VehicleVINCharacter31017";
+BA_ "SystemSignalLongSymbol" SG_ 2564944879 V2BVIN_2B_VehicleVINCharacter291 "V2BVIN_2B_VehicleVINCharacter2916";
+BA_ "SystemSignalLongSymbol" SG_ 2564944879 V2BVIN_1B_VehicleVINCharacter181 "V2BVIN_1B_VehicleVINCharacter1815";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_7B67b_PDUDefro "VCUBatteryControl_7B67b_PDUDefrostingRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_7B45b_PDUDefro "VCUBatteryControl_7B45b_PDUDefrostingRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_7B23b_PDUPreCh "VCUBatteryControl_7B23b_PDUPreChargeRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_7B01b_PDUPreCh "VCUBatteryControl_7B01b_PDUPreChargeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_6B67b_PDUAirPu "VCUBatteryControl_6B67b_PDUAirPumpRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_6B45b_PDUAirPu "VCUBatteryControl_6B45b_PDUAirPumpRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_6B23b_PDUOilPu "VCUBatteryControl_6B23b_PDUOilPumpRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_6B01b_PDUOilPu "VCUBatteryControl_6B01b_PDUOilPumpRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_5B67b_PDUStepD "VCUBatteryControl_5B67b_PDUStepDownDCDCRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_5B45b_PDUStepD "VCUBatteryControl_5B45b_PDUStepDownDCDCRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_5B23b_PDUHeate "VCUBatteryControl_5B23b_PDUHeaterNegativeRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_5B01b_PDUHeate "VCUBatteryControl_5B01b_PDUHeaterNegativeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_4B67b_PDUHeate "VCUBatteryControl_4B67b_PDUHeaterPositiveRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_4B45b_PDUHeate "VCUBatteryControl_4B45b_PDUHeaterPositiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_4B23b_PDUCharg "VCUBatteryControl_4B23b_PDUChargePositiveRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_4B01b_PDUCharg "VCUBatteryControl_4B01b_PDUChargePositiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_3B67b_BMSMainN "VCUBatteryControl_3B67b_BMSMainNegativeRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_3B45b_BMSMainN "VCUBatteryControl_3B45b_BMSMainNegativeRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_3B23b_PDUMainP "VCUBatteryControl_3B23b_PDUMainPositiveRelayFault";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_3B01b_PDUMainP "VCUBatteryControl_3B01b_PDUMainPositiveRelayState";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_2B_VehicleVelo "VCUBatteryControl_2B_VehicleVelocity";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_1B67b_BMSStepD "VCUBatteryControl_1B67b_BMSStepDownDCDCRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_1B45b_BMSStepU "VCUBatteryControl_1B45b_BMSStepUpDCDCRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_1B23b_BMSDCACR "VCUBatteryControl_1B23b_BMSDCACRelayCmd";
+BA_ "SystemSignalLongSymbol" SG_ 2550330351 VCUBatteryControl_1B01b_BMSMainN "VCUBatteryControl_1B01b_BMSMainNegativeRelayCmd";
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_7B57b_Motor1FunctionInd 0;
+BA_ "SystemSignalLongSymbol" SG_ 2566864167 EVCUMCU2_7B57b_Motor1FunctionInd "EVCUMCU2_7B57b_Motor1FunctionIndicate";
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_7B01b_Motor1State 0;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_6B67b_MotorOrderNumber 0;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_6B45b_MotorNumber 0;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_6B23b_MCU1TempAlarm 0;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_6B01b_Motor1TempAlarm 0;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_45B_Motor1Torque 32000;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_3B_MCU1Temperature 40;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_2B_Motor1Temperature 40;
+BA_ "GenSigStartValue" SG_ 2566864167 EVCUMCU2_01B_Motor1Speed 15000;
+BA_ "GenSigStartValue" SG_ 2566863911 EVCUMCU1_45B_MCUACCurrent 0;
+BA_ "GenSigStartValue" SG_ 2566863911 EVCUMCU1_23B_MCUDCVoltage 0;
+BA_ "GenSigStartValue" SG_ 2566863911 EVCUMCU1_01B_MCUDCCurrent 10000;
+
