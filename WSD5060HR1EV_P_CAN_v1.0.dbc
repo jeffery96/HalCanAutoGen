@@ -36,7 +36,7 @@ BS_:
 BU_: Others VCU
 
 
-BO_ 2365584880 MCU_Errors3: 8 Vector__XXX
+BO_ 2365584880 MCU_Errors3: 8 Others
  SG_ MCUErrors3_1B0b_MotorOverSpeedLv : 8|1@1+ (1,0) [0|0] "Motor超速1级" Vector__XXX
  SG_ MCUErrors3_0B7b_MotorWPhaseOverC : 7|1@1+ (1,0) [0|0] "MotorW相过流1级" Vector__XXX
  SG_ MCUErrors3_0B6b_MotorVPhaseOverC : 6|1@1+ (1,0) [0|0] "MotorV相过流1级" Vector__XXX
@@ -46,7 +46,7 @@ BO_ 2365584880 MCU_Errors3: 8 Vector__XXX
  SG_ MCUErrors3_0B2b_MotorOverTempLvl : 2|1@1+ (1,0) [0|0] "Motor1级过温" Vector__XXX
  SG_ MCUErrors3_0B1b_MCUUnderVoltLv1 : 1|1@1+ (1,0) [0|0] "MCU欠压1级故障" Vector__XXX
 
-BO_ 2365584624 MCU_Errors2: 8 Vector__XXX
+BO_ 2365584624 MCU_Errors2: 8 Others
  SG_ MCUErrors2_5B0b_MotorOverSpeedLe : 40|1@1+ (1,0) [0|0] "Motor超速2级" Vector__XXX
  SG_ MCUErrors2_4B7b_MotorWPhaseOverC : 39|1@1+ (1,0) [0|0] "MotorW相过流2级" Vector__XXX
  SG_ MCUErrors2_4B6b_MotorVPhaseOverC : 38|1@1+ (1,0) [0|0] "MotorV相过流2级" Vector__XXX
@@ -64,7 +64,7 @@ BO_ 2365584624 MCU_Errors2: 8 Vector__XXX
  SG_ MCUErrors2_0B2b_MotorOverTempLv3 : 2|1@1+ (1,0) [0|0] "Motor3级过温" Vector__XXX
  SG_ MCUErrors2_0B1b_MCUUnderVoltLvl3 : 1|1@1+ (1,0) [0|0] "MCU欠压3级故障" Vector__XXX
 
-BO_ 2365584368 MCU_Errors1: 8 Vector__XXX
+BO_ 2365584368 MCU_Errors1: 8 Others
  SG_ MCUErrors1_5B6b_MCUActiveDisChar : 46|1@1+ (1,0) [0|0] "MCU 主动放电故障" Vector__XXX
  SG_ MCUErrors1_5B5b_MCUEEPROMFault : 45|1@1+ (1,0) [0|0] "MCU EEPROM故障" Vector__XXX
  SG_ MCUErrors1_5B3b_MotorSpeedSensor : 44|1@1+ (1,0) [0|0] "Motor转速传感器故障" Vector__XXX
@@ -97,7 +97,7 @@ BO_ 2365584368 MCU_Errors1: 8 Vector__XXX
  SG_ MCUErrors1_0B2b_MotorOverTempLv4 : 2|1@1+ (1,0) [0|0] "Motor4级过温" Vector__XXX
  SG_ MCUErrors1_0B1b_MCUUnderVoltLv4 : 1|1@1+ (1,0) [0|0] "MCU欠压4级故障" Vector__XXX
 
-BO_ 2365551600 MCU_States3: 8 Vector__XXX
+BO_ 2365551600 MCU_States3: 8 Others
  SG_ MCUStates3_23B_MCUMaxBrakeTorque : 16|16@1+ (0.1,-3000) [0|0] "" Vector__XXX
  SG_ MCUStates3_01B_MCUMaxDriveTorque : 0|16@1+ (0.1,0) [0|0] "" Vector__XXX
 
