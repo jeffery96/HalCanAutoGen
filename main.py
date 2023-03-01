@@ -292,4 +292,3 @@ with open('./hacg_can.h', 'w') as hacg_can_h_file:
 
 pass
 
-# TODO: TMProMsg3_07B_TMSerialNum 这个信号长度为64，处理存在问题

@@ -375,7 +375,7 @@ BA_DEF_DEF_  "VFrameFormat" "J1939PG";
 BA_DEF_DEF_  "SystemSignalLongSymbol" "";
 BA_ "DBName" "KLNEVTXXY001";
 BA_ "NmStationAddress" BU_ Others 0;
-BA_ "NmStationAddress" BU_ VCU 161;
+BA_ "NmStationAddress" BU_ VCU 0;
 BA_ "VFrameFormat" BO_ 2358899626 1;
 BA_ "VFrameFormat" BO_ 2358899370 1;
 BA_ "VFrameFormat" BO_ 2358899114 1;

@@ -37,32 +37,32 @@ BU_: Others VCU
 
 
 BO_ 2365584880 MCU_Errors3: 8 Vector__XXX
- SG_ MCUErrors3_1B0b_MotorOverSpeedLe : 8|1@1+ (1,0) [0|0] "Motor超速1级" Vector__XXX
+ SG_ MCUErrors3_1B0b_MotorOverSpeedLv : 8|1@1+ (1,0) [0|0] "Motor超速1级" Vector__XXX
  SG_ MCUErrors3_0B7b_MotorWPhaseOverC : 7|1@1+ (1,0) [0|0] "MotorW相过流1级" Vector__XXX
  SG_ MCUErrors3_0B6b_MotorVPhaseOverC : 6|1@1+ (1,0) [0|0] "MotorV相过流1级" Vector__XXX
  SG_ MCUErrors3_0B5b_MotorUPhaseOverC : 5|1@1+ (1,0) [0|0] "MotorU相过流1级" Vector__XXX
- SG_ MCUErrors3_0B4b_MCUDCOverVoltLev : 4|1@1+ (1,0) [0|0] "MCU DC母线1级过压" Vector__XXX
- SG_ MCUErrors3_0B3b_MCUOverTempLevel : 3|1@1+ (1,0) [0|0] "MCU1级过温" Vector__XXX
- SG_ MCUErrors3_0B2b_MotorOverTempLev : 2|1@1+ (1,0) [0|0] "Motor1级过温" Vector__XXX
- SG_ MCUErrors3_0B1b_MCUUnderVoltLeve : 1|1@1+ (1,0) [0|0] "MCU欠压1级故障" Vector__XXX
+ SG_ MCUErrors3_0B4b_MCUDCOverVoltLv1 : 4|1@1+ (1,0) [0|0] "MCU DC母线1级过压" Vector__XXX
+ SG_ MCUErrors3_0B3b_MCUOverTempLv1 : 3|1@1+ (1,0) [0|0] "MCU1级过温" Vector__XXX
+ SG_ MCUErrors3_0B2b_MotorOverTempLvl : 2|1@1+ (1,0) [0|0] "Motor1级过温" Vector__XXX
+ SG_ MCUErrors3_0B1b_MCUUnderVoltLv1 : 1|1@1+ (1,0) [0|0] "MCU欠压1级故障" Vector__XXX
 
 BO_ 2365584624 MCU_Errors2: 8 Vector__XXX
  SG_ MCUErrors2_5B0b_MotorOverSpeedLe : 40|1@1+ (1,0) [0|0] "Motor超速2级" Vector__XXX
  SG_ MCUErrors2_4B7b_MotorWPhaseOverC : 39|1@1+ (1,0) [0|0] "MotorW相过流2级" Vector__XXX
  SG_ MCUErrors2_4B6b_MotorVPhaseOverC : 38|1@1+ (1,0) [0|0] "MotorV相过流2级" Vector__XXX
  SG_ MCUErrors2_4B5b_MotorUPhaseOverC : 37|1@1+ (1,0) [0|0] "MotorU相过流2级" Vector__XXX
- SG_ MCUErrors2_4B4b_MCUDCOverVoltLev : 36|1@1+ (1,0) [0|0] "MCU DC母线2级过压" Vector__XXX
- SG_ MCUErrors2_4B3b_MCUOverTempLevel : 35|1@1+ (1,0) [0|0] "MCU2级过温" Vector__XXX
- SG_ MCUErrors2_4B2b_MotorOverTempLev : 34|1@1+ (1,0) [0|0] "Motor2级过温" Vector__XXX
- SG_ MCUErrors2_4B1b_MCUUnderVoltLeve : 33|1@1+ (1,0) [0|0] "MCU欠压2级故障" Vector__XXX
- SG_ MCUErrors2_1B0b_MotorOverSpeedLe : 8|1@1+ (1,0) [0|0] "Motor超速3级" Vector__XXX
+ SG_ MCUErrors2_4B4b_MCUDCOverVoltLv2 : 36|1@1+ (1,0) [0|0] "MCU DC母线2级过压" Vector__XXX
+ SG_ MCUErrors2_4B3b_MCUOverTempLv2 : 35|1@1+ (1,0) [0|0] "MCU2级过温" Vector__XXX
+ SG_ MCUErrors2_4B2b_MotorOverTempLv2 : 34|1@1+ (1,0) [0|0] "Motor2级过温" Vector__XXX
+ SG_ MCUErrors2_4B1b_MCUUnderVoltLv2 : 33|1@1+ (1,0) [0|0] "MCU欠压2级故障" Vector__XXX
+ SG_ MCUErrors2_1B0b_MotorOverSpeedLv : 8|1@1+ (1,0) [0|0] "Motor超速3级" Vector__XXX
  SG_ MCUErrors2_0B7b_MotorWPhaseOverC : 7|1@1+ (1,0) [0|0] "MotorW相过流3级" Vector__XXX
  SG_ MCUErrors2_0B6b_MotorVPhaseOverC : 6|1@1+ (1,0) [0|0] "MotorV相过流3级" Vector__XXX
  SG_ MCUErrors2_0B5b_MotorUPhaseOverC : 5|1@1+ (1,0) [0|0] "MotorU相过流3级" Vector__XXX
- SG_ MCUErrors2_0B4b_MCUDCOverVoltLev : 4|1@1+ (1,0) [0|0] "MCU DC母线3级过压" Vector__XXX
- SG_ MCUErrors2_0B3b_MCUOverTempLevel : 3|1@1+ (1,0) [0|0] "MCU3级过温" Vector__XXX
- SG_ MCUErrors2_0B2b_MotorOverTempLev : 2|1@1+ (1,0) [0|0] "Motor3级过温" Vector__XXX
- SG_ MCUErrors2_0B1b_MCUUnderVoltLeve : 1|1@1+ (1,0) [0|0] "MCU欠压3级故障" Vector__XXX
+ SG_ MCUErrors2_0B4b_MCUDCOverVoltLv3 : 4|1@1+ (1,0) [0|0] "MCU DC母线3级过压" Vector__XXX
+ SG_ MCUErrors2_0B3b_MCUOverTempLv3 : 3|1@1+ (1,0) [0|0] "MCU3级过温" Vector__XXX
+ SG_ MCUErrors2_0B2b_MotorOverTempLv3 : 2|1@1+ (1,0) [0|0] "Motor3级过温" Vector__XXX
+ SG_ MCUErrors2_0B1b_MCUUnderVoltLvl3 : 1|1@1+ (1,0) [0|0] "MCU欠压3级故障" Vector__XXX
 
 BO_ 2365584368 MCU_Errors1: 8 Vector__XXX
  SG_ MCUErrors1_5B6b_MCUActiveDisChar : 46|1@1+ (1,0) [0|0] "MCU 主动放电故障" Vector__XXX
@@ -88,14 +88,14 @@ BO_ 2365584368 MCU_Errors1: 8 Vector__XXX
  SG_ MCUErrors1_1B3b_MCUPhaseShortCir : 11|1@1+ (1,0) [0|0] "MCU交流相线对地短路4级" Vector__XXX
  SG_ MCUErrors1_1B2b_MCUDCShortCircGN : 10|1@1+ (1,0) [0|0] "MCU直流母线对地短路4级" Vector__XXX
  SG_ MCUErrors1_1B1b_MotorInterPhaseS : 9|1@1+ (1,0) [0|0] "Motor相间短路4级" Vector__XXX
- SG_ MCUErrors1_1B0b_MotorOverSpeedLe : 8|1@1+ (1,0) [0|0] "Motor超速4级" Vector__XXX
+ SG_ MCUErrors1_1B0b_MotorOverSpeedLv : 8|1@1+ (1,0) [0|0] "Motor超速4级" Vector__XXX
  SG_ MCUErrors1_0B7b_MotorWPhaseOverC : 7|1@1+ (1,0) [0|0] "MotorW相过流4级" Vector__XXX
  SG_ MCUErrors1_0B6b_MotorVPhaseOverC : 6|1@1+ (1,0) [0|0] "MotorV相过流4级" Vector__XXX
  SG_ MCUErrors1_0B5b_MotorUPhaseOverC : 5|1@1+ (1,0) [0|0] "MotorU相过流4级" Vector__XXX
- SG_ MCUErrors1_0B4b_MCUDCOverVoltLev : 4|1@1+ (1,0) [0|0] "MCU DC母线4级过压" Vector__XXX
- SG_ MCUErrors1_0B3b_MCUOverTempLevel : 3|1@1+ (1,0) [0|0] "MCU4级过温" Vector__XXX
- SG_ MCUErrors1_0B2b_MotorOverTempLev : 2|1@1+ (1,0) [0|0] "Motor4级过温" Vector__XXX
- SG_ MCUErrors1_0B1b_MCUUnderVoltLeve : 1|1@1+ (1,0) [0|0] "MCU欠压4级故障" Vector__XXX
+ SG_ MCUErrors1_0B4b_MCUDCOverVoltLv4 : 4|1@1+ (1,0) [0|0] "MCU DC母线4级过压" Vector__XXX
+ SG_ MCUErrors1_0B3b_MCUOverTempLv4 : 3|1@1+ (1,0) [0|0] "MCU4级过温" Vector__XXX
+ SG_ MCUErrors1_0B2b_MotorOverTempLv4 : 2|1@1+ (1,0) [0|0] "Motor4级过温" Vector__XXX
+ SG_ MCUErrors1_0B1b_MCUUnderVoltLv4 : 1|1@1+ (1,0) [0|0] "MCU欠压4级故障" Vector__XXX
 
 BO_ 2365551600 MCU_States3: 8 Vector__XXX
  SG_ MCUStates3_23B_MCUMaxBrakeTorque : 16|16@1+ (0.1,-3000) [0|0] "" Vector__XXX
@@ -143,7 +143,7 @@ BO_ 2365546791 VCU_MCU_Cmd: 8 VCU
  SG_ VCUMCUCmd_23B_DemandTorque : 16|16@1+ (0.1,-3000) [0|0] "需求扭矩" Vector__XXX
  SG_ VCUMCUCmd_1B67b_MCUDirection : 14|2@1+ (1,0) [0|0] "电机运行方向" Vector__XXX
  SG_ VCUMCUCmd_1B35b_MCUControlMode : 11|3@1+ (1,0) [0|0] "MCU控制模式" Vector__XXX
- SG_ VCUMCUCmd_1B12b_MCUEnable : 9|2@1+ (1,0) [0|0] "MCU使能" Vector__XXX
+ SG_ VCUMCUCmd_1B12b_MCUEnable : 9|2@1+ (1,0) [0|0] "MCU IGBT使能" Vector__XXX
  SG_ VCUMCUCmd_1B0b_FootBrakeState : 8|1@1+ (1,0) [0|0] "脚刹状态" Vector__XXX
  SG_ VCUMCUCmd_0B01b_SystemReady : 0|2@1+ (1,0) [0|0] "系统Ready状态" Vector__XXX
 
@@ -228,30 +228,19 @@ BA_ "VFrameFormat" BO_ 2365551088 3;
 BA_ "VFrameFormat" BO_ 2348875518 3;
 BA_ "VFrameFormat" BO_ 2365547047 3;
 BA_ "VFrameFormat" BO_ 2365546791 3;
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_1B0b_MotorOverSpeedLe "MCUErrors3_1B0b_MotorOverSpeedLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B7b_MotorWPhaseOverC "MCUErrors3_0B7b_MotorWPhaseOverCurrLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B6b_MotorVPhaseOverC "MCUErrors3_0B6b_MotorVPhaseOverCurrLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B5b_MotorUPhaseOverC "MCUErrors3_0B5b_MotorUPhaseOverCurrLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B4b_MCUDCOverVoltLev "MCUErrors3_0B4b_MCUDCOverVoltLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B3b_MCUOverTempLevel "MCUErrors3_0B3b_MCUOverTempLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B2b_MotorOverTempLev "MCUErrors3_0B2b_MotorOverTempLevel1";
-BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B1b_MCUUnderVoltLeve "MCUErrors3_0B1b_MCUUnderVoltLevel1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_1B0b_MotorOverSpeedLv "MCUErrors3_1B0b_MotorOverSpeedLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B7b_MotorWPhaseOverC "MCUErrors3_0B7b_MotorWPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B6b_MotorVPhaseOverC "MCUErrors3_0B6b_MotorVPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B5b_MotorUPhaseOverC "MCUErrors3_0B5b_MotorUPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B2b_MotorOverTempLvl "MCUErrors3_0B2b_MotorOverTempLvl1";
 BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_5B0b_MotorOverSpeedLe "MCUErrors2_5B0b_MotorOverSpeedLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B7b_MotorWPhaseOverC "MCUErrors2_4B7b_MotorWPhaseOverCurrLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B6b_MotorVPhaseOverC "MCUErrors2_4B6b_MotorVPhaseOverCurrLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B5b_MotorUPhaseOverC "MCUErrors2_4B5b_MotorUPhaseOverCurrLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B4b_MCUDCOverVoltLev "MCUErrors2_4B4b_MCUDCOverVoltLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B3b_MCUOverTempLevel "MCUErrors2_4B3b_MCUOverTempLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B2b_MotorOverTempLev "MCUErrors2_4B2b_MotorOverTempLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B1b_MCUUnderVoltLeve "MCUErrors2_4B1b_MCUUnderVoltLevel2";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_1B0b_MotorOverSpeedLe "MCUErrors2_1B0b_MotorOverSpeedLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B7b_MotorWPhaseOverC "MCUErrors2_0B7b_MotorWPhaseOverCurrLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B6b_MotorVPhaseOverC "MCUErrors2_0B6b_MotorVPhaseOverCurrLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B5b_MotorUPhaseOverC "MCUErrors2_0B5b_MotorUPhaseOverCurrLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B4b_MCUDCOverVoltLev "MCUErrors2_0B4b_MCUDCOverVoltLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B3b_MCUOverTempLevel "MCUErrors2_0B3b_MCUOverTempLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B2b_MotorOverTempLev "MCUErrors2_0B2b_MotorOverTempLevel3";
-BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B1b_MCUUnderVoltLeve "MCUErrors2_0B1b_MCUUnderVoltLevel3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B7b_MotorWPhaseOverC "MCUErrors2_4B7b_MotorWPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B6b_MotorVPhaseOverC "MCUErrors2_4B6b_MotorVPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B5b_MotorUPhaseOverC "MCUErrors2_4B5b_MotorUPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_1B0b_MotorOverSpeedLv "MCUErrors2_1B0b_MotorOverSpeedLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B7b_MotorWPhaseOverC "MCUErrors2_0B7b_MotorWPhaseOverCurrLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B6b_MotorVPhaseOverC "MCUErrors2_0B6b_MotorVPhaseOverCurrLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B5b_MotorUPhaseOverC "MCUErrors2_0B5b_MotorUPhaseOverCurrLv3";
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B6b_MCUActiveDisChar "MCUErrors1_5B6b_MCUActiveDisChargeFault";
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B3b_MotorSpeedSensor "MCUErrors1_5B3b_MotorSpeedSensorFault";
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B2b_MCUDCVoltSensorF "MCUErrors1_5B2b_MCUDCVoltSensorFault";
@@ -264,17 +253,13 @@ BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B3b_MCUVPhaseCurrSen "MC
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B2b_MCUUPhaseCurrSen "MCUErrors1_4B2b_MCUUPhaseCurrSensorFault";
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B1b_MotorTempSensorF "MCUErrors1_4B1b_MotorTempSensorFault";
 BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B0b_MCUTempSensorFau "MCUErrors1_4B0b_MCUTempSensorFault";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B3b_MCUPhaseShortCir "MCUErrors1_1B3b_MCUPhaseShortCircGNDLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B2b_MCUDCShortCircGN "MCUErrors1_1B2b_MCUDCShortCircGNDLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B1b_MotorInterPhaseS "MCUErrors1_1B1b_MotorInterPhaseShortCircLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B0b_MotorOverSpeedLe "MCUErrors1_1B0b_MotorOverSpeedLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B7b_MotorWPhaseOverC "MCUErrors1_0B7b_MotorWPhaseOverCurrLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B6b_MotorVPhaseOverC "MCUErrors1_0B6b_MotorVPhaseOverCurrLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B5b_MotorUPhaseOverC "MCUErrors1_0B5b_MotorUPhaseOverCurrLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B4b_MCUDCOverVoltLev "MCUErrors1_0B4b_MCUDCOverVoltLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B3b_MCUOverTempLevel "MCUErrors1_0B3b_MCUOverTempLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B2b_MotorOverTempLev "MCUErrors1_0B2b_MotorOverTempLevel4";
-BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B1b_MCUUnderVoltLeve "MCUErrors1_0B1b_MCUUnderVoltLevel4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B3b_MCUPhaseShortCir "MCUErrors1_1B3b_MCUPhaseShortCircGNDLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B2b_MCUDCShortCircGN "MCUErrors1_1B2b_MCUDCShortCircGNDLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B1b_MotorInterPhaseS "MCUErrors1_1B1b_MotorInterPhaseShortCircLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B0b_MotorOverSpeedLv "MCUErrors1_1B0b_MotorOverSpeedLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B7b_MotorWPhaseOverC "MCUErrors1_0B7b_MotorWPhaseOverCurrLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B6b_MotorVPhaseOverC "MCUErrors1_0B6b_MotorVPhaseOverCurrLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B5b_MotorUPhaseOverC "MCUErrors1_0B5b_MotorUPhaseOverCurrLv4";
 BA_ "GenSigStartValue" SG_ 2365551600 MCUStates3_23B_MCUMaxBrakeTorque 30000;
 BA_ "SystemSignalLongSymbol" SG_ 2365551600 MCUStates3_23B_MCUMaxBrakeTorque "MCUStates3_23B_MCUMaxBrakeTorqueAvailable";
 BA_ "SystemSignalLongSymbol" SG_ 2365551600 MCUStates3_01B_MCUMaxDriveTorque "MCUStates3_01B_MCUMaxDriveTorqueAvailable";
@@ -318,4 +303,13 @@ BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_0B_AccePedalPosi "VC
 BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_0B24b_ParkingSystemSta "VCUMCUCmd_0B24b_ParkingSystemState";
 BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_45B_DemandSpeed 15000;
 BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_23B_DemandTorque 30000;
+VAL_ 2365547047 VCUVehiclStates_2B67b_VCUCrawlOf 1 "蠕行关闭有效" 0 "蠕行关闭无效" ;
+VAL_ 2365547047 VCUVehiclStates_2B45b_SlideSwitc 1 "开启" 0 "关闭" ;
+VAL_ 2365547047 VCUVehiclStates_2B01b_AntiRollBa 1 "开启" 0 "关闭" ;
+VAL_ 2365546791 VCUMCUCmd_0B24b_ParkingSystemSta 5 "自由状态" 4 "正在驻车状态" 3 "错误状态" 2 "正在释放状态" 1 "驻车状态" 0 "释放状态" ;
+VAL_ 2365546791 VCUMCUCmd_1B67b_MCUDirection 2 "后退方向" 1 "前进方向" ;
+VAL_ 2365546791 VCUMCUCmd_1B35b_MCUControlMode 3 "主动放电模式" 2 "转速模式" 1 "转矩模式" 0 "关闭模式" ;
+VAL_ 2365546791 VCUMCUCmd_1B12b_MCUEnable 1 "非使能" 0 "使能" ;
+VAL_ 2365546791 VCUMCUCmd_1B0b_FootBrakeState 1 "脚刹有效" 0 "脚刹无效" ;
+VAL_ 2365546791 VCUMCUCmd_0B01b_SystemReady 2 "系统Ready无行车故障" 1 "系统处于高压状态" 0 "系统处于低压状态" ;
 
