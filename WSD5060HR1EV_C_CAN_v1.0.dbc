@@ -120,7 +120,7 @@ BO_ 2565932327 LVOP_Control: 8 Vector__XXX
  SG_ LVOP_Control_6B_VehicleVelocity : 48|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOP_Control_0B_LVOilPumpEnable : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2565868840 DCAC_HV_Oilpuup_Status2: 8 Vector__XXX
+BO_ 2565868840 DCAC_HV_Oilpump_Status2: 8 Vector__XXX
  SG_ DCACHVOilpumpStatus2_7B23b_OilPu : 58|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus2_7B01b_OilPu : 56|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus2_6B_OilPumpI : 48|8@1+ (1,-40) [0|0] "" Vector__XXX
