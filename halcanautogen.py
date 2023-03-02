@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Dict
 import os
 from datetime import datetime
 import cantools
@@ -7,30 +7,42 @@ import cantools
 # TODO: 解决DBC和CAN通道映射关系
 class HalCanAutoGen(object):
     def __init__(self,
-                 dbc_file: Union[str, cantools.database.can.database.Database],
+                 dbc_file: Dict[Union[str, cantools.database.can.database.Database], str],
                  storage_path: str = './',
                  modifier: str = os.getlogin()
                  ):
 
-        self._dbc = None
+        self._dbc = dbc_file
         self._storage_path = storage_path
         self._modifier = modifier
         self._chn = 'can0'
 
-        if isinstance(dbc_file, str):
-            p, f = os.path.splitext(dbc_file)
-            if f == '.dbc':
-                self._dbc = cantools.database.load_file(dbc_file)
-            elif f == '.xls' or f == '.xlsx':
-                raise TypeError('暂不支持Excel类型通信矩阵！')
+        temp = {}
+        for k, v in self._dbc.items():
+            if isinstance(k, str):
+                p, f = os.path.splitext(k)
+                if f == '.dbc':
+                    temp[cantools.database.load_file(k)] = self._dbc[k]
+                    # self._dbc[cantools.database.load_file(k)] = self._dbc.pop(k)
+                elif f == '.xls' or f == '.xlsx':
+                    raise TypeError('暂不支持Excel类型通信矩阵')
+                else:
+                    raise ValueError('不是合法路径或DBC文件')
 
-        elif isinstance(dbc_file, cantools.database.can.database.Database):
-            self._dbc = dbc_file
-        else:
-            raise TypeError('DBC文件类型错误')
+            elif isinstance(k, cantools.database.can.database.Database):
+                temp[k] = self._dbc[k]
+                # self._dbc = dbc_file
+                pass
+            else:
+                raise TypeError('DBC文件类型错误')
+        self._dbc = temp
+        # TODO: 先排序can0报文，再排序can1报文
+        self._messages = sorted([m for d in self._dbc for m in d.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
+                         sorted([m for d in self._dbc for m in d.messages if 'VCU' not in m.senders], key=lambda x: x.name)
+        pass
+        # self._messages = sorted([m for m in self._dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
+        #                  sorted([m for m in self._dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
 
-        self._messages = [m for m in self._dbc.messages if 'VCU' in m.senders] + \
-                         [m for m in self._dbc.messages if 'VCU' not in m.senders]
         pass
 
     def generate_iovarsc_file(self):
@@ -58,53 +70,23 @@ class HalCanAutoGen(object):
 
                 if 'VCU' in msg.senders:
                     # VCU发送的报文
-                    var_name1 = f'pfc_{self._chn}_{hex(msg.frame_id)}_msgReady'
-                    var_name2 = f'pfc_{self._chn}_{hex(msg.frame_id)}_msgTxFailed'
+                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgReady'
+                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgTxFailed'
                     f.write(comment)
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name1.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name2.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
+                    f.write('uint8_t'.ljust(12) + var_name1.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
+                    f.write('uint8_t'.ljust(12) + var_name2.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
                     f.write('\n')
                 else:
                     # VCU接收的报文
-                    var_name1 = f'pfc_{self._chn}_{hex(msg.frame_id)}_received'
-                    var_name2 = f'pfc_{self._chn}_{hex(msg.frame_id)}_msgOverRun'
-                    var_name3 = f'pfc_{self._chn}_{hex(msg.frame_id)}_timeout'
-                    var_name4 = f'pfc_{self._chn}_{hex(msg.frame_id)}_msgValid'
+                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_received'
+                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgOverRun'
+                    var_name3 = f'hld_{self._chn}_{hex(msg.frame_id)}_timeout'
+                    var_name4 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgValid'
                     f.write(comment)
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name1.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name2.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name3.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
-                    f.write(
-                        'uint8_t'.ljust(12) +
-                        var_name4.ljust(44) +
-                        '=' +
-                        '0u;'.rjust(12) +
-                        '\n')
+                    f.write('uint8_t'.ljust(12) + var_name1.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
+                    f.write('uint8_t'.ljust(12) + var_name2.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
+                    f.write('uint8_t'.ljust(12) + var_name3.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
+                    f.write('uint8_t'.ljust(12) + var_name4.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
                     f.write('\n')
             ccp_uds_part = '''/* CAN Message: ccp_daq_0 */
 uint8_t hld_can2_0x219_0_msgReady = 0u;
@@ -173,7 +155,7 @@ uint8_t hld_can2_0x18DAF103_msgReady = 0u;
 uint8_t hld_can2_0x18DAF103_msgTxFailed = 0u;
 
 '''
-            f.write(ccp_uds_part)
+            # f.write(ccp_uds_part)
 
             # BSW CAN Buffer Struct Defination
             for msg in self._messages:
@@ -233,18 +215,16 @@ uint8_t vin_resp_buf[8] =
 };
 
 '''
-            f.write(ccp_uds_part)
+            # f.write(ccp_uds_part)
 
             # BSW Signal Defination
             for msg in self._messages:
-
+                comment = f'/* {msg.name} Message Signals */\n'
+                f.write(comment)
                 for sig in msg.signals:
                     bsw_var_signal_name = 'pfc_' + sig.name.split("_")[-1]
                     if len(bsw_var_signal_name) >= 32:
-                        print(
-                            '超过长度的变量: ' +
-                            bsw_var_signal_name +
-                            f'{len(bsw_var_signal_name)}')
+                        print('超过长度的变量: ' + bsw_var_signal_name + f'{len(bsw_var_signal_name)}')
 
                     sig_type = 'uint8_t' if sig.length <= 8 else 'uint16_t' if sig.length <= 16 else 'uint32_t'
                     sig_initval = (hex(int(-sig.offset / sig.scale))
@@ -252,8 +232,7 @@ uint8_t vin_resp_buf[8] =
                     f.write(
                         f'{sig_type.ljust(12)}{bsw_var_signal_name.ljust(44)}={sig_initval.rjust(12)};\n')
                 f.write('\n')
-            f.write(
-                '/*-------------------------------------EOF--------------------------------------*/\n\n')
+            f.write('/*-------------------------------------EOF--------------------------------------*/\n\n')
 
     def generate_iovarsh_file(self):
         with open(self._storage_path + 'io_vars.h', 'w') as f:
@@ -302,6 +281,8 @@ uint8_t vin_resp_buf[8] =
             f.write('\n')
 
             for msg in self._messages:
+                comment = f'/* {msg.name} Message Signals */\n'
+                f.write(comment)
                 for sig in msg.signals:
                     sig_type = 'uint8_t' if sig.length <= 8 else 'uint16_t' if sig.length <= 16 else 'uint32_t'
                     bsw_var_signal_name = 'pfc_' + sig.name.split("_")[-1]
@@ -364,18 +345,17 @@ uint8_t vin_resp_buf[8] =
                                     f'}}\n\n'
                     f.write(function_body)
                 else:
-                    signal_Unpack_part = ''
+                    signal_unpack_part = ''
                     for sig in msg.signals:
                         sig_type = 'uint8_t' if sig.length <= 8 else 'uint16_t' if sig.length <= 16 else 'uint32_t' if sig.length <= 32 else 'uint64_t'
                         bsw_var_signal_name = 'pfc_' + sig.name.split("_")[-1]
                         start = sig.start
                         lenth = sig.length
                         end = start + lenth
-                        signal_Unpack_part += f'    /*signalName:{bsw_var_signal_name}, DataOrder:{sig.byte_order}, startBit: {sig.start}, length: {sig.length} */\n'
+                        signal_unpack_part += f'    /*signalName:{bsw_var_signal_name}, DataOrder:{sig.byte_order}, startBit: {sig.start}, length: {sig.length} */\n'
 
                         filter_bit_in_64 = '{:064b}'.format(int('1' * lenth, 2) << (start % 8))
                         for i, j in enumerate(range(start, end, 8)):
-
                             assignment_symbol = '=' if i == 0 else '|='
                             byte_index, _ = divmod(j, 8)
                             filter_bit_in_bin = filter_bit_in_64[::-1][i * 8:(i + 1) * 8][::-1]
@@ -383,11 +363,11 @@ uint8_t vin_resp_buf[8] =
                             shift_dir = '>>' if i == 0 else '<<'
                             shift_num = len(filter_bit_in_bin) - len(filter_bit_in_bin.rstrip('0'))
                             shift_num = shift_num if i == 0 else i * 8
-                            signal_Unpack_part += f'    {bsw_var_signal_name.ljust(32)} {assignment_symbol} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n'
+                            signal_unpack_part += f'    {bsw_var_signal_name.ljust(32)} {assignment_symbol} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n'
 
                     function_body = f'void Can0Msg_Unpack_{hex(msg.frame_id)}(void)\n' \
                                     f'{{\n' \
-                                    f'{signal_Unpack_part}' \
+                                    f'{signal_unpack_part}' \
                                     f'}}\n\n'
                     f.write(function_body)
 
@@ -429,9 +409,8 @@ uint8_t vin_resp_buf[8] =
 
 if __name__ == '__main__':
     can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
-    h = HalCanAutoGen(can0_dbc, modifier='LinXiaobin')
+    h = HalCanAutoGen({can0_dbc: 'can0', r'./WSD5060HR1EV_C_CAN_v1.0.dbc': 'can1'}, modifier='LinXiaobin')
     h.generate_iovarsc_file()
     h.generate_iovarsh_file()
     h.generate_hacgcanh_file()
     h.generate_hacgcanc_file()
-
