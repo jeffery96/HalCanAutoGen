@@ -432,44 +432,70 @@ class HalCanAutoGen(object):
             f.write(include_header_part)
 
             for dbc, chn in self._dbc:
-                msg_num = len(dbc.messages)
+                messages = sorted([m for m in dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
+                           sorted([m for m in dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
+
+                msg_num = len(messages)
                 f.write(f'/*{chn.upper()} Message List Config:*/\n')
                 f.write(f'#define {chn.upper()}_MSGS_COUNT ({msg_num}u)\n\n')
 
-                typedef_content = ''.join([f'    {chn.upper()}_MSG_{msg.name},\n' for msg in dbc.messages])
-                msg_name_typedef = f'typedef enum __CAN0_MSG_NAME_T__\n' \
+                typedef_content = ''.join([f'    {chn.upper()}_MSG_{msg.name.upper()},\n' for msg in messages])
+                msg_name_typedef = f'typedef enum __{chn.upper()}_MSG_NAME_T__\n' \
                                    f'{{\n' \
                                    f'{typedef_content}' \
-                                   f'}}{chn}msg_name_t\n\n'
+                                   f'}}{chn}msg_name_t;\n\n'
 
                 f.write(msg_name_typedef)
 
                 f.write(f'#define {chn.upper()}_MSGS_CONFIG \\\n')
-                for msg in dbc.messages:
-                    msg_config = f'/* CAN0_MSG_{msg.name.upper()} */'.ljust(40) + \
-                                 f'{{{hex(msg.frame_id)},' \
-                                 f' MSG_TYPE_NORMAL,' \
-                                 f'TRUE,' \
-                                 f'TRUE,' \
-                                 f'8,' \
-                                 f',' \
-                                 f'FALSE,' \
-                                 f'FALSE,' \
-                                 f'(   20/10 ),' \
-                                 f'(   10/10 ),' \
-                                 f'VCU_CMD_MCU_buf,' \
-                                 f'NULL,' \
-                                 f'NULL,' \
-                                 f'NULL,' \
-                                 f'NULL,' \
-                                 f'&hld_can0_0x18000201_msgReady,' \
-                                 f'&hld_can0_0x18000201_msgTxFailed,' \
-                                 f'Can0Msg_Pack_0x18000201}},\\\n'
+                for msg in messages:
+                    # 参数判断
+                    frame_id = hex(msg.frame_id)
+                    msg_type = 'MSG_TYPE_NORMAL' if 'uds' not in msg.name or 'ccp' not in msg.name else 'MSG_TYPE_DIAG'
+                    extend_format = 'TRUE' if msg.is_extended_frame else 'FALSE'
+                    tx = 'TRUE' if 'VCU' in msg.senders else 'FALSE'
+                    dlc = '8'
+                    valid_len = '8'
+                    event = 'FALSE' if 'uds' not in msg.name or 'ccp' not in msg.name else 'TRUE'
+                    gateway = 'FALSE'
+                    period = f'( 0/10 )' if msg.cycle_time == None else f'( {msg.cycle_time}/10 )'
+                    first_tx_delay = '( 10/10 )' if 'VCU' in msg.senders else '(  0/10 )'
+                    p_buffer = f'{msg.name}_buf'
+                    rx_recieved = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_received'
+                    rx_overrun = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_msgOverRun'
+                    rx_timeout = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_timeout'
+                    rx_valid = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_msgValid'
+                    tx_ready = f'hld_{chn}_{hex(msg.frame_id)}_msgReady' if 'VCU' in msg.senders else 'NULL'
+                    tx_failed = f'hld_{chn}_{hex(msg.frame_id)}_msgTxFailed' if 'VCU' in msg.senders else 'NULL'
+                    pack_unpack = f'hld_{chn}_{hex(msg.frame_id).capitalize()}_msgTxFailed' \
+                                  if 'uds' not in msg.name or 'ccp' not in msg.name else 'NULL'
+
+                    msg_config = f'/* {chn.upper()}_MSG_{msg.name.upper()} */\n' + \
+                                 f'{{' + \
+                                 f'{frame_id}'.rjust(11) + ', ' + \
+                                 f'{msg_type}'.rjust(15) + ', ' + \
+                                 f'{extend_format}'.rjust(5) + ', ' + \
+                                 f'{tx}'.rjust(5) + ', ' + \
+                                 f'{dlc}'.rjust(1) + ', ' + \
+                                 f'{valid_len}'.rjust(1) + ', ' + \
+                                 f'{event}'.rjust(5) + ', ' + \
+                                 f'{gateway}'.rjust(5) + ', ' + \
+                                 f'{period}'.rjust(11) + ', ' + \
+                                 f'{first_tx_delay}'.rjust(11) + ', ' + \
+                                 f'{p_buffer}'.rjust(32) + ', ' + \
+                                 f'{rx_recieved}'.rjust(32) + ', ' + \
+                                 f'{rx_overrun}'.rjust(32) + ', ' + \
+                                 f'{rx_timeout}'.rjust(32) + ', ' + \
+                                 f'{rx_valid}'.rjust(32) + ', ' + \
+                                 f'&{tx_ready}'.rjust(32) + ', ' + \
+                                 f'&{tx_failed}'.rjust(32) + ', ' + \
+                                 f'{pack_unpack}'.rjust(32) + \
+                                 f'}},\\\n'
                     f.write(msg_config)
                 f.write('\n')
 
                 f.write(f'#define {chn.upper()}_MSGS_ADD_CONFIG \\\n')
-                for msg in dbc.messages:
+                for msg in messages:
                     msg_add_config = f'/* {chn.upper()}_MSG_{msg.name.upper()} */'.ljust(40) + \
                                      f'{{FALSE, 0, 0, NULL}},\\\n'
                     f.write(msg_add_config)
@@ -482,7 +508,9 @@ class HalCanAutoGen(object):
 
 if __name__ == '__main__':
     can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
-    h = HalCanAutoGen({can0_dbc: 'can0', r'./WSD5060HR1EV_C_CAN_v1.0.dbc': 'can1'}, modifier='LinXiaobin')
+    can1_dbc = cantools.database.load_file(r'./WSD5060HR1EV_C_CAN_v1.0.dbc', encoding='gb2312')
+    can2_dbc = cantools.database.load_file(r'./WSD5060HR1EV_B_CAN_v1.0.dbc', encoding='gb2312')
+    h = HalCanAutoGen({can0_dbc: 'can0', can1_dbc: 'can1', can2_dbc: 'can2'}, modifier='LinXiaobin', storage_path='./hal_cfg/')
     h.generate_iovarsc_file()
     h.generate_iovarsh_file()
     h.generate_hacgcanh_file()

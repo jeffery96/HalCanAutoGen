@@ -36,30 +36,36 @@ BS_:
 BU_: Others VCU
 
 
-BO_ 2566907714 IC_Status5: 8 Vector__XXX
+BO_ 2551194625 uds_rx_func: 8 Others
+
+BO_ 2551194369 uds_rx: 8 Others
+
+BO_ 2551194113 uds_tx: 8 VCU
+
+BO_ 2566907714 IC_Status5: 8 Others
  SG_ ICStatus5_1B_MotorInputCoolingWa : 8|8@1+ (1,-40) [0|0] "" Vector__XXX
 
-BO_ 2566906690 IC_Status1: 8 Vector__XXX
+BO_ 2566906690 IC_Status1: 8 Others
  SG_ ICStatus1_5B67b_AccePedalInterLo : 46|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ ICStatus1_0B67b_RearHatchState : 6|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ ICStatus1_0B01b_DriverDoorState : 0|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2566844672 CCVS: 8 Vector__XXX
+BO_ 2566844672 CCVS: 8 VCU
  SG_ CCVS_3B45b_BrakeSwitch : 28|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ CCVS_12B_WheelBasedVehicleVeloci : 8|16@1+ (0.00390625,0) [0|0] "" Vector__XXX
  SG_ CCVS_0B23b_HandBrake : 26|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2365538599 EVCU_Status3: 8 Vector__XXX
+BO_ 2365538599 EVCU_Status3: 8 VCU
  SG_ EVCUStatus3_6B03b_VCULife : 48|4@1+ (0.4,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus3_2B_MotorCoolFan : 16|8@1+ (0.4,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus3_1B23b_KeyStartReques : 10|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus3_1B01b_VCUWakeUpState : 8|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2566864935 EVCU_Status2: 8 Vector__XXX
+BO_ 2566864935 EVCU_Status2: 8 VCU
  SG_ EVCUStatus2_12B_VehicleFaultCode : 8|16@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus2_0B03b_VehicleFaultGr : 0|4@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2365538087 EVCU_Status1: 8 Vector__XXX
+BO_ 2365538087 EVCU_Status1: 8 VCU
  SG_ EVCUStatus1_7B47b_VehicleInterLo : 60|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus1_7B03b_MCUState : 56|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus1_6B67b_DSFault : 54|2@1+ (1,0) [0|0] "" Vector__XXX
@@ -76,7 +82,7 @@ BO_ 2365538087 EVCU_Status1: 8 Vector__XXX
  SG_ EVCUStatus1_0B23b_RegenTorqueSta : 2|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EVCUStatus1_0B01b_AccePedalState : 0|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2550861835 ABS1_VSO: 8 Vector__XXX
+BO_ 2550861835 ABS1_VSO: 8 Others
  SG_ ABS1VSO_7B_ABSChecksum1 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ ABS1VSO_6B47b_ABSLife1 : 52|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ ABS1VSO_6B0b_ABSNOEVFlag : 48|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -87,7 +93,7 @@ BO_ 2550861835 ABS1_VSO: 8 Vector__XXX
  SG_ ABS1VSO_0B1b_ABSEBDActive : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ ABS1VSO_0B0b_ABSActive : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2566787684 EPB_Status: 8 Vector__XXX
+BO_ 2566787684 EPB_Status: 8 Others
  SG_ EPBStatus_7B47b_EPBCheckSum : 60|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EPBStatus_7B03b_EPBLife : 56|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EPBStatus_6B_EPBFaultCode : 48|8@1+ (1,0) [0|0] "" Vector__XXX
@@ -98,14 +104,14 @@ BO_ 2566787684 EPB_Status: 8 Vector__XXX
  SG_ EPBStatus_0B23b_EPBSystemFault : 2|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ EPBStatus_0B01b_EPBParkLampState : 0|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2566651921 DS_AP1: 8 Vector__XXX
+BO_ 2566651921 DS_AP1: 8 Others
  SG_ DSAP1_7B_DSLife : 56|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DSAP1_1B2b_DSGearR : 10|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DSAP1_1B1b_DSGearN : 9|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DSAP1_1B0b_DSGearD : 8|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DSAP1_0B03b_DSSelfCheckState : 0|4@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2364933025 LVOP_Status1: 8 Vector__XXX
+BO_ 2364933025 LVOP_Status1: 8 Others
  SG_ LVOPStatus1_7B67b_LVOilPumpFault : 62|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOPStatus1_7B05b_LVOilPumpFault : 56|6@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOPStatus1_6B_LVOilPumpMCUTemp : 48|8@1+ (1,-40) [0|0] "" Vector__XXX
@@ -115,12 +121,7 @@ BO_ 2364933025 LVOP_Status1: 8 Vector__XXX
  SG_ LVOPStatus1_1B_LVOilPumpInputVol : 8|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOPStatus1_0B_LVOilPumpRunningS : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2565932327 LVOP_Control: 8 Vector__XXX
- SG_ LVOP_Control_7B_LVOilPumpLife : 56|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ LVOP_Control_6B_VehicleVelocity : 48|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ LVOP_Control_0B_LVOilPumpEnable : 0|8@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 2565868840 DCAC_HV_Oilpump_Status2: 8 Vector__XXX
+BO_ 2565868840 DCAC_HV_Oilpump_Status2: 8 Others
  SG_ DCACHVOilpumpStatus2_7B23b_OilPu : 58|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus2_7B01b_OilPu : 56|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus2_6B_OilPumpI : 48|8@1+ (1,-40) [0|0] "" Vector__XXX
@@ -129,12 +130,12 @@ BO_ 2565868840 DCAC_HV_Oilpump_Status2: 8 Vector__XXX
  SG_ DCACHVOilpumpStatus2_23B_OilPump : 16|16@1+ (0.1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus2_01B_OilPump : 0|16@1+ (0.125,0) [0|0] "" Vector__XXX
 
-BO_ 2565867560 DCAC_HV_Oilpump_Status1: 8 Vector__XXX
+BO_ 2565867560 DCAC_HV_Oilpump_Status1: 8 Others
  SG_ DCACHVOilpumpStatus1_1B_OilPumpF : 8|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus1_0B47b_OilPu : 4|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCACHVOilpumpStatus1_0B01b_OilPu : 0|2@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2565868328 DCDC1_Status2: 8 Vector__XXX
+BO_ 2565868328 DCDC1_Status2: 8 Others
  SG_ DCDC1Status2_6B67b_SDDCDCTempFau : 54|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCDC1Status2_6B45b_SDDCDCFaultSt : 52|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCDC1Status2_6B23b_SDDCDCRunning : 50|2@1+ (1,0) [0|0] "" Vector__XXX
@@ -145,7 +146,7 @@ BO_ 2565868328 DCDC1_Status2: 8 Vector__XXX
  SG_ DCDC1Status2_2B_SDDCDCInputCurre : 16|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCDC1Status2_01B_SDDCDCInputVolt : 0|16@1+ (0.1,0) [0|0] "" Vector__XXX
 
-BO_ 2565868072 DCDC1_Status1: 8 Vector__XXX
+BO_ 2565868072 DCDC1_Status1: 8 Others
  SG_ DCDC1Status1_1B_SDDCDCFaultCode : 8|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCDC1Status1_0B47b_SDDCDCLife : 4|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ DCDC1Status1_0B01b_SDDCDCFaultGr : 0|2@1+ (1,0) [0|0] "" Vector__XXX
@@ -279,6 +280,7 @@ BO_ 2566863911 EVCU_MCU1: 8 VCU
  SG_ EVCUMCU1_23B_MCUDCVoltage : 16|16@1+ (0.1,0) [0|0] "" Vector__XXX
  SG_ EVCUMCU1_01B_MCUDCCurrent : 0|16@1+ (0.1,-1000) [0|0] "" Vector__XXX
 
+BO_TX_BU_ 2551194625 : VCU,Others;
 
 
 BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
@@ -350,31 +352,58 @@ BA_DEF_DEF_  "SystemSignalLongSymbol" "";
 BA_ "DBName" "WSD5060HR1EV_C_CAN_v10";
 BA_ "NmStationAddress" BU_ Others 0;
 BA_ "NmStationAddress" BU_ VCU 0;
+BA_ "VFrameFormat" BO_ 2551194625 3;
+BA_ "VFrameFormat" BO_ 2551194369 3;
+BA_ "VFrameFormat" BO_ 2551194113 3;
+BA_ "GenMsgCycleTime" BO_ 2566907714 500;
 BA_ "VFrameFormat" BO_ 2566907714 3;
+BA_ "GenMsgCycleTime" BO_ 2566906690 100;
 BA_ "VFrameFormat" BO_ 2566906690 3;
+BA_ "GenMsgCycleTime" BO_ 2566844672 100;
 BA_ "VFrameFormat" BO_ 2566844672 3;
+BA_ "GenMsgCycleTime" BO_ 2365538599 50;
 BA_ "VFrameFormat" BO_ 2365538599 3;
+BA_ "GenMsgCycleTime" BO_ 2566864935 500;
 BA_ "VFrameFormat" BO_ 2566864935 3;
+BA_ "GenMsgCycleTime" BO_ 2365538087 50;
 BA_ "VFrameFormat" BO_ 2365538087 3;
+BA_ "GenMsgCycleTime" BO_ 2550861835 20;
 BA_ "VFrameFormat" BO_ 2550861835 3;
+BA_ "GenMsgCycleTime" BO_ 2566787684 100;
 BA_ "VFrameFormat" BO_ 2566787684 3;
+BA_ "GenMsgCycleTime" BO_ 2566651921 500;
 BA_ "VFrameFormat" BO_ 2566651921 3;
+BA_ "GenMsgCycleTime" BO_ 2364933025 200;
 BA_ "VFrameFormat" BO_ 2364933025 3;
-BA_ "VFrameFormat" BO_ 2565932327 3;
+BA_ "GenMsgCycleTime" BO_ 2565868840 500;
 BA_ "VFrameFormat" BO_ 2565868840 3;
+BA_ "GenMsgCycleTime" BO_ 2565867560 500;
 BA_ "VFrameFormat" BO_ 2565867560 3;
+BA_ "GenMsgCycleTime" BO_ 2565868328 500;
 BA_ "VFrameFormat" BO_ 2565868328 3;
+BA_ "GenMsgCycleTime" BO_ 2565868072 500;
 BA_ "VFrameFormat" BO_ 2565868072 3;
+BA_ "GenMsgCycleTime" BO_ 2348875518 100;
 BA_ "VFrameFormat" BO_ 2348875518 3;
+BA_ "GenMsgCycleTime" BO_ 2365537831 50;
 BA_ "VFrameFormat" BO_ 2365537831 3;
+BA_ "GenMsgCycleTime" BO_ 2550263795 500;
 BA_ "VFrameFormat" BO_ 2550263795 3;
+BA_ "GenMsgCycleTime" BO_ 2558783475 100;
 BA_ "VFrameFormat" BO_ 2558783475 3;
+BA_ "GenMsgCycleTime" BO_ 2563047155 200;
 BA_ "VFrameFormat" BO_ 2563047155 3;
+BA_ "GenMsgCycleTime" BO_ 2558849011 200;
 BA_ "VFrameFormat" BO_ 2558849011 3;
+BA_ "GenMsgCycleTime" BO_ 2564944879 1000;
 BA_ "VFrameFormat" BO_ 2564944879 3;
+BA_ "GenMsgCycleTime" BO_ 2550330351 100;
 BA_ "VFrameFormat" BO_ 2550330351 3;
+BA_ "GenMsgCycleTime" BO_ 2566864423 500;
 BA_ "VFrameFormat" BO_ 2566864423 3;
+BA_ "GenMsgCycleTime" BO_ 2566864167 200;
 BA_ "VFrameFormat" BO_ 2566864167 3;
+BA_ "GenMsgCycleTime" BO_ 2566863911 200;
 BA_ "VFrameFormat" BO_ 2566863911 3;
 BA_ "GenSigStartValue" SG_ 2566907714 ICStatus5_1B_MotorInputCoolingWa 40;
 BA_ "SystemSignalLongSymbol" SG_ 2566907714 ICStatus5_1B_MotorInputCoolingWa "ICStatus5_1B_MotorInputCoolingWaterTemp";
