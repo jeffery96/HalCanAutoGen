@@ -2,6 +2,7 @@ from typing import Union, Dict
 import os
 from datetime import datetime
 import cantools
+from timeit import timeit
 
 
 class HalCanAutoGen(object):
@@ -14,7 +15,6 @@ class HalCanAutoGen(object):
         self._dbc = dbc_file
         self._storage_path = storage_path
         self._modifier = modifier
-        self._chn = 'can0'
 
         temp = {}
         for k, v in self._dbc.items():
@@ -64,99 +64,33 @@ class HalCanAutoGen(object):
             f.write(include_header_part)
 
             # BSW CAN Buffer Defination
-            for msg in self._messages:
-                comment = f'/* CAN Message: {msg.name}_buf */\n'
+            for dbc, chn in self._dbc:
+                messages = sorted([m for m in dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
+                           sorted([m for m in dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
 
-                if 'VCU' in msg.senders:
-                    # VCU发送的报文
-                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgReady'
-                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgTxFailed'
-                    f.write(comment)
-                    f.write('uint8_t'.ljust(12) + var_name1.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('uint8_t'.ljust(12) + var_name2.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('\n')
-                else:
-                    # VCU接收的报文
-                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_received'
-                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgOverRun'
-                    var_name3 = f'hld_{self._chn}_{hex(msg.frame_id)}_timeout'
-                    var_name4 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgValid'
-                    f.write(comment)
-                    f.write('uint8_t'.ljust(12) + var_name1.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('uint8_t'.ljust(12) + var_name2.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('uint8_t'.ljust(12) + var_name3.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('uint8_t'.ljust(12) + var_name4.ljust(44) + '=' + '0u;'.rjust(12) + '\n')
-                    f.write('\n')
-#             ccp_uds_part = '''/* CAN Message: ccp_daq_0 */
-# uint8_t hld_can2_0x219_0_msgReady = 0u;
-# uint8_t hld_can2_0x219_0_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_1 */
-# uint8_t hld_can2_0x219_1_msgReady = 0u;
-# uint8_t hld_can2_0x219_1_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_2 */
-# uint8_t hld_can2_0x219_2_msgReady = 0u;
-# uint8_t hld_can2_0x219_2_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_3 */
-# uint8_t hld_can2_0x219_3_msgReady = 0u;
-# uint8_t hld_can2_0x219_3_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_4 */
-# uint8_t hld_can2_0x219_4_msgReady = 0u;
-# uint8_t hld_can2_0x219_4_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_5 */
-# uint8_t hld_can2_0x219_5_msgReady = 0u;
-# uint8_t hld_can2_0x219_5_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_6 */
-# uint8_t hld_can2_0x219_6_msgReady = 0u;
-# uint8_t hld_can2_0x219_6_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_7 */
-# uint8_t hld_can2_0x219_7_msgReady = 0u;
-# uint8_t hld_can2_0x219_7_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_daq_8 */
-# uint8_t hld_can2_0x219_8_msgReady = 0u;
-# uint8_t hld_can2_0x219_8_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_tx */
-# uint8_t hld_can2_0x739_msgReady = 0u;
-# uint8_t hld_can2_0x739_msgTxFailed = 0u;
-#
-# /* CAN Message: ccp_rx */
-# uint8_t hld_can2_0x729_received = 0u;
-# uint8_t hld_can2_0x729_msgOverRun = 0u;
-# uint8_t hld_can2_0x729_timeout = 0u;
-# uint8_t hld_can2_0x729_msgValid = 0u;
-#
-# /* CAN Message: uds_tx */
-# uint8_t hld_can2_0x18DAF110_msgReady = 0u;
-# uint8_t hld_can2_0x18DAF110_msgTxFailed = 0u;
-#
-# /* CAN Message: uds_rx */
-# uint8_t hld_can2_0x18DA10F1_received = 0u;
-# uint8_t hld_can2_0x18DA10F1_msgOverRun = 0u;
-# uint8_t hld_can2_0x18DA10F1_timeout = 0u;
-# uint8_t hld_can2_0x18DA10F1_msgValid = 0u;
-#
-# /* CAN Message: uds_rx_func */
-# uint8_t hld_can2_0x18DB33F1_received = 0u;
-# uint8_t hld_can2_0x18DB33F1_msgOverRun = 0u;
-# uint8_t hld_can2_0x18DB33F1_timeout = 0u;
-# uint8_t hld_can2_0x18DB33F1_msgValid = 0u;
-#
-# /* CAN Message: vin_resp_buf */
-# uint8_t hld_can2_0x18DAF103_msgReady = 0u;
-# uint8_t hld_can2_0x18DAF103_msgTxFailed = 0u;
-#
-# '''
-            # f.write(ccp_uds_part)
+                for msg in messages:
+                    comment = f'/* CAN Message: {msg.name}_buf */\n'
+                    if 'VCU' in msg.senders:
+                        # VCU发送的报文
+                        var_name1 = f'hld_{chn}_{hex(msg.frame_id)}_msgReady'
+                        var_name2 = f'hld_{chn}_{hex(msg.frame_id)}_msgTxFailed'
+                        f.write(comment)
+                        f.write('uint8_t'.ljust(9) + var_name1.ljust(33) + '= ' + '0u;'+ '\n')
+                        f.write('uint8_t'.ljust(9) + var_name2.ljust(33) + '= ' + '0u;'+ '\n')
+                        f.write('\n')
+                    else:
+                        # VCU接收的报文
+                        var_name1 = f'hld_{chn}_{hex(msg.frame_id)}_received'
+                        var_name2 = f'hld_{chn}_{hex(msg.frame_id)}_msgOverRun'
+                        var_name3 = f'hld_{chn}_{hex(msg.frame_id)}_timeout'
+                        var_name4 = f'hld_{chn}_{hex(msg.frame_id)}_msgValid'
+                        f.write(comment)
+                        f.write('uint8_t'.ljust(9) + var_name1.ljust(33) + '= ' + '0u;' + '\n')
+                        f.write('uint8_t'.ljust(9) + var_name2.ljust(33) + '= ' + '0u;' + '\n')
+                        f.write('uint8_t'.ljust(9) + var_name3.ljust(33) + '= ' + '0u;' + '\n')
+                        f.write('uint8_t'.ljust(9) + var_name4.ljust(33) + '= ' + '0u;' + '\n')
+                        f.write('\n')
 
-            # BSW CAN Buffer Struct Defination
             for msg in self._messages:
                 buf_struct = f'uint8_t {msg.name}_buf[8] = \n' + \
                              '{\n' + \
@@ -164,59 +98,7 @@ class HalCanAutoGen(object):
                              '};\n'
                 f.write(buf_struct)
             f.write('\n')
-#             ccp_uds_part = '''uint8_t ccp_daq_0[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_1[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_2[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_3[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_4[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_5[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_6[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_7[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_daq_8[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_tx[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t ccp_rx[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-# uint8_t vin_resp_buf[8] =
-# {
-#     0, 0, 0, 0, 0, 0, 0, 0
-# };
-#
-# '''
-            # f.write(ccp_uds_part)
 
-            # BSW Signal Defination
             for msg in self._messages:
                 comment = f'/* {msg.name} Message Signals */\n'
                 f.write(comment)
@@ -229,7 +111,7 @@ class HalCanAutoGen(object):
                     sig_initval = (hex(int(-sig.offset / sig.scale))
                                    if sig.initial is None else hex(sig.initial)) + 'u'
                     f.write(
-                        f'{sig_type.ljust(12)}{bsw_var_signal_name.ljust(44)}={sig_initval.rjust(12)};\n')
+                        f'{sig_type.ljust(9)}{bsw_var_signal_name.ljust(32)} = {sig_initval.rjust(8)};\n')
                 f.write('\n')
             f.write('/*-------------------------------------EOF--------------------------------------*/\n\n')
 
@@ -252,28 +134,33 @@ class HalCanAutoGen(object):
                                   f'#define __IO_VARS__\n' \
                                   f'\n'
             f.write(include_header_part)
+            
+            # BSW CAN Buffer Defination
+            for dbc, chn in self._dbc:
+                messages = sorted([m for m in dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
+                           sorted([m for m in dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
 
-            for msg in self._messages:
-                if 'VCU' in msg.senders:
-                    # VCU发送的报文
-                    comment = f'/* CAN Message: {msg.name}_buf */\n'
-                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgReady;'
-                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgTxFailed;'
-                    f.write(comment)
-                    f.write('extern uint8_t ' + var_name1.ljust(44) + '\n')
-                    f.write('extern uint8_t ' + var_name2.ljust(44) + '\n\n')
-                else:
-                    # VCU接收的报文
-                    comment = f'/* CAN Message: {msg.name}_buf */\n'
-                    var_name1 = f'hld_{self._chn}_{hex(msg.frame_id)}_received;'
-                    var_name2 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgOverRun;'
-                    var_name3 = f'hld_{self._chn}_{hex(msg.frame_id)}_timeout;'
-                    var_name4 = f'hld_{self._chn}_{hex(msg.frame_id)}_msgValid;'
-                    f.write(comment)
-                    f.write('extern uint8_t ' + var_name1.ljust(44) + '\n')
-                    f.write('extern uint8_t ' + var_name2.ljust(44) + '\n')
-                    f.write('extern uint8_t ' + var_name3.ljust(44) + '\n')
-                    f.write('extern uint8_t ' + var_name4.ljust(44) + '\n\n')
+                for msg in messages:
+                    if 'VCU' in msg.senders:
+                        # VCU发送的报文
+                        comment = f'/* CAN Message: {msg.name}_buf */\n'
+                        var_name1 = f'hld_{chn}_{hex(msg.frame_id)}_msgReady;'
+                        var_name2 = f'hld_{chn}_{hex(msg.frame_id)}_msgTxFailed;'
+                        f.write(comment)
+                        f.write('extern uint8_t ' + var_name1.ljust(44) + '\n')
+                        f.write('extern uint8_t ' + var_name2.ljust(44) + '\n\n')
+                    else:
+                        # VCU接收的报文
+                        comment = f'/* CAN Message: {msg.name}_buf */\n'
+                        var_name1 = f'hld_{chn}_{hex(msg.frame_id)}_received;'
+                        var_name2 = f'hld_{chn}_{hex(msg.frame_id)}_msgOverRun;'
+                        var_name3 = f'hld_{chn}_{hex(msg.frame_id)}_timeout;'
+                        var_name4 = f'hld_{chn}_{hex(msg.frame_id)}_msgValid;'
+                        f.write(comment)
+                        f.write('extern uint8_t ' + var_name1.ljust(44) + '\n')
+                        f.write('extern uint8_t ' + var_name2.ljust(44) + '\n')
+                        f.write('extern uint8_t ' + var_name3.ljust(44) + '\n')
+                        f.write('extern uint8_t ' + var_name4.ljust(44) + '\n\n')
 
             for msg in self._messages:
                 f.write(f'extern uint8_t {msg.name}_buf[8];\n')
@@ -294,8 +181,9 @@ class HalCanAutoGen(object):
 
     def generate_hacgcanc_file(self):
         for dbc, chn in self._dbc:
-            messages = sorted([m for m in dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
-                       sorted([m for m in dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
+            # 筛选出uds和ccp相关报文并按照VCU和其他节点排序
+            messages = sorted([m for m in dbc.messages if 'VCU' in m.senders and 'uds' not in m.name and 'ccp' not in m.name], key=lambda x: x.name) + \
+                       sorted([m for m in dbc.messages if 'VCU' not in m.senders and 'uds' not in m.name and 'ccp' not in m.name], key=lambda x: x.name)
             with open(self._storage_path + f'hacg_{chn}.c', 'w') as f:
                 file_comment_part = f'/********************************************************************************\n' \
                                     f' * Copyright 2023 Wisdom (Fujian) Motor Co.,Ltd.\n' \
@@ -315,6 +203,7 @@ class HalCanAutoGen(object):
                 f.write(include_header_part)
 
                 for msg in messages:
+
                     if 'VCU' in msg.senders:
 
                         clear_buf_part = f'    /*Clear Message Buffer first!*/\n'
@@ -340,7 +229,7 @@ class HalCanAutoGen(object):
                                 shift_num = len(filter_bit_in_bin) - len(filter_bit_in_bin.rstrip('0'))
                                 shift_num = shift_num if i == 0 else 8
                                 signal_pack_part += f'    {msg.name}_buf[{byte_index}] |= ((uint8_t)({bsw_var_signal_name} {shift_dir} {shift_num}u) & {filter_bit_in_hex}u);\n'
-                        function_body = f'void Can0Msg_Pack_{hex(msg.frame_id)}(void)\n' \
+                        function_body = f'void {chn.capitalize()}Msg_Pack_{hex(msg.frame_id)}(void)\n' \
                                         f'{{\n' \
                                         f'{clear_buf_part}\n' \
                                         f'{signal_pack_part}' \
@@ -365,9 +254,9 @@ class HalCanAutoGen(object):
                                 shift_dir = '>>' if i == 0 else '<<'
                                 shift_num = len(filter_bit_in_bin) - len(filter_bit_in_bin.rstrip('0'))
                                 shift_num = shift_num if i == 0 else i * 8
-                                signal_unpack_part += f'    {bsw_var_signal_name.ljust(32)} {assignment_symbol} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n'
+                                signal_unpack_part += f'    {bsw_var_signal_name.ljust(32)} {assignment_symbol.ljust(2)} (({sig_type})({msg.name}_buf[{byte_index}] & {filter_bit_in_hex}u) {shift_dir} {shift_num}u);\n'
 
-                        function_body = f'void Can0Msg_Unpack_{hex(msg.frame_id)}(void)\n' \
+                        function_body = f'void {chn.capitalize()}Msg_Unpack_{hex(msg.frame_id)}(void)\n' \
                                         f'{{\n' \
                                         f'{signal_unpack_part}' \
                                         f'}}\n\n'
@@ -378,8 +267,9 @@ class HalCanAutoGen(object):
 
     def generate_hacgcanh_file(self):
         for dbc, chn in self._dbc:
-            messages = sorted([m for m in dbc.messages if 'VCU' in m.senders], key=lambda x: x.name) + \
-                       sorted([m for m in dbc.messages if 'VCU' not in m.senders], key=lambda x: x.name)
+            # 筛选出uds和ccp相关报文并按照VCU和其他节点排序
+            messages = sorted([m for m in dbc.messages if 'VCU' in m.senders and 'uds' not in m.name and 'ccp' not in m.name],key=lambda x: x.name) + \
+                       sorted([m for m in dbc.messages if'VCU' not in m.senders and 'uds' not in m.name and 'ccp' not in m.name],key=lambda x: x.name)
             with open(self._storage_path + f'hacg_{chn}.h', 'w') as f:
                 file_comment_part = f'/********************************************************************************\n' \
                                     f' * Copyright 2023 Wisdom (Fujian) Motor Co.,Ltd.\n' \
@@ -394,21 +284,21 @@ class HalCanAutoGen(object):
                 f.write(file_comment_part)
                 include_header_part = f'#include "build_control.h"\n' \
                                       f'\n' \
-                                      f'#ifndef __IO_VARS__\n' \
-                                      f'#define __IO_VARS__\n' \
+                                      f'#ifndef __HACG_{chn.upper()}__\n' \
+                                      f'#define __HACG_{chn.upper()}__\n' \
                                       f'\n'
                 f.write(include_header_part)
 
                 for msg in messages:
                     if 'VCU' in msg.senders:
                         f.write(
-                            f'extern void Can0Msg_pack_{hex(msg.frame_id)}(void);\n')
+                            f'extern void {chn.capitalize()}Msg_pack_{hex(msg.frame_id)}(void);\n')
                     else:
                         f.write(
-                            f'extern void Can0Msg_Unpack_{hex(msg.frame_id)}(void);\n')
+                            f'extern void {chn.capitalize()}Msg_Unpack_{hex(msg.frame_id)}(void);\n')
 
                 f.write('\n')
-                f.write('#endif /*End of __HACG_CAN1__*/\n')
+                f.write(f'#endif /*End of __HACG_{chn.upper()}__*/\n')
                 f.write('/*-------------------------------------EOF--------------------------------------*/\n\n')
 
     def generate_platformconfigh_file(self):
@@ -451,24 +341,24 @@ class HalCanAutoGen(object):
                 for msg in messages:
                     # 参数判断
                     frame_id = hex(msg.frame_id)
-                    msg_type = 'MSG_TYPE_NORMAL' if 'uds' not in msg.name or 'ccp' not in msg.name else 'MSG_TYPE_DIAG'
+                    msg_type = 'MSG_TYPE_NORMAL' if 'uds' not in msg.name and 'ccp' not in msg.name else 'MSG_TYPE_DIAG'
                     extend_format = 'TRUE' if msg.is_extended_frame else 'FALSE'
                     tx = 'TRUE' if 'VCU' in msg.senders else 'FALSE'
                     dlc = '8'
                     valid_len = '8'
                     event = 'FALSE' if 'uds' not in msg.name or 'ccp' not in msg.name else 'TRUE'
                     gateway = 'FALSE'
-                    period = f'( 0/10 )' if msg.cycle_time == None else f'( {msg.cycle_time}/10 )'
+                    period = f'( 0/10 )' if msg.cycle_time is None else f'( {msg.cycle_time}/10 )'
                     first_tx_delay = '( 10/10 )' if 'VCU' in msg.senders else '(  0/10 )'
                     p_buffer = f'{msg.name}_buf'
-                    rx_recieved = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_received'
-                    rx_overrun = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_msgOverRun'
-                    rx_timeout = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_timeout'
-                    rx_valid = 'NULL' if 'VCU' in msg.senders else f'hld_{chn}_{hex(msg.frame_id)}_msgValid'
-                    tx_ready = f'hld_{chn}_{hex(msg.frame_id)}_msgReady' if 'VCU' in msg.senders else 'NULL'
-                    tx_failed = f'hld_{chn}_{hex(msg.frame_id)}_msgTxFailed' if 'VCU' in msg.senders else 'NULL'
-                    pack_unpack = f'hld_{chn}_{hex(msg.frame_id).capitalize()}_msgTxFailed' \
-                                  if 'uds' not in msg.name or 'ccp' not in msg.name else 'NULL'
+                    rx_recieved = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_received'
+                    rx_overrun = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_msgOverRun'
+                    rx_timeout = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_timeout'
+                    rx_valid = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_msgValid'
+                    tx_ready = f'&hld_{chn}_{hex(msg.frame_id)}_msgReady' if 'VCU' in msg.senders else 'NULL'
+                    tx_failed = f'&hld_{chn}_{hex(msg.frame_id)}_msgTxFailed' if 'VCU' in msg.senders else 'NULL'
+                    pack_unpack = f'{chn.capitalize()}Msg_{"Pack" if "VCU" in msg.senders else "Unpack"}_{hex(msg.frame_id)}' \
+                                  if 'uds' not in msg.name and 'ccp' not in msg.name else 'NULL'
 
                     msg_config = f'/* {chn.upper()}_MSG_{msg.name.upper()} */\n' + \
                                  f'{{' + \
@@ -483,12 +373,12 @@ class HalCanAutoGen(object):
                                  f'{period}'.rjust(11) + ', ' + \
                                  f'{first_tx_delay}'.rjust(11) + ', ' + \
                                  f'{p_buffer}'.rjust(32) + ', ' + \
-                                 f'{rx_recieved}'.rjust(32) + ', ' + \
-                                 f'{rx_overrun}'.rjust(32) + ', ' + \
-                                 f'{rx_timeout}'.rjust(32) + ', ' + \
-                                 f'{rx_valid}'.rjust(32) + ', ' + \
-                                 f'&{tx_ready}'.rjust(32) + ', ' + \
-                                 f'&{tx_failed}'.rjust(32) + ', ' + \
+                                 f'{rx_recieved}'.rjust(33) + ', ' + \
+                                 f'{rx_overrun}'.rjust(33) + ', ' + \
+                                 f'{rx_timeout}'.rjust(33) + ', ' + \
+                                 f'{rx_valid}'.rjust(33) + ', ' + \
+                                 f'{tx_ready}'.rjust(33) + ', ' + \
+                                 f'{tx_failed}'.rjust(33) + ', ' + \
                                  f'{pack_unpack}'.rjust(32) + \
                                  f'}},\\\n'
                     f.write(msg_config)
@@ -505,14 +395,26 @@ class HalCanAutoGen(object):
             f.write('/*-------------------------------------EOF--------------------------------------*/\n\n')
             pass
 
+    def generate_all(self):
+        self.generate_iovarsc_file()
+        self.generate_iovarsh_file()
+        self.generate_hacgcanh_file()
+        self.generate_hacgcanc_file()
+        self.generate_platformconfigh_file()
+
 
 if __name__ == '__main__':
     can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
     can1_dbc = cantools.database.load_file(r'./WSD5060HR1EV_C_CAN_v1.0.dbc', encoding='gb2312')
     can2_dbc = cantools.database.load_file(r'./WSD5060HR1EV_B_CAN_v1.0.dbc', encoding='gb2312')
     h = HalCanAutoGen({can0_dbc: 'can0', can1_dbc: 'can1', can2_dbc: 'can2'}, modifier='LinXiaobin', storage_path='./hal_cfg/')
-    h.generate_iovarsc_file()
-    h.generate_iovarsh_file()
-    h.generate_hacgcanh_file()
-    h.generate_hacgcanc_file()
-    h.generate_platformconfigh_file()
+    h.generate_all()
+
+    # def timeitall():
+    #     can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
+    #     can1_dbc = cantools.database.load_file(r'./WSD5060HR1EV_C_CAN_v1.0.dbc', encoding='gb2312')
+    #     can2_dbc = cantools.database.load_file(r'./WSD5060HR1EV_B_CAN_v1.0.dbc', encoding='gb2312')
+    #     h = HalCanAutoGen({can0_dbc: 'can0', can1_dbc: 'can1', can2_dbc: 'can2'}, modifier='LinXiaobin',
+    #                       storage_path='./hal_cfg/')
+    #     h.generate_all()
+    # print(timeit(stmt='timeitall()', setup='from __main__ import timeitall', number=10))
