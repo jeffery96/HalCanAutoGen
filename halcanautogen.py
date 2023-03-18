@@ -96,6 +96,8 @@ class HalCanAutoGen(object):
                              '{\n' + \
                              '    0, 0, 0, 0, 0, 0, 0, 0\n' + \
                              '};\n'
+                if 'ccp' in msg.name or 'uds' in msg.name:
+                    buf_struct = buf_struct.replace('_buf', '')
                 f.write(buf_struct)
             f.write('\n')
 
@@ -163,7 +165,10 @@ class HalCanAutoGen(object):
                         f.write('extern uint8_t ' + var_name4.ljust(44) + '\n\n')
 
             for msg in self._messages:
-                f.write(f'extern uint8_t {msg.name}_buf[8];\n')
+                buf_struct = f'extern uint8_t {msg.name}_buf[8];\n'
+                if 'ccp' in msg.name or 'uds' in msg.name:
+                    buf_struct = buf_struct.replace('_buf', '')
+                f.write(buf_struct)
             f.write('\n')
 
             for msg in self._messages:
@@ -292,7 +297,7 @@ class HalCanAutoGen(object):
                 for msg in messages:
                     if 'VCU' in msg.senders:
                         f.write(
-                            f'extern void {chn.capitalize()}Msg_pack_{hex(msg.frame_id)}(void);\n')
+                            f'extern void {chn.capitalize()}Msg_Pack_{hex(msg.frame_id)}(void);\n')
                     else:
                         f.write(
                             f'extern void {chn.capitalize()}Msg_Unpack_{hex(msg.frame_id)}(void);\n')
@@ -350,7 +355,7 @@ class HalCanAutoGen(object):
                     gateway = 'FALSE'
                     period = f'( 0/10 )' if msg.cycle_time is None else f'( {msg.cycle_time}/10 )'
                     first_tx_delay = '( 10/10 )' if 'VCU' in msg.senders else '(  0/10 )'
-                    p_buffer = f'{msg.name}_buf'
+                    p_buffer = f'{msg.name}_buf' if 'uds' not in msg.name and 'ccp' not in msg.name else f'{msg.name}'
                     rx_recieved = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_received'
                     rx_overrun = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_msgOverRun'
                     rx_timeout = 'NULL' if 'VCU' in msg.senders else f'&hld_{chn}_{hex(msg.frame_id)}_timeout'
@@ -360,7 +365,7 @@ class HalCanAutoGen(object):
                     pack_unpack = f'{chn.capitalize()}Msg_{"Pack" if "VCU" in msg.senders else "Unpack"}_{hex(msg.frame_id)}' \
                                   if 'uds' not in msg.name and 'ccp' not in msg.name else 'NULL'
 
-                    msg_config = f'/* {chn.upper()}_MSG_{msg.name.upper()} */\n' + \
+                    msg_config = f'/* {chn.upper()}_MSG_{msg.name.upper()} */'.ljust(40) + \
                                  f'{{' + \
                                  f'{frame_id}'.rjust(11) + ', ' + \
                                  f'{msg_type}'.rjust(15) + ', ' + \
