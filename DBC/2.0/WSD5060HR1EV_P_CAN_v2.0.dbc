@@ -1,0 +1,327 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Others VCU
+
+
+BO_ 2365584880 MCU_Errors3: 8 Others
+ SG_ MCUErrors3_1B0b_motOverSpdLv1 : 8|1@1+ (1,0) [0|0] "Motor超速1级" Vector__XXX
+ SG_ MCUErrors3_0B7b_motWPhaseOverCur : 7|1@1+ (1,0) [0|0] "MotorW相过流1级" Vector__XXX
+ SG_ MCUErrors3_0B6b_motVPhaseOverCur : 6|1@1+ (1,0) [0|0] "MotorV相过流1级" Vector__XXX
+ SG_ MCUErrors3_0B5b_motUPhaseOverCur : 5|1@1+ (1,0) [0|0] "MotorU相过流1级" Vector__XXX
+ SG_ MCUErrors3_0B4b_mcuDCOverVoltLv1 : 4|1@1+ (1,0) [0|0] "MCU DC母线1级过压" Vector__XXX
+ SG_ MCUErrors3_0B3b_mcuOverTempLv1 : 3|1@1+ (1,0) [0|0] "MCU1级过温" Vector__XXX
+ SG_ MCUErrors3_0B2b_mcuOverTempLvl1 : 2|1@1+ (1,0) [0|0] "Motor1级过温" Vector__XXX
+ SG_ MCUErrors3_0B1b_mcuUnderVoltLv1 : 1|1@1+ (1,0) [0|0] "MCU欠压1级故障" Vector__XXX
+
+BO_ 2365584624 MCU_Errors2: 8 Others
+ SG_ MCUErrors2_5B0b_motOverSpeedLeve : 40|1@1+ (1,0) [0|0] "Motor超速2级" Vector__XXX
+ SG_ MCUErrors2_4B7b_motWPhaseOverCur : 39|1@1+ (1,0) [0|0] "MotorW相过流2级" Vector__XXX
+ SG_ MCUErrors2_4B6b_motVPhaseOverCur : 38|1@1+ (1,0) [0|0] "MotorV相过流2级" Vector__XXX
+ SG_ MCUErrors2_4B5b_motUPhaseOverCur : 37|1@1+ (1,0) [0|0] "MotorU相过流2级" Vector__XXX
+ SG_ MCUErrors2_4B4b_mcuDCOverVoltLv2 : 36|1@1+ (1,0) [0|0] "MCU DC母线2级过压" Vector__XXX
+ SG_ MCUErrors2_4B3b_mcuOverTempLv2 : 35|1@1+ (1,0) [0|0] "MCU2级过温" Vector__XXX
+ SG_ MCUErrors2_4B2b_motOverTempLv2 : 34|1@1+ (1,0) [0|0] "Motor2级过温" Vector__XXX
+ SG_ MCUErrors2_4B1b_mcuUnderVoltLv2 : 33|1@1+ (1,0) [0|0] "MCU欠压2级故障" Vector__XXX
+ SG_ MCUErrors2_1B0b_motOverSpeedLv3 : 8|1@1+ (1,0) [0|0] "Motor超速3级" Vector__XXX
+ SG_ MCUErrors2_0B7b_motWPhaseOverCur : 7|1@1+ (1,0) [0|0] "MotorW相过流3级" Vector__XXX
+ SG_ MCUErrors2_0B6b_motVPhaseOverCur : 6|1@1+ (1,0) [0|0] "MotorV相过流3级" Vector__XXX
+ SG_ MCUErrors2_0B5b_motUPhaseOverCur : 5|1@1+ (1,0) [0|0] "MotorU相过流3级" Vector__XXX
+ SG_ MCUErrors2_0B4b_mcuDCOverVoltLv3 : 4|1@1+ (1,0) [0|0] "MCU DC母线3级过压" Vector__XXX
+ SG_ MCUErrors2_0B3b_mcuOverTempLv3 : 3|1@1+ (1,0) [0|0] "MCU3级过温" Vector__XXX
+ SG_ MCUErrors2_0B2b_motOverTempLv3 : 2|1@1+ (1,0) [0|0] "Motor3级过温" Vector__XXX
+ SG_ MCUErrors2_0B1b_mcuUnderVoltLvl3 : 1|1@1+ (1,0) [0|0] "MCU欠压3级故障" Vector__XXX
+
+BO_ 2365584368 MCU_Errors1: 8 Others
+ SG_ MCUErrors1_5B6b_mcuActiveDisChgF : 46|1@1+ (1,0) [0|0] "MCU 主动放电故障" Vector__XXX
+ SG_ MCUErrors1_5B5b_mcuEEPROMFault : 45|1@1+ (1,0) [0|0] "MCU EEPROM故障" Vector__XXX
+ SG_ MCUErrors1_5B3b_motSpdSensFault : 44|1@1+ (1,0) [0|0] "Motor转速传感器故障" Vector__XXX
+ SG_ MCUErrors1_5B2b_mcuIBGTFault : 43|1@1+ (1,0) [0|0] "MCU IGBT故障" Vector__XXX
+ SG_ MCUErrors1_5B2b_MCUDCVoltSensorF : 42|1@1+ (1,0) [0|0] "MCU 母线电压传感器故障" Vector__XXX
+ SG_ MCUErrors1_5B1b_motRDCFault : 41|1@1+ (1,0) [0|0] "电机选编故障" Vector__XXX
+ SG_ MCUErrors1_5B0b_mcuLowVoltBattSu : 40|1@1+ (1,0) [0|0] "MCU低压电源供电故障" Vector__XXX
+ SG_ MCUErrors1_4B7b_mcuWPhaseLossFau : 39|1@1+ (1,0) [0|0] "MCU W相缺相故障" Vector__XXX
+ SG_ MCUErrors1_4B6b_mcuVPhaseLossFau : 38|1@1+ (1,0) [0|0] "MCU V相缺相故障" Vector__XXX
+ SG_ MCUErrors1_4B5b_mcuUPhaseLossFau : 37|1@1+ (1,0) [0|0] "MCU U相缺相故障" Vector__XXX
+ SG_ MCUErrors1_4B4b_mcuWPhaseCurrSen : 36|1@1+ (1,0) [0|0] "MCU W相电流传感器故障" Vector__XXX
+ SG_ MCUErrors1_4B3b_mcuVPhaseCurrSen : 35|1@1+ (1,0) [0|0] "MCU V相电流传感器故障" Vector__XXX
+ SG_ MCUErrors1_4B2b_mcuUPhaseCurrSen : 34|1@1+ (1,0) [0|0] "MCU U相电流传感器故障" Vector__XXX
+ SG_ MCUErrors1_4B1b_motTempSensFault : 33|1@1+ (1,0) [0|0] "电机温度传感器故障" Vector__XXX
+ SG_ MCUErrors1_4B0b_mcuTempSensFault : 32|1@1+ (1,0) [0|0] "MCU温度传感器故障" Vector__XXX
+ SG_ MCUErrors1_3B4b_mcuCanOfflineFau : 28|1@1+ (1,0) [0|0] "CAN 离线故障" Vector__XXX
+ SG_ MCUErrors1_3B3b_mcuCanCRCCheckFa : 27|1@1+ (1,0) [0|0] "CAN CRC校验异常" Vector__XXX
+ SG_ MCUErrors1_3B2b_mcuCanTimeoutFau : 26|1@1+ (1,0) [0|0] "CAN通信超时故障" Vector__XXX
+ SG_ MCUErrors1_3B1b_motCanFault : 25|1@1+ (1,0) [0|0] "电机CAN故障" Vector__XXX
+ SG_ MCUErrors1_3B0b_mcuVcuCanFault : 24|1@1+ (1,0) [0|0] "整车控制器CAN故障" Vector__XXX
+ SG_ MCUErrors1_1B3b_mcuPhaseToGndSCL : 11|1@1+ (1,0) [0|0] "MCU交流相线对地短路4级" Vector__XXX
+ SG_ MCUErrors1_1B2b_mcuDCBusToGndSCL : 10|1@1+ (1,0) [0|0] "MCU直流母线对地短路4级" Vector__XXX
+ SG_ MCUErrors1_1B1b_motInterPhaseSCL : 9|1@1+ (1,0) [0|0] "Motor相间短路4级" Vector__XXX
+ SG_ MCUErrors1_1B0b_motOverSpeedLv4 : 8|1@1+ (1,0) [0|0] "Motor超速4级" Vector__XXX
+ SG_ MCUErrors1_0B7b_motWPhaseOverCur : 7|1@1+ (1,0) [0|0] "MotorW相过流4级" Vector__XXX
+ SG_ MCUErrors1_0B6b_motVPhaseOverCur : 6|1@1+ (1,0) [0|0] "MotorV相过流4级" Vector__XXX
+ SG_ MCUErrors1_0B5b_motUPhaseOverCur : 5|1@1+ (1,0) [0|0] "MotorU相过流4级" Vector__XXX
+ SG_ MCUErrors1_0B4b_mcuDCOverVoltLv4 : 4|1@1+ (1,0) [0|0] "MCU DC母线4级过压" Vector__XXX
+ SG_ MCUErrors1_0B3b_mcuOverTempLv4 : 3|1@1+ (1,0) [0|0] "MCU4级过温" Vector__XXX
+ SG_ MCUErrors1_0B2b_motOverTempLv4 : 2|1@1+ (1,0) [0|0] "Motor4级过温" Vector__XXX
+ SG_ MCUErrors1_0B1b_mcuUnderVoltLv4 : 1|1@1+ (1,0) [0|0] "MCU欠压4级故障" Vector__XXX
+
+BO_ 2365551600 MCU_States3: 8 Others
+ SG_ MCUStates3_23B_MCUMaxBrakeTorque : 16|16@1+ (0.1,-3000) [0|0] "" Vector__XXX
+ SG_ MCUStates3_01B_mcuMaxDriveTorque : 0|16@1+ (0.1,0) [0|0] "" Vector__XXX
+
+BO_ 2365551344 MCU_States2: 8 Others
+ SG_ MCUStates2_7B03_mcuLifeToVcu : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MCUStates2_56B_motActualTorque : 40|16@1+ (0.1,-3000) [0|0] "MCU反馈电机扭矩" Vector__XXX
+ SG_ MCUStates2_34B_motActualSpeed : 24|16@1+ (1,-15000) [0|0] "MCU反馈电机转速" Vector__XXX
+ SG_ MCUStates2_2B_mcuFaultCode : 16|8@1+ (1,0) [0|0] "MCU故障代码" Vector__XXX
+ SG_ MCUStates2_1B47b_mcuFaultGrade : 12|4@1+ (1,0) [0|0] "MCU故障等级" Vector__XXX
+ SG_ MCUStates2_1B03b_mcuWorkMode : 8|4@1+ (1,0) [0|0] "MCU工作模式" Vector__XXX
+ SG_ MCUStates2_0B57b_mcuFunctionsInd : 5|3@1+ (1,0) [0|0] "MCU运行功能指示" Vector__XXX
+ SG_ MCUStates2_0B4b_mcuIGBTEnableSta : 4|1@1+ (1,0) [0|0] "IGBT使能反馈" Vector__XXX
+ SG_ MCUStates2_0B23b_mcuActiveDisChg : 2|2@1+ (1,0) [0|0] "MCU主动放电状态反馈" Vector__XXX
+ SG_ MCUStates2_0B01b_mcuPreChgAllow : 0|2@1+ (1,0) [0|0] "MCU预充上电允许" Vector__XXX
+
+BO_ 2365551088 MCU_States1: 8 Others
+ SG_ MCUStates1_7B_mcuTemp : 56|8@1+ (1,-40) [0|0] "MCU温度" Vector__XXX
+ SG_ MCUStates1_6B_motTemp : 48|8@1+ (1,-40) [0|0] "电机温度" Vector__XXX
+ SG_ MCUStates1_45B_mcuACCurrent : 32|16@1+ (0.1,0) [0|0] "MCU交流电流有效值" Vector__XXX
+ SG_ MCUStates1_23B_mcuDCVoltage : 16|16@1+ (0.1,0) [0|0] "MCU母线电压" Vector__XXX
+ SG_ MCUStates1_01B_mcuDCCurrent : 0|16@1+ (0.1,-1000) [0|0] "MCU母线电流" Vector__XXX
+
+BO_ 2365547303 VCU_BattPowerAllow: 8 VCU
+ SG_ BattPowerAllow_67B_vcuMcuAllowMa : 48|16@1+ (0.1,-1000) [0|0] "允许最大充电电流" Vector__XXX
+ SG_ BattPowerAllow_45B_vcuMcuAllowMa : 32|16@1+ (0.1,-1000) [0|0] "允许最大放电电流" Vector__XXX
+ SG_ BattPowerAllow_23B_vcuMcuPackIns : 16|16@1+ (0.1,0) [0|0] "电池包内侧电压" Vector__XXX
+ SG_ BattPowerAllow_01B_vcuMcuPackCur : 0|16@1+ (0.1,-1000) [0|0] "电池包总电流" Vector__XXX
+
+BO_ 2365547047 VCU_Vehicle_States: 8 VCU
+ SG_ VCUVehiclStates_7B03b_vcuLifeToM : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUVehiclStates_34B_vcuMcuVehSpd : 24|16@1+ (1,-15000) [0|0] "整车限速电机转速" Vector__XXX
+ SG_ VCUVehiclStates_2B67b_vcuMcuCraw : 22|2@1+ (1,0) [0|0] "VCU请求蠕行关闭" Vector__XXX
+ SG_ VCUVehiclStates_2B45b_vcuMcuSlid : 20|2@1+ (1,0) [0|0] "滑行功能开关" Vector__XXX
+ SG_ VCUVehiclStates_2B23b_vcuMcuMotS : 18|2@1+ (1,0) [0|0] "限速功能开关" Vector__XXX
+ SG_ VCUVehiclStates_2B01b_vcuMcuAnti : 16|2@1+ (1,0) [0|0] "防溜功能开关" Vector__XXX
+ SG_ VCUVehiclStates_1B_vcuMcuBrakePe : 8|8@1+ (0.4,0) [0|0] "制动踏板开度" Vector__XXX
+ SG_ VCUVehiclStates_0B_vcuMcuAccePed : 0|8@1+ (0.4,0) [0|0] "加速踏板开度" Vector__XXX
+
+BO_ 2365546791 VCU_MCU_Cmd: 8 VCU
+ SG_ VCUMCUCmd_0B24b_vcuMcuParkingSys : 2|3@1+ (1,0) [0|0] "驻车系统状态" Vector__XXX
+ SG_ VCUMCUCmd_7B03b_vcuLifeToMcu1 : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCUMCUCmd_45B_vcuMcuDemandSpeed : 32|16@1+ (1,-15000) [0|0] "需求转速" Vector__XXX
+ SG_ VCUMCUCmd_23B_vcuMcuDemandTorque : 16|16@1+ (0.1,-3000) [0|0] "需求扭矩" Vector__XXX
+ SG_ VCUMCUCmd_1B67b_vcuMcuDirection : 14|2@1+ (1,0) [0|0] "电机运行方向" Vector__XXX
+ SG_ VCUMCUCmd_1B35b_vcuMcuControlMod : 11|3@1+ (1,0) [0|0] "MCU控制模式" Vector__XXX
+ SG_ VCUMCUCmd_1B12b_vcuMcuIGBTEnable : 9|2@1+ (1,0) [0|0] "MCU IGBT使能" Vector__XXX
+ SG_ VCUMCUCmd_1B0b_vcuMcuFootBrakeSt : 8|1@1+ (1,0) [0|0] "脚刹状态" Vector__XXX
+ SG_ VCUMCUCmd_0B01b_vcuMcuSystemRead : 0|2@1+ (1,0) [0|0] "系统Ready状态" Vector__XXX
+
+
+
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigILSupport" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 100000;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 3600000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 1000000;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 2147483647;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "NmJ1939SystemInstance" INT 0 15;
+BA_DEF_ BU_  "NmJ1939System" INT 0 127;
+BA_DEF_ BU_  "NmJ1939ManufacturerCode" INT 0 2047;
+BA_DEF_ BU_  "NmJ1939IndustryGroup" INT 0 7;
+BA_DEF_ BU_  "NmJ1939IdentityNumber" INT 0 2097151;
+BA_DEF_ BU_  "NmJ1939FunctionInstance" INT 0 7;
+BA_DEF_ BU_  "NmJ1939Function" INT 0 255;
+BA_DEF_ BU_  "NmJ1939ECUInstance" INT 0 3;
+BA_DEF_ BU_  "NmJ1939AAC" INT 0 1;
+BA_DEF_ BU_  "NmStationAddress" INT 0 255;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","NotUsed","IfActive","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","noMsgSendType";
+BA_DEF_ BO_  "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_  "GenSigILSupport" "Yes";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "NmJ1939SystemInstance" 0;
+BA_DEF_DEF_  "NmJ1939System" 0;
+BA_DEF_DEF_  "NmJ1939ManufacturerCode" 0;
+BA_DEF_DEF_  "NmJ1939IndustryGroup" 0;
+BA_DEF_DEF_  "NmJ1939IdentityNumber" 0;
+BA_DEF_DEF_  "NmJ1939FunctionInstance" 0;
+BA_DEF_DEF_  "NmJ1939Function" 0;
+BA_DEF_DEF_  "NmJ1939ECUInstance" 0;
+BA_DEF_DEF_  "NmJ1939AAC" 0;
+BA_DEF_DEF_  "NmStationAddress" 254;
+BA_DEF_DEF_  "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_  "GenMsgRequestable" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "ProtocolType" "J1939";
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "BusType" "CAN";
+BA_ "DBName" "WSD5060HR1EV_P_CAN_v10";
+BA_ "NmStationAddress" BU_ Others 0;
+BA_ "NmStationAddress" BU_ VCU 0;
+BA_ "GenMsgCycleTime" BO_ 2365584880 100;
+BA_ "VFrameFormat" BO_ 2365584880 3;
+BA_ "GenMsgCycleTime" BO_ 2365584624 100;
+BA_ "VFrameFormat" BO_ 2365584624 3;
+BA_ "GenMsgCycleTime" BO_ 2365584368 100;
+BA_ "VFrameFormat" BO_ 2365584368 3;
+BA_ "GenMsgCycleTime" BO_ 2365551600 100;
+BA_ "VFrameFormat" BO_ 2365551600 3;
+BA_ "GenMsgCycleTime" BO_ 2365551344 10;
+BA_ "VFrameFormat" BO_ 2365551344 3;
+BA_ "GenMsgCycleTime" BO_ 2365551088 200;
+BA_ "VFrameFormat" BO_ 2365551088 3;
+BA_ "GenMsgCycleTime" BO_ 2365547303 200;
+BA_ "VFrameFormat" BO_ 2365547303 3;
+BA_ "GenMsgCycleTime" BO_ 2365547047 10;
+BA_ "VFrameFormat" BO_ 2365547047 3;
+BA_ "GenMsgCycleTime" BO_ 2365546791 10;
+BA_ "VFrameFormat" BO_ 2365546791 3;
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B7b_motWPhaseOverCur "MCUErrors3_0B7b_motWPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B6b_motVPhaseOverCur "MCUErrors3_0B6b_motVPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584880 MCUErrors3_0B5b_motUPhaseOverCur "MCUErrors3_0B5b_motUPhaseOverCurrLv1";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_5B0b_motOverSpeedLeve "MCUErrors2_5B0b_motOverSpeedLevel2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B7b_motWPhaseOverCur "MCUErrors2_4B7b_motWPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B6b_motVPhaseOverCur "MCUErrors2_4B6b_motVPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_4B5b_motUPhaseOverCur "MCUErrors2_4B5b_motUPhaseOverCurrLv2";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B7b_motWPhaseOverCur "MCUErrors2_0B7b_motWPhaseOverCurrLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B6b_motVPhaseOverCur "MCUErrors2_0B6b_motVPhaseOverCurrLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584624 MCUErrors2_0B5b_motUPhaseOverCur "MCUErrors2_0B5b_motUPhaseOverCurrLv3";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B6b_mcuActiveDisChgF "MCUErrors1_5B6b_mcuActiveDisChgFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B2b_MCUDCVoltSensorF "MCUErrors1_5B2b_MCUDCVoltSensorFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_5B0b_mcuLowVoltBattSu "MCUErrors1_5B0b_mcuLowVoltBattSupFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B7b_mcuWPhaseLossFau "MCUErrors1_4B7b_mcuWPhaseLossFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B6b_mcuVPhaseLossFau "MCUErrors1_4B6b_mcuVPhaseLossFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B5b_mcuUPhaseLossFau "MCUErrors1_4B5b_mcuUPhaseLossFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B4b_mcuWPhaseCurrSen "MCUErrors1_4B4b_mcuWPhaseCurrSensFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B3b_mcuVPhaseCurrSen "MCUErrors1_4B3b_mcuVPhaseCurrSensFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_4B2b_mcuUPhaseCurrSen "MCUErrors1_4B2b_mcuUPhaseCurrSensFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_3B4b_mcuCanOfflineFau "MCUErrors1_3B4b_mcuCanOfflineFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_3B3b_mcuCanCRCCheckFa "MCUErrors1_3B3b_mcuCanCRCCheckFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_3B2b_mcuCanTimeoutFau "MCUErrors1_3B2b_mcuCanTimeoutFault";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B3b_mcuPhaseToGndSCL "MCUErrors1_1B3b_mcuPhaseToGndSCLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B2b_mcuDCBusToGndSCL "MCUErrors1_1B2b_mcuDCBusToGndSCLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_1B1b_motInterPhaseSCL "MCUErrors1_1B1b_motInterPhaseSCLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B7b_motWPhaseOverCur "MCUErrors1_0B7b_motWPhaseOverCurrLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B6b_motVPhaseOverCur "MCUErrors1_0B6b_motVPhaseOverCurrLv4";
+BA_ "SystemSignalLongSymbol" SG_ 2365584368 MCUErrors1_0B5b_motUPhaseOverCur "MCUErrors1_0B5b_motUPhaseOverCurrLv4";
+BA_ "GenSigStartValue" SG_ 2365551600 MCUStates3_23B_MCUMaxBrakeTorque 30000;
+BA_ "SystemSignalLongSymbol" SG_ 2365551600 MCUStates3_23B_MCUMaxBrakeTorque "MCUStates3_23B_MCUMaxBrakeTorqueAvail";
+BA_ "SystemSignalLongSymbol" SG_ 2365551600 MCUStates3_01B_mcuMaxDriveTorque "MCUStates3_01B_mcuMaxDriveTorqueAvail";
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_7B03_mcuLifeToVcu 0;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_56B_motActualTorque 30000;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_34B_motActualSpeed 15000;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_2B_mcuFaultCode 0;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_1B47b_mcuFaultGrade 0;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_1B03b_mcuWorkMode 0;
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_0B57b_mcuFunctionsInd 0;
+BA_ "SystemSignalLongSymbol" SG_ 2365551344 MCUStates2_0B57b_mcuFunctionsInd "MCUStates2_0B57b_mcuFunctionsIndicate";
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_0B4b_mcuIGBTEnableSta 0;
+BA_ "SystemSignalLongSymbol" SG_ 2365551344 MCUStates2_0B4b_mcuIGBTEnableSta "MCUStates2_0B4b_mcuIGBTEnableState";
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_0B23b_mcuActiveDisChg 0;
+BA_ "SystemSignalLongSymbol" SG_ 2365551344 MCUStates2_0B23b_mcuActiveDisChg "MCUStates2_0B23b_mcuActiveDisChgState";
+BA_ "GenSigStartValue" SG_ 2365551344 MCUStates2_0B01b_mcuPreChgAllow 0;
+BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_7B_mcuTemp 40;
+BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_6B_motTemp 40;
+BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_45B_mcuACCurrent 0;
+BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_23B_mcuDCVoltage 0;
+BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_01B_mcuDCCurrent 10000;
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_67B_vcuMcuAllowMa 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_67B_vcuMcuAllowMa "BattPowerAllow_67B_vcuMcuAllowMaxChgCurr";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_45B_vcuMcuAllowMa 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_45B_vcuMcuAllowMa "BattPowerAllow_45B_vcuMcuAllowMaxDischgCurr";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_23B_vcuMcuPackIns 0;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_23B_vcuMcuPackIns "BattPowerAllow_23B_vcuMcuPackInsideVoltage";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_01B_vcuMcuPackCur 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_01B_vcuMcuPackCur "BattPowerAllow_01B_vcuMcuPackCurrent";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_7B03b_vcuLifeToM "VCUVehiclStates_7B03b_vcuLifeToMcu2";
+BA_ "GenSigStartValue" SG_ 2365547047 VCUVehiclStates_34B_vcuMcuVehSpd 15000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_34B_vcuMcuVehSpd "VCUVehiclStates_34B_vcuMcuVehSpdLimitMotSpd";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_2B67b_vcuMcuCraw "VCUVehiclStates_2B67b_vcuMcuCrawlOff";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_2B45b_vcuMcuSlid "VCUVehiclStates_2B45b_vcuMcuSlideSwitch";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_2B23b_vcuMcuMotS "VCUVehiclStates_2B23b_vcuMcuMotSpeedLimitSwitch";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_2B01b_vcuMcuAnti "VCUVehiclStates_2B01b_vcuMcuAntiRollBackSwitch";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_1B_vcuMcuBrakePe "VCUVehiclStates_1B_vcuMcuBrakePedalPosition";
+BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_0B_vcuMcuAccePed "VCUVehiclStates_0B_vcuMcuAccePedalPosition";
+BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_0B24b_vcuMcuParkingSys "VCUMCUCmd_0B24b_vcuMcuParkingSystemState";
+BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_45B_vcuMcuDemandSpeed 15000;
+BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_23B_vcuMcuDemandTorque 30000;
+BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_1B35b_vcuMcuControlMod "VCUMCUCmd_1B35b_vcuMcuControlMode";
+BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_1B0b_vcuMcuFootBrakeSt "VCUMCUCmd_1B0b_vcuMcuFootBrakeState";
+BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_0B01b_vcuMcuSystemRead "VCUMCUCmd_0B01b_vcuMcuSystemReady";
+VAL_ 2365551344 MCUStates2_1B47b_mcuFaultGrade 4 "4级故障" 3 "3级故障" 2 "2级故障" 1 "1级故障" 0 "无故障等级" ;
+VAL_ 2365551344 MCUStates2_1B03b_mcuWorkMode 7 "故障" 6 "下低压电" 5 "主动放电" 4 "转矩模式运行" 3 "转速模式运行" 2 "电机运行中" 1 "低压上电正常" 0 "初始化" ;
+VAL_ 2365551344 MCUStates2_0B57b_mcuFunctionsInd 6 "限速运行指示" 5 "防溜运行指示" 4 "制动运行指示" 3 "蠕行运行指示" 2 "滑行运行指示" 1 "驱动运行指示" 0 "停机无指示" ;
+VAL_ 2365551344 MCUStates2_0B4b_mcuIGBTEnableSta 1 "使能无效" 0 "使能有效" ;
+VAL_ 2365551344 MCUStates2_0B23b_mcuActiveDisChg 1 "放电完成" 0 "放电未完成" ;
+VAL_ 2365551344 MCUStates2_0B01b_mcuPreChgAllow 1 "允许" 0 "不允许" ;
+VAL_ 2365547047 VCUVehiclStates_2B67b_vcuMcuCraw 1 "蠕行关闭有效" 0 "蠕行关闭无效" ;
+VAL_ 2365547047 VCUVehiclStates_2B45b_vcuMcuSlid 1 "开启" 0 "关闭" ;
+VAL_ 2365547047 VCUVehiclStates_2B01b_vcuMcuAnti 1 "开启" 0 "关闭" ;
+VAL_ 2365546791 VCUMCUCmd_0B24b_vcuMcuParkingSys 5 "自由状态" 4 "正在驻车状态" 3 "错误状态" 2 "正在释放状态" 1 "驻车状态" 0 "释放状态" ;
+VAL_ 2365546791 VCUMCUCmd_1B67b_vcuMcuDirection 2 "后退方向" 1 "前进方向" ;
+VAL_ 2365546791 VCUMCUCmd_1B35b_vcuMcuControlMod 3 "主动放电模式" 2 "转速模式" 1 "转矩模式" 0 "关闭模式" ;
+VAL_ 2365546791 VCUMCUCmd_1B12b_vcuMcuIGBTEnable 2 "非使能" 1 "使能" ;
+VAL_ 2365546791 VCUMCUCmd_1B0b_vcuMcuFootBrakeSt 1 "脚刹有效" 0 "脚刹无效" ;
+VAL_ 2365546791 VCUMCUCmd_0B01b_vcuMcuSystemRead 2 "系统Ready无行车故障" 1 "系统处于高压状态" 0 "系统处于低压状态" ;
+

@@ -421,9 +421,9 @@ class HalCanAutoGen(object):
 
 
 if __name__ == '__main__':
-    can0_dbc = cantools.database.load_file(r'./WSD5060HR1EV_P_CAN_v1.0.dbc', encoding='gb2312')
-    can1_dbc = cantools.database.load_file(r'./WSD5060HR1EV_C_CAN_v1.0.dbc', encoding='gb2312')
-    can2_dbc = cantools.database.load_file(r'./WSD5060HR1EV_B_CAN_v1.0.dbc', encoding='gb2312')
+    can0_dbc = cantools.database.load_file(r'./DBC/2.0/WSD5060HR1EV_P_CAN_v2.0.dbc', encoding='gb2312')
+    can1_dbc = cantools.database.load_file(r'./DBC/2.0/WSD5060HR1EV_C_CAN_v2.0.dbc', encoding='gb2312')
+    can2_dbc = cantools.database.load_file(r'./DBC/2.0/WSD5060HR1EV_B_CAN_v2.0.dbc', encoding='gb2312')
     h = HalCanAutoGen({can0_dbc: 'can0', can1_dbc: 'can1', can2_dbc: 'can2'}, modifier='LinXiaobin', storage_path='./hal_cfg/')
     h.generate_all()
 

@@ -14,7 +14,6 @@
 #define __HACG_CAN2__
 
 extern void Can2Msg_Pack_0x18f10527(void);
-extern void Can2Msg_Pack_0x18daf103(void);
 extern void Can2Msg_Unpack_0xcf603a1(void);
 
 #endif /*End of __HACG_CAN2__*/

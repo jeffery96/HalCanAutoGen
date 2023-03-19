@@ -22,10 +22,7 @@ extern void Can1Msg_Pack_0xcff3f27(void);
 extern void Can1Msg_Pack_0x18ff4027(void);
 extern void Can1Msg_Pack_0xcff4127(void);
 extern void Can1Msg_Pack_0x18e1f3ef(void);
-extern void Can1Msg_Pack_0x18102601(void);
-extern void Can1Msg_Pack_0x18102501(void);
 extern void Can1Msg_Pack_0x1802f3ef(void);
-extern void Can1Msg_Pack_0x703(void);
 extern void Can1Msg_Unpack_0x180b100b(void);
 extern void Can1Msg_Unpack_0x18c4eff3(void);
 extern void Can1Msg_Unpack_0x1801eff3(void);
@@ -40,10 +37,7 @@ extern void Can1Msg_Unpack_0x18fe1264(void);
 extern void Can1Msg_Unpack_0x18ffe342(void);
 extern void Can1Msg_Unpack_0x18ffe742(void);
 extern void Can1Msg_Unpack_0xcf603a1(void);
-extern void Can1Msg_Unpack_0x701(void);
-extern void Can1Msg_Unpack_0x702(void);
 extern void Can1Msg_Unpack_0x1802f328(void);
-extern void Can1Msg_Unpack_0x18102101(void);
 
 #endif /*End of __HACG_CAN1__*/
 /*-------------------------------------EOF--------------------------------------*/

@@ -25,46 +25,32 @@ void Can2Msg_Pack_0x18f10527(void)
     LVOP_Control_buf[6] = 0x00u;
     LVOP_Control_buf[7] = 0x00u;
 
-    /*signalName:pfc_LVOilPumpEnable, DataOrder:little_endian, startBit: 0, length: 8 */
-    LVOP_Control_buf[0] |= ((uint8_t)(pfc_LVOilPumpEnable << 0u) & 0xFFu);
-    /*signalName:pfc_VehicleVelocity, DataOrder:little_endian, startBit: 48, length: 8 */
-    LVOP_Control_buf[6] |= ((uint8_t)(pfc_VehicleVelocity << 0u) & 0xFFu);
-    /*signalName:pfc_toLVOilPumpLife, DataOrder:little_endian, startBit: 56, length: 8 */
-    LVOP_Control_buf[7] |= ((uint8_t)(pfc_toLVOilPumpLife << 0u) & 0xFFu);
-}
-
-void Can2Msg_Pack_0x18daf103(void)
-{
-    /*Clear Message Buffer first!*/
-    vin_resp_buf[0] = 0x00u;
-    vin_resp_buf[1] = 0x00u;
-    vin_resp_buf[2] = 0x00u;
-    vin_resp_buf[3] = 0x00u;
-    vin_resp_buf[4] = 0x00u;
-    vin_resp_buf[5] = 0x00u;
-    vin_resp_buf[6] = 0x00u;
-    vin_resp_buf[7] = 0x00u;
-
+    /*signalName:pfc_vcuLvopEnable, DataOrder:little_endian, startBit: 0, length: 8 */
+    LVOP_Control_buf[0] |= ((uint8_t)(pfc_vcuLvopEnable << 0u) & 0xFFu);
+    /*signalName:pfc_vcuLvopVehicleVelocity, DataOrder:little_endian, startBit: 48, length: 8 */
+    LVOP_Control_buf[6] |= ((uint8_t)(pfc_vcuLvopVehicleVelocity << 0u) & 0xFFu);
+    /*signalName:pfc_vcuLifeToLvop, DataOrder:little_endian, startBit: 56, length: 8 */
+    LVOP_Control_buf[7] |= ((uint8_t)(pfc_vcuLifeToLvop << 0u) & 0xFFu);
 }
 
 void Can2Msg_Unpack_0xcf603a1(void)
 {
-    /*signalName:pfc_LVOilPumpRunningState, DataOrder:little_endian, startBit: 0, length: 8 */
-    pfc_LVOilPumpRunningState        =  ((uint8_t)(LVOP_Status1_buf[0] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpInputVoltage, DataOrder:little_endian, startBit: 8, length: 8 */
-    pfc_LVOilPumpInputVoltage        =  ((uint8_t)(LVOP_Status1_buf[1] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpCurrent, DataOrder:little_endian, startBit: 16, length: 8 */
-    pfc_LVOilPumpCurrent             =  ((uint8_t)(LVOP_Status1_buf[2] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpMotorSpeed, DataOrder:little_endian, startBit: 32, length: 8 */
-    pfc_LVOilPumpMotorSpeed          =  ((uint8_t)(LVOP_Status1_buf[4] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpLife, DataOrder:little_endian, startBit: 40, length: 8 */
-    pfc_LVOilPumpLife                =  ((uint8_t)(LVOP_Status1_buf[5] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpMCUTemp, DataOrder:little_endian, startBit: 48, length: 8 */
-    pfc_LVOilPumpMCUTemp             =  ((uint8_t)(LVOP_Status1_buf[6] & 0xFFu) >> 0u);
-    /*signalName:pfc_LVOilPumpFaultCode, DataOrder:little_endian, startBit: 56, length: 6 */
-    pfc_LVOilPumpFaultCode           =  ((uint8_t)(LVOP_Status1_buf[7] & 0x3Fu) >> 0u);
-    /*signalName:pfc_LVOilPumpFaultGrade, DataOrder:little_endian, startBit: 62, length: 2 */
-    pfc_LVOilPumpFaultGrade          =  ((uint8_t)(LVOP_Status1_buf[7] & 0xC0u) >> 6u);
+    /*signalName:pfc_lvopRunningState, DataOrder:little_endian, startBit: 0, length: 8 */
+    pfc_lvopRunningState             =  ((uint8_t)(LVOP_Status1_buf[0] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopInputVoltage, DataOrder:little_endian, startBit: 8, length: 8 */
+    pfc_lvopInputVoltage             =  ((uint8_t)(LVOP_Status1_buf[1] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopCurrent, DataOrder:little_endian, startBit: 16, length: 8 */
+    pfc_lvopCurrent                  =  ((uint8_t)(LVOP_Status1_buf[2] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopMotSpeed, DataOrder:little_endian, startBit: 32, length: 8 */
+    pfc_lvopMotSpeed                 =  ((uint8_t)(LVOP_Status1_buf[4] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopLifeToVcu, DataOrder:little_endian, startBit: 40, length: 8 */
+    pfc_lvopLifeToVcu                =  ((uint8_t)(LVOP_Status1_buf[5] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopMcuTemp, DataOrder:little_endian, startBit: 48, length: 8 */
+    pfc_lvopMcuTemp                  =  ((uint8_t)(LVOP_Status1_buf[6] & 0xFFu) >> 0u);
+    /*signalName:pfc_lvopFaultCode, DataOrder:little_endian, startBit: 56, length: 6 */
+    pfc_lvopFaultCode                =  ((uint8_t)(LVOP_Status1_buf[7] & 0x3Fu) >> 0u);
+    /*signalName:pfc_lvopFaultGrade, DataOrder:little_endian, startBit: 62, length: 2 */
+    pfc_lvopFaultGrade               =  ((uint8_t)(LVOP_Status1_buf[7] & 0xC0u) >> 6u);
 }
 
 

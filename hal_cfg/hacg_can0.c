@@ -25,18 +25,18 @@ void Can0Msg_Pack_0xcff6327(void)
     VCU_BattPowerAllow_buf[6] = 0x00u;
     VCU_BattPowerAllow_buf[7] = 0x00u;
 
-    /*signalName:pfc_PackCurrent, DataOrder:little_endian, startBit: 0, length: 16 */
-    VCU_BattPowerAllow_buf[0] |= ((uint8_t)(pfc_PackCurrent << 0u) & 0xFFu);
-    VCU_BattPowerAllow_buf[1] |= ((uint8_t)(pfc_PackCurrent >> 8u) & 0xFFu);
-    /*signalName:pfc_PackInsideVoltage, DataOrder:little_endian, startBit: 16, length: 16 */
-    VCU_BattPowerAllow_buf[2] |= ((uint8_t)(pfc_PackInsideVoltage << 0u) & 0xFFu);
-    VCU_BattPowerAllow_buf[3] |= ((uint8_t)(pfc_PackInsideVoltage >> 8u) & 0xFFu);
-    /*signalName:pfc_AllowMaxDischargeCurr, DataOrder:little_endian, startBit: 32, length: 16 */
-    VCU_BattPowerAllow_buf[4] |= ((uint8_t)(pfc_AllowMaxDischargeCurr << 0u) & 0xFFu);
-    VCU_BattPowerAllow_buf[5] |= ((uint8_t)(pfc_AllowMaxDischargeCurr >> 8u) & 0xFFu);
-    /*signalName:pfc_AllowMaxChargeCurr, DataOrder:little_endian, startBit: 48, length: 16 */
-    VCU_BattPowerAllow_buf[6] |= ((uint8_t)(pfc_AllowMaxChargeCurr << 0u) & 0xFFu);
-    VCU_BattPowerAllow_buf[7] |= ((uint8_t)(pfc_AllowMaxChargeCurr >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuMcuPackCurrent, DataOrder:little_endian, startBit: 0, length: 16 */
+    VCU_BattPowerAllow_buf[0] |= ((uint8_t)(pfc_vcuMcuPackCurrent << 0u) & 0xFFu);
+    VCU_BattPowerAllow_buf[1] |= ((uint8_t)(pfc_vcuMcuPackCurrent >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuMcuPackInsideVoltage, DataOrder:little_endian, startBit: 16, length: 16 */
+    VCU_BattPowerAllow_buf[2] |= ((uint8_t)(pfc_vcuMcuPackInsideVoltage << 0u) & 0xFFu);
+    VCU_BattPowerAllow_buf[3] |= ((uint8_t)(pfc_vcuMcuPackInsideVoltage >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuMcuAllowMaxDischgCurr, DataOrder:little_endian, startBit: 32, length: 16 */
+    VCU_BattPowerAllow_buf[4] |= ((uint8_t)(pfc_vcuMcuAllowMaxDischgCurr << 0u) & 0xFFu);
+    VCU_BattPowerAllow_buf[5] |= ((uint8_t)(pfc_vcuMcuAllowMaxDischgCurr >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuMcuAllowMaxChgCurr, DataOrder:little_endian, startBit: 48, length: 16 */
+    VCU_BattPowerAllow_buf[6] |= ((uint8_t)(pfc_vcuMcuAllowMaxChgCurr << 0u) & 0xFFu);
+    VCU_BattPowerAllow_buf[7] |= ((uint8_t)(pfc_vcuMcuAllowMaxChgCurr >> 8u) & 0xFFu);
 }
 
 void Can0Msg_Pack_0xcff6127(void)
@@ -51,26 +51,26 @@ void Can0Msg_Pack_0xcff6127(void)
     VCU_MCU_Cmd_buf[6] = 0x00u;
     VCU_MCU_Cmd_buf[7] = 0x00u;
 
-    /*signalName:pfc_SystemReady, DataOrder:little_endian, startBit: 0, length: 2 */
-    VCU_MCU_Cmd_buf[0] |= ((uint8_t)(pfc_SystemReady << 0u) & 0x03u);
-    /*signalName:pfc_ParkingSystemState, DataOrder:little_endian, startBit: 2, length: 3 */
-    VCU_MCU_Cmd_buf[0] |= ((uint8_t)(pfc_ParkingSystemState << 2u) & 0x1Cu);
-    /*signalName:pfc_FootBrakeState, DataOrder:little_endian, startBit: 8, length: 1 */
-    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_FootBrakeState << 0u) & 0x01u);
-    /*signalName:pfc_MCUEnable, DataOrder:little_endian, startBit: 9, length: 2 */
-    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_MCUEnable << 1u) & 0x06u);
-    /*signalName:pfc_MCUControlMode, DataOrder:little_endian, startBit: 11, length: 3 */
-    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_MCUControlMode << 3u) & 0x38u);
-    /*signalName:pfc_MCUDirection, DataOrder:little_endian, startBit: 14, length: 2 */
-    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_MCUDirection << 6u) & 0xC0u);
-    /*signalName:pfc_DemandTorque, DataOrder:little_endian, startBit: 16, length: 16 */
-    VCU_MCU_Cmd_buf[2] |= ((uint8_t)(pfc_DemandTorque << 0u) & 0xFFu);
-    VCU_MCU_Cmd_buf[3] |= ((uint8_t)(pfc_DemandTorque >> 8u) & 0xFFu);
-    /*signalName:pfc_DemandSpeed, DataOrder:little_endian, startBit: 32, length: 16 */
-    VCU_MCU_Cmd_buf[4] |= ((uint8_t)(pfc_DemandSpeed << 0u) & 0xFFu);
-    VCU_MCU_Cmd_buf[5] |= ((uint8_t)(pfc_DemandSpeed >> 8u) & 0xFFu);
-    /*signalName:pfc_VCULife1ToMCU, DataOrder:little_endian, startBit: 56, length: 4 */
-    VCU_MCU_Cmd_buf[7] |= ((uint8_t)(pfc_VCULife1ToMCU << 0u) & 0x0Fu);
+    /*signalName:pfc_vcuMcuSystemReady, DataOrder:little_endian, startBit: 0, length: 2 */
+    VCU_MCU_Cmd_buf[0] |= ((uint8_t)(pfc_vcuMcuSystemReady << 0u) & 0x03u);
+    /*signalName:pfc_vcuMcuParkingSystemState, DataOrder:little_endian, startBit: 2, length: 3 */
+    VCU_MCU_Cmd_buf[0] |= ((uint8_t)(pfc_vcuMcuParkingSystemState << 2u) & 0x1Cu);
+    /*signalName:pfc_vcuMcuFootBrakeState, DataOrder:little_endian, startBit: 8, length: 1 */
+    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_vcuMcuFootBrakeState << 0u) & 0x01u);
+    /*signalName:pfc_vcuMcuIGBTEnable, DataOrder:little_endian, startBit: 9, length: 2 */
+    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_vcuMcuIGBTEnable << 1u) & 0x06u);
+    /*signalName:pfc_vcuMcuControlMode, DataOrder:little_endian, startBit: 11, length: 3 */
+    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_vcuMcuControlMode << 3u) & 0x38u);
+    /*signalName:pfc_vcuMcuDirection, DataOrder:little_endian, startBit: 14, length: 2 */
+    VCU_MCU_Cmd_buf[1] |= ((uint8_t)(pfc_vcuMcuDirection << 6u) & 0xC0u);
+    /*signalName:pfc_vcuMcuDemandTorque, DataOrder:little_endian, startBit: 16, length: 16 */
+    VCU_MCU_Cmd_buf[2] |= ((uint8_t)(pfc_vcuMcuDemandTorque << 0u) & 0xFFu);
+    VCU_MCU_Cmd_buf[3] |= ((uint8_t)(pfc_vcuMcuDemandTorque >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuMcuDemandSpeed, DataOrder:little_endian, startBit: 32, length: 16 */
+    VCU_MCU_Cmd_buf[4] |= ((uint8_t)(pfc_vcuMcuDemandSpeed << 0u) & 0xFFu);
+    VCU_MCU_Cmd_buf[5] |= ((uint8_t)(pfc_vcuMcuDemandSpeed >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuLifeToMcu1, DataOrder:little_endian, startBit: 56, length: 4 */
+    VCU_MCU_Cmd_buf[7] |= ((uint8_t)(pfc_vcuLifeToMcu1 << 0u) & 0x0Fu);
 }
 
 void Can0Msg_Pack_0xcff6227(void)
@@ -85,198 +85,198 @@ void Can0Msg_Pack_0xcff6227(void)
     VCU_Vehicle_States_buf[6] = 0x00u;
     VCU_Vehicle_States_buf[7] = 0x00u;
 
-    /*signalName:pfc_AccePedalPosition, DataOrder:little_endian, startBit: 0, length: 8 */
-    VCU_Vehicle_States_buf[0] |= ((uint8_t)(pfc_AccePedalPosition << 0u) & 0xFFu);
-    /*signalName:pfc_BrakePedalPosition, DataOrder:little_endian, startBit: 8, length: 8 */
-    VCU_Vehicle_States_buf[1] |= ((uint8_t)(pfc_BrakePedalPosition << 0u) & 0xFFu);
-    /*signalName:pfc_AntiRollBackSwitch, DataOrder:little_endian, startBit: 16, length: 2 */
-    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_AntiRollBackSwitch << 0u) & 0x03u);
-    /*signalName:pfc_MotorSpeedLimitSwitch, DataOrder:little_endian, startBit: 18, length: 2 */
-    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_MotorSpeedLimitSwitch << 2u) & 0x0Cu);
-    /*signalName:pfc_SlideSwitch, DataOrder:little_endian, startBit: 20, length: 2 */
-    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_SlideSwitch << 4u) & 0x30u);
-    /*signalName:pfc_VCUCrawlOff, DataOrder:little_endian, startBit: 22, length: 2 */
-    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_VCUCrawlOff << 6u) & 0xC0u);
-    /*signalName:pfc_VehicleSpeedLimitMotorSpeed, DataOrder:little_endian, startBit: 24, length: 16 */
-    VCU_Vehicle_States_buf[3] |= ((uint8_t)(pfc_VehicleSpeedLimitMotorSpeed << 0u) & 0xFFu);
-    VCU_Vehicle_States_buf[4] |= ((uint8_t)(pfc_VehicleSpeedLimitMotorSpeed >> 8u) & 0xFFu);
-    /*signalName:pfc_VCULife2ToMCU, DataOrder:little_endian, startBit: 56, length: 4 */
-    VCU_Vehicle_States_buf[7] |= ((uint8_t)(pfc_VCULife2ToMCU << 0u) & 0x0Fu);
+    /*signalName:pfc_vcuMcuAccePedalPosition, DataOrder:little_endian, startBit: 0, length: 8 */
+    VCU_Vehicle_States_buf[0] |= ((uint8_t)(pfc_vcuMcuAccePedalPosition << 0u) & 0xFFu);
+    /*signalName:pfc_vcuMcuBrakePedalPosition, DataOrder:little_endian, startBit: 8, length: 8 */
+    VCU_Vehicle_States_buf[1] |= ((uint8_t)(pfc_vcuMcuBrakePedalPosition << 0u) & 0xFFu);
+    /*signalName:pfc_vcuMcuAntiRollBackSwitch, DataOrder:little_endian, startBit: 16, length: 2 */
+    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_vcuMcuAntiRollBackSwitch << 0u) & 0x03u);
+    /*signalName:pfc_vcuMcuMotSpeedLimitSwitch, DataOrder:little_endian, startBit: 18, length: 2 */
+    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_vcuMcuMotSpeedLimitSwitch << 2u) & 0x0Cu);
+    /*signalName:pfc_vcuMcuSlideSwitch, DataOrder:little_endian, startBit: 20, length: 2 */
+    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_vcuMcuSlideSwitch << 4u) & 0x30u);
+    /*signalName:pfc_vcuMcuCrawlOff, DataOrder:little_endian, startBit: 22, length: 2 */
+    VCU_Vehicle_States_buf[2] |= ((uint8_t)(pfc_vcuMcuCrawlOff << 6u) & 0xC0u);
+    /*signalName:pfc_vcuMcuVehSpdLimitMotSpd, DataOrder:little_endian, startBit: 24, length: 16 */
+    VCU_Vehicle_States_buf[3] |= ((uint8_t)(pfc_vcuMcuVehSpdLimitMotSpd << 0u) & 0xFFu);
+    VCU_Vehicle_States_buf[4] |= ((uint8_t)(pfc_vcuMcuVehSpdLimitMotSpd >> 8u) & 0xFFu);
+    /*signalName:pfc_vcuLifeToMcu2, DataOrder:little_endian, startBit: 56, length: 4 */
+    VCU_Vehicle_States_buf[7] |= ((uint8_t)(pfc_vcuLifeToMcu2 << 0u) & 0x0Fu);
 }
 
 void Can0Msg_Unpack_0xcfff3f0(void)
 {
-    /*signalName:pfc_MCUUnderVoltLv4, DataOrder:little_endian, startBit: 1, length: 1 */
-    pfc_MCUUnderVoltLv4              =  ((uint8_t)(MCU_Errors1_buf[0] & 0x02u) >> 1u);
-    /*signalName:pfc_MotorOverTempLv4, DataOrder:little_endian, startBit: 2, length: 1 */
-    pfc_MotorOverTempLv4             =  ((uint8_t)(MCU_Errors1_buf[0] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUOverTempLv4, DataOrder:little_endian, startBit: 3, length: 1 */
-    pfc_MCUOverTempLv4               =  ((uint8_t)(MCU_Errors1_buf[0] & 0x08u) >> 3u);
-    /*signalName:pfc_MCUDCOverVoltLv4, DataOrder:little_endian, startBit: 4, length: 1 */
-    pfc_MCUDCOverVoltLv4             =  ((uint8_t)(MCU_Errors1_buf[0] & 0x10u) >> 4u);
-    /*signalName:pfc_MotorUPhaseOverCurrLv4, DataOrder:little_endian, startBit: 5, length: 1 */
-    pfc_MotorUPhaseOverCurrLv4       =  ((uint8_t)(MCU_Errors1_buf[0] & 0x20u) >> 5u);
-    /*signalName:pfc_MotorVPhaseOverCurrLv4, DataOrder:little_endian, startBit: 6, length: 1 */
-    pfc_MotorVPhaseOverCurrLv4       =  ((uint8_t)(MCU_Errors1_buf[0] & 0x40u) >> 6u);
-    /*signalName:pfc_MotorWPhaseOverCurrLv4, DataOrder:little_endian, startBit: 7, length: 1 */
-    pfc_MotorWPhaseOverCurrLv4       =  ((uint8_t)(MCU_Errors1_buf[0] & 0x80u) >> 7u);
-    /*signalName:pfc_MotorOverSpeedLv4, DataOrder:little_endian, startBit: 8, length: 1 */
-    pfc_MotorOverSpeedLv4            =  ((uint8_t)(MCU_Errors1_buf[1] & 0x01u) >> 0u);
-    /*signalName:pfc_MotorInterPhaseShortCircLv4, DataOrder:little_endian, startBit: 9, length: 1 */
-    pfc_MotorInterPhaseShortCircLv4  =  ((uint8_t)(MCU_Errors1_buf[1] & 0x02u) >> 1u);
-    /*signalName:pfc_MCUDCShortCircGNDLv4, DataOrder:little_endian, startBit: 10, length: 1 */
-    pfc_MCUDCShortCircGNDLv4         =  ((uint8_t)(MCU_Errors1_buf[1] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUPhaseShortCircGNDLv4, DataOrder:little_endian, startBit: 11, length: 1 */
-    pfc_MCUPhaseShortCircGNDLv4      =  ((uint8_t)(MCU_Errors1_buf[1] & 0x08u) >> 3u);
-    /*signalName:pfc_VehicleCANFault, DataOrder:little_endian, startBit: 24, length: 1 */
-    pfc_VehicleCANFault              =  ((uint8_t)(MCU_Errors1_buf[3] & 0x01u) >> 0u);
-    /*signalName:pfc_MotorCANFault, DataOrder:little_endian, startBit: 25, length: 1 */
-    pfc_MotorCANFault                =  ((uint8_t)(MCU_Errors1_buf[3] & 0x02u) >> 1u);
-    /*signalName:pfc_CANTimeoutFault, DataOrder:little_endian, startBit: 26, length: 1 */
-    pfc_CANTimeoutFault              =  ((uint8_t)(MCU_Errors1_buf[3] & 0x04u) >> 2u);
-    /*signalName:pfc_CANCRCCheckFault, DataOrder:little_endian, startBit: 27, length: 1 */
-    pfc_CANCRCCheckFault             =  ((uint8_t)(MCU_Errors1_buf[3] & 0x08u) >> 3u);
-    /*signalName:pfc_CANOfflineFault, DataOrder:little_endian, startBit: 28, length: 1 */
-    pfc_CANOfflineFault              =  ((uint8_t)(MCU_Errors1_buf[3] & 0x10u) >> 4u);
-    /*signalName:pfc_MCUTempSensorFault, DataOrder:little_endian, startBit: 32, length: 1 */
-    pfc_MCUTempSensorFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x01u) >> 0u);
-    /*signalName:pfc_MotorTempSensorFault, DataOrder:little_endian, startBit: 33, length: 1 */
-    pfc_MotorTempSensorFault         =  ((uint8_t)(MCU_Errors1_buf[4] & 0x02u) >> 1u);
-    /*signalName:pfc_MCUUPhaseCurrSensorFault, DataOrder:little_endian, startBit: 34, length: 1 */
-    pfc_MCUUPhaseCurrSensorFault     =  ((uint8_t)(MCU_Errors1_buf[4] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUVPhaseCurrSensorFault, DataOrder:little_endian, startBit: 35, length: 1 */
-    pfc_MCUVPhaseCurrSensorFault     =  ((uint8_t)(MCU_Errors1_buf[4] & 0x08u) >> 3u);
-    /*signalName:pfc_MCUWPhaseCurrSensorFault, DataOrder:little_endian, startBit: 36, length: 1 */
-    pfc_MCUWPhaseCurrSensorFault     =  ((uint8_t)(MCU_Errors1_buf[4] & 0x10u) >> 4u);
-    /*signalName:pfc_MCUUPhaseLossFault, DataOrder:little_endian, startBit: 37, length: 1 */
-    pfc_MCUUPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x20u) >> 5u);
-    /*signalName:pfc_MCUVPhaseLossFault, DataOrder:little_endian, startBit: 38, length: 1 */
-    pfc_MCUVPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x40u) >> 6u);
-    /*signalName:pfc_MCUWPhaseLossFault, DataOrder:little_endian, startBit: 39, length: 1 */
-    pfc_MCUWPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x80u) >> 7u);
-    /*signalName:pfc_LowVoltBatteryFault, DataOrder:little_endian, startBit: 40, length: 1 */
-    pfc_LowVoltBatteryFault          =  ((uint8_t)(MCU_Errors1_buf[5] & 0x01u) >> 0u);
-    /*signalName:pfc_MotorRDCFault, DataOrder:little_endian, startBit: 41, length: 1 */
-    pfc_MotorRDCFault                =  ((uint8_t)(MCU_Errors1_buf[5] & 0x02u) >> 1u);
+    /*signalName:pfc_mcuUnderVoltLv4, DataOrder:little_endian, startBit: 1, length: 1 */
+    pfc_mcuUnderVoltLv4              =  ((uint8_t)(MCU_Errors1_buf[0] & 0x02u) >> 1u);
+    /*signalName:pfc_motOverTempLv4, DataOrder:little_endian, startBit: 2, length: 1 */
+    pfc_motOverTempLv4               =  ((uint8_t)(MCU_Errors1_buf[0] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuOverTempLv4, DataOrder:little_endian, startBit: 3, length: 1 */
+    pfc_mcuOverTempLv4               =  ((uint8_t)(MCU_Errors1_buf[0] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuDCOverVoltLv4, DataOrder:little_endian, startBit: 4, length: 1 */
+    pfc_mcuDCOverVoltLv4             =  ((uint8_t)(MCU_Errors1_buf[0] & 0x10u) >> 4u);
+    /*signalName:pfc_motUPhaseOverCurrLv4, DataOrder:little_endian, startBit: 5, length: 1 */
+    pfc_motUPhaseOverCurrLv4         =  ((uint8_t)(MCU_Errors1_buf[0] & 0x20u) >> 5u);
+    /*signalName:pfc_motVPhaseOverCurrLv4, DataOrder:little_endian, startBit: 6, length: 1 */
+    pfc_motVPhaseOverCurrLv4         =  ((uint8_t)(MCU_Errors1_buf[0] & 0x40u) >> 6u);
+    /*signalName:pfc_motWPhaseOverCurrLv4, DataOrder:little_endian, startBit: 7, length: 1 */
+    pfc_motWPhaseOverCurrLv4         =  ((uint8_t)(MCU_Errors1_buf[0] & 0x80u) >> 7u);
+    /*signalName:pfc_motOverSpeedLv4, DataOrder:little_endian, startBit: 8, length: 1 */
+    pfc_motOverSpeedLv4              =  ((uint8_t)(MCU_Errors1_buf[1] & 0x01u) >> 0u);
+    /*signalName:pfc_motInterPhaseSCLv4, DataOrder:little_endian, startBit: 9, length: 1 */
+    pfc_motInterPhaseSCLv4           =  ((uint8_t)(MCU_Errors1_buf[1] & 0x02u) >> 1u);
+    /*signalName:pfc_mcuDCBusToGndSCLv4, DataOrder:little_endian, startBit: 10, length: 1 */
+    pfc_mcuDCBusToGndSCLv4           =  ((uint8_t)(MCU_Errors1_buf[1] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuPhaseToGndSCLv4, DataOrder:little_endian, startBit: 11, length: 1 */
+    pfc_mcuPhaseToGndSCLv4           =  ((uint8_t)(MCU_Errors1_buf[1] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuVcuCanFault, DataOrder:little_endian, startBit: 24, length: 1 */
+    pfc_mcuVcuCanFault               =  ((uint8_t)(MCU_Errors1_buf[3] & 0x01u) >> 0u);
+    /*signalName:pfc_motCanFault, DataOrder:little_endian, startBit: 25, length: 1 */
+    pfc_motCanFault                  =  ((uint8_t)(MCU_Errors1_buf[3] & 0x02u) >> 1u);
+    /*signalName:pfc_mcuCanTimeoutFault, DataOrder:little_endian, startBit: 26, length: 1 */
+    pfc_mcuCanTimeoutFault           =  ((uint8_t)(MCU_Errors1_buf[3] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuCanCRCCheckFault, DataOrder:little_endian, startBit: 27, length: 1 */
+    pfc_mcuCanCRCCheckFault          =  ((uint8_t)(MCU_Errors1_buf[3] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuCanOfflineFault, DataOrder:little_endian, startBit: 28, length: 1 */
+    pfc_mcuCanOfflineFault           =  ((uint8_t)(MCU_Errors1_buf[3] & 0x10u) >> 4u);
+    /*signalName:pfc_mcuTempSensFault, DataOrder:little_endian, startBit: 32, length: 1 */
+    pfc_mcuTempSensFault             =  ((uint8_t)(MCU_Errors1_buf[4] & 0x01u) >> 0u);
+    /*signalName:pfc_motTempSensFault, DataOrder:little_endian, startBit: 33, length: 1 */
+    pfc_motTempSensFault             =  ((uint8_t)(MCU_Errors1_buf[4] & 0x02u) >> 1u);
+    /*signalName:pfc_mcuUPhaseCurrSensFault, DataOrder:little_endian, startBit: 34, length: 1 */
+    pfc_mcuUPhaseCurrSensFault       =  ((uint8_t)(MCU_Errors1_buf[4] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuVPhaseCurrSensFault, DataOrder:little_endian, startBit: 35, length: 1 */
+    pfc_mcuVPhaseCurrSensFault       =  ((uint8_t)(MCU_Errors1_buf[4] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuWPhaseCurrSensFault, DataOrder:little_endian, startBit: 36, length: 1 */
+    pfc_mcuWPhaseCurrSensFault       =  ((uint8_t)(MCU_Errors1_buf[4] & 0x10u) >> 4u);
+    /*signalName:pfc_mcuUPhaseLossFault, DataOrder:little_endian, startBit: 37, length: 1 */
+    pfc_mcuUPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x20u) >> 5u);
+    /*signalName:pfc_mcuVPhaseLossFault, DataOrder:little_endian, startBit: 38, length: 1 */
+    pfc_mcuVPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x40u) >> 6u);
+    /*signalName:pfc_mcuWPhaseLossFault, DataOrder:little_endian, startBit: 39, length: 1 */
+    pfc_mcuWPhaseLossFault           =  ((uint8_t)(MCU_Errors1_buf[4] & 0x80u) >> 7u);
+    /*signalName:pfc_mcuLowVoltBattSupFault, DataOrder:little_endian, startBit: 40, length: 1 */
+    pfc_mcuLowVoltBattSupFault       =  ((uint8_t)(MCU_Errors1_buf[5] & 0x01u) >> 0u);
+    /*signalName:pfc_motRDCFault, DataOrder:little_endian, startBit: 41, length: 1 */
+    pfc_motRDCFault                  =  ((uint8_t)(MCU_Errors1_buf[5] & 0x02u) >> 1u);
     /*signalName:pfc_MCUDCVoltSensorFault, DataOrder:little_endian, startBit: 42, length: 1 */
     pfc_MCUDCVoltSensorFault         =  ((uint8_t)(MCU_Errors1_buf[5] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUIBGTFault, DataOrder:little_endian, startBit: 43, length: 1 */
-    pfc_MCUIBGTFault                 =  ((uint8_t)(MCU_Errors1_buf[5] & 0x08u) >> 3u);
-    /*signalName:pfc_MotorSpeedSensorFault, DataOrder:little_endian, startBit: 44, length: 1 */
-    pfc_MotorSpeedSensorFault        =  ((uint8_t)(MCU_Errors1_buf[5] & 0x10u) >> 4u);
-    /*signalName:pfc_MCUEEPROMFault, DataOrder:little_endian, startBit: 45, length: 1 */
-    pfc_MCUEEPROMFault               =  ((uint8_t)(MCU_Errors1_buf[5] & 0x20u) >> 5u);
-    /*signalName:pfc_MCUActiveDisChargeFault, DataOrder:little_endian, startBit: 46, length: 1 */
-    pfc_MCUActiveDisChargeFault      =  ((uint8_t)(MCU_Errors1_buf[5] & 0x40u) >> 6u);
+    /*signalName:pfc_mcuIBGTFault, DataOrder:little_endian, startBit: 43, length: 1 */
+    pfc_mcuIBGTFault                 =  ((uint8_t)(MCU_Errors1_buf[5] & 0x08u) >> 3u);
+    /*signalName:pfc_motSpdSensFault, DataOrder:little_endian, startBit: 44, length: 1 */
+    pfc_motSpdSensFault              =  ((uint8_t)(MCU_Errors1_buf[5] & 0x10u) >> 4u);
+    /*signalName:pfc_mcuEEPROMFault, DataOrder:little_endian, startBit: 45, length: 1 */
+    pfc_mcuEEPROMFault               =  ((uint8_t)(MCU_Errors1_buf[5] & 0x20u) >> 5u);
+    /*signalName:pfc_mcuActiveDisChgFault, DataOrder:little_endian, startBit: 46, length: 1 */
+    pfc_mcuActiveDisChgFault         =  ((uint8_t)(MCU_Errors1_buf[5] & 0x40u) >> 6u);
 }
 
 void Can0Msg_Unpack_0xcfff4f0(void)
 {
-    /*signalName:pfc_MCUUnderVoltLvl3, DataOrder:little_endian, startBit: 1, length: 1 */
-    pfc_MCUUnderVoltLvl3             =  ((uint8_t)(MCU_Errors2_buf[0] & 0x02u) >> 1u);
-    /*signalName:pfc_MotorOverTempLv3, DataOrder:little_endian, startBit: 2, length: 1 */
-    pfc_MotorOverTempLv3             =  ((uint8_t)(MCU_Errors2_buf[0] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUOverTempLv3, DataOrder:little_endian, startBit: 3, length: 1 */
-    pfc_MCUOverTempLv3               =  ((uint8_t)(MCU_Errors2_buf[0] & 0x08u) >> 3u);
-    /*signalName:pfc_MCUDCOverVoltLv3, DataOrder:little_endian, startBit: 4, length: 1 */
-    pfc_MCUDCOverVoltLv3             =  ((uint8_t)(MCU_Errors2_buf[0] & 0x10u) >> 4u);
-    /*signalName:pfc_MotorUPhaseOverCurrLv3, DataOrder:little_endian, startBit: 5, length: 1 */
-    pfc_MotorUPhaseOverCurrLv3       =  ((uint8_t)(MCU_Errors2_buf[0] & 0x20u) >> 5u);
-    /*signalName:pfc_MotorVPhaseOverCurrLv3, DataOrder:little_endian, startBit: 6, length: 1 */
-    pfc_MotorVPhaseOverCurrLv3       =  ((uint8_t)(MCU_Errors2_buf[0] & 0x40u) >> 6u);
-    /*signalName:pfc_MotorWPhaseOverCurrLv3, DataOrder:little_endian, startBit: 7, length: 1 */
-    pfc_MotorWPhaseOverCurrLv3       =  ((uint8_t)(MCU_Errors2_buf[0] & 0x80u) >> 7u);
-    /*signalName:pfc_MotorOverSpeedLv3, DataOrder:little_endian, startBit: 8, length: 1 */
-    pfc_MotorOverSpeedLv3            =  ((uint8_t)(MCU_Errors2_buf[1] & 0x01u) >> 0u);
-    /*signalName:pfc_MCUUnderVoltLv2, DataOrder:little_endian, startBit: 33, length: 1 */
-    pfc_MCUUnderVoltLv2              =  ((uint8_t)(MCU_Errors2_buf[4] & 0x02u) >> 1u);
-    /*signalName:pfc_MotorOverTempLv2, DataOrder:little_endian, startBit: 34, length: 1 */
-    pfc_MotorOverTempLv2             =  ((uint8_t)(MCU_Errors2_buf[4] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUOverTempLv2, DataOrder:little_endian, startBit: 35, length: 1 */
-    pfc_MCUOverTempLv2               =  ((uint8_t)(MCU_Errors2_buf[4] & 0x08u) >> 3u);
-    /*signalName:pfc_MCUDCOverVoltLv2, DataOrder:little_endian, startBit: 36, length: 1 */
-    pfc_MCUDCOverVoltLv2             =  ((uint8_t)(MCU_Errors2_buf[4] & 0x10u) >> 4u);
-    /*signalName:pfc_MotorUPhaseOverCurrLv2, DataOrder:little_endian, startBit: 37, length: 1 */
-    pfc_MotorUPhaseOverCurrLv2       =  ((uint8_t)(MCU_Errors2_buf[4] & 0x20u) >> 5u);
-    /*signalName:pfc_MotorVPhaseOverCurrLv2, DataOrder:little_endian, startBit: 38, length: 1 */
-    pfc_MotorVPhaseOverCurrLv2       =  ((uint8_t)(MCU_Errors2_buf[4] & 0x40u) >> 6u);
-    /*signalName:pfc_MotorWPhaseOverCurrLv2, DataOrder:little_endian, startBit: 39, length: 1 */
-    pfc_MotorWPhaseOverCurrLv2       =  ((uint8_t)(MCU_Errors2_buf[4] & 0x80u) >> 7u);
-    /*signalName:pfc_MotorOverSpeedLevel2, DataOrder:little_endian, startBit: 40, length: 1 */
-    pfc_MotorOverSpeedLevel2         =  ((uint8_t)(MCU_Errors2_buf[5] & 0x01u) >> 0u);
+    /*signalName:pfc_mcuUnderVoltLvl3, DataOrder:little_endian, startBit: 1, length: 1 */
+    pfc_mcuUnderVoltLvl3             =  ((uint8_t)(MCU_Errors2_buf[0] & 0x02u) >> 1u);
+    /*signalName:pfc_motOverTempLv3, DataOrder:little_endian, startBit: 2, length: 1 */
+    pfc_motOverTempLv3               =  ((uint8_t)(MCU_Errors2_buf[0] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuOverTempLv3, DataOrder:little_endian, startBit: 3, length: 1 */
+    pfc_mcuOverTempLv3               =  ((uint8_t)(MCU_Errors2_buf[0] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuDCOverVoltLv3, DataOrder:little_endian, startBit: 4, length: 1 */
+    pfc_mcuDCOverVoltLv3             =  ((uint8_t)(MCU_Errors2_buf[0] & 0x10u) >> 4u);
+    /*signalName:pfc_motUPhaseOverCurrLv3, DataOrder:little_endian, startBit: 5, length: 1 */
+    pfc_motUPhaseOverCurrLv3         =  ((uint8_t)(MCU_Errors2_buf[0] & 0x20u) >> 5u);
+    /*signalName:pfc_motVPhaseOverCurrLv3, DataOrder:little_endian, startBit: 6, length: 1 */
+    pfc_motVPhaseOverCurrLv3         =  ((uint8_t)(MCU_Errors2_buf[0] & 0x40u) >> 6u);
+    /*signalName:pfc_motWPhaseOverCurrLv3, DataOrder:little_endian, startBit: 7, length: 1 */
+    pfc_motWPhaseOverCurrLv3         =  ((uint8_t)(MCU_Errors2_buf[0] & 0x80u) >> 7u);
+    /*signalName:pfc_motOverSpeedLv3, DataOrder:little_endian, startBit: 8, length: 1 */
+    pfc_motOverSpeedLv3              =  ((uint8_t)(MCU_Errors2_buf[1] & 0x01u) >> 0u);
+    /*signalName:pfc_mcuUnderVoltLv2, DataOrder:little_endian, startBit: 33, length: 1 */
+    pfc_mcuUnderVoltLv2              =  ((uint8_t)(MCU_Errors2_buf[4] & 0x02u) >> 1u);
+    /*signalName:pfc_motOverTempLv2, DataOrder:little_endian, startBit: 34, length: 1 */
+    pfc_motOverTempLv2               =  ((uint8_t)(MCU_Errors2_buf[4] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuOverTempLv2, DataOrder:little_endian, startBit: 35, length: 1 */
+    pfc_mcuOverTempLv2               =  ((uint8_t)(MCU_Errors2_buf[4] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuDCOverVoltLv2, DataOrder:little_endian, startBit: 36, length: 1 */
+    pfc_mcuDCOverVoltLv2             =  ((uint8_t)(MCU_Errors2_buf[4] & 0x10u) >> 4u);
+    /*signalName:pfc_motUPhaseOverCurrLv2, DataOrder:little_endian, startBit: 37, length: 1 */
+    pfc_motUPhaseOverCurrLv2         =  ((uint8_t)(MCU_Errors2_buf[4] & 0x20u) >> 5u);
+    /*signalName:pfc_motVPhaseOverCurrLv2, DataOrder:little_endian, startBit: 38, length: 1 */
+    pfc_motVPhaseOverCurrLv2         =  ((uint8_t)(MCU_Errors2_buf[4] & 0x40u) >> 6u);
+    /*signalName:pfc_motWPhaseOverCurrLv2, DataOrder:little_endian, startBit: 39, length: 1 */
+    pfc_motWPhaseOverCurrLv2         =  ((uint8_t)(MCU_Errors2_buf[4] & 0x80u) >> 7u);
+    /*signalName:pfc_motOverSpeedLevel2, DataOrder:little_endian, startBit: 40, length: 1 */
+    pfc_motOverSpeedLevel2           =  ((uint8_t)(MCU_Errors2_buf[5] & 0x01u) >> 0u);
 }
 
 void Can0Msg_Unpack_0xcfff5f0(void)
 {
-    /*signalName:pfc_MCUUnderVoltLv1, DataOrder:little_endian, startBit: 1, length: 1 */
-    pfc_MCUUnderVoltLv1              =  ((uint8_t)(MCU_Errors3_buf[0] & 0x02u) >> 1u);
-    /*signalName:pfc_MotorOverTempLvl1, DataOrder:little_endian, startBit: 2, length: 1 */
-    pfc_MotorOverTempLvl1            =  ((uint8_t)(MCU_Errors3_buf[0] & 0x04u) >> 2u);
-    /*signalName:pfc_MCUOverTempLv1, DataOrder:little_endian, startBit: 3, length: 1 */
-    pfc_MCUOverTempLv1               =  ((uint8_t)(MCU_Errors3_buf[0] & 0x08u) >> 3u);
-    /*signalName:pfc_MCUDCOverVoltLv1, DataOrder:little_endian, startBit: 4, length: 1 */
-    pfc_MCUDCOverVoltLv1             =  ((uint8_t)(MCU_Errors3_buf[0] & 0x10u) >> 4u);
-    /*signalName:pfc_MotorUPhaseOverCurrLv1, DataOrder:little_endian, startBit: 5, length: 1 */
-    pfc_MotorUPhaseOverCurrLv1       =  ((uint8_t)(MCU_Errors3_buf[0] & 0x20u) >> 5u);
-    /*signalName:pfc_MotorVPhaseOverCurrLv1, DataOrder:little_endian, startBit: 6, length: 1 */
-    pfc_MotorVPhaseOverCurrLv1       =  ((uint8_t)(MCU_Errors3_buf[0] & 0x40u) >> 6u);
-    /*signalName:pfc_MotorWPhaseOverCurrLv1, DataOrder:little_endian, startBit: 7, length: 1 */
-    pfc_MotorWPhaseOverCurrLv1       =  ((uint8_t)(MCU_Errors3_buf[0] & 0x80u) >> 7u);
-    /*signalName:pfc_MotorOverSpeedLv1, DataOrder:little_endian, startBit: 8, length: 1 */
-    pfc_MotorOverSpeedLv1            =  ((uint8_t)(MCU_Errors3_buf[1] & 0x01u) >> 0u);
+    /*signalName:pfc_mcuUnderVoltLv1, DataOrder:little_endian, startBit: 1, length: 1 */
+    pfc_mcuUnderVoltLv1              =  ((uint8_t)(MCU_Errors3_buf[0] & 0x02u) >> 1u);
+    /*signalName:pfc_mcuOverTempLvl1, DataOrder:little_endian, startBit: 2, length: 1 */
+    pfc_mcuOverTempLvl1              =  ((uint8_t)(MCU_Errors3_buf[0] & 0x04u) >> 2u);
+    /*signalName:pfc_mcuOverTempLv1, DataOrder:little_endian, startBit: 3, length: 1 */
+    pfc_mcuOverTempLv1               =  ((uint8_t)(MCU_Errors3_buf[0] & 0x08u) >> 3u);
+    /*signalName:pfc_mcuDCOverVoltLv1, DataOrder:little_endian, startBit: 4, length: 1 */
+    pfc_mcuDCOverVoltLv1             =  ((uint8_t)(MCU_Errors3_buf[0] & 0x10u) >> 4u);
+    /*signalName:pfc_motUPhaseOverCurrLv1, DataOrder:little_endian, startBit: 5, length: 1 */
+    pfc_motUPhaseOverCurrLv1         =  ((uint8_t)(MCU_Errors3_buf[0] & 0x20u) >> 5u);
+    /*signalName:pfc_motVPhaseOverCurrLv1, DataOrder:little_endian, startBit: 6, length: 1 */
+    pfc_motVPhaseOverCurrLv1         =  ((uint8_t)(MCU_Errors3_buf[0] & 0x40u) >> 6u);
+    /*signalName:pfc_motWPhaseOverCurrLv1, DataOrder:little_endian, startBit: 7, length: 1 */
+    pfc_motWPhaseOverCurrLv1         =  ((uint8_t)(MCU_Errors3_buf[0] & 0x80u) >> 7u);
+    /*signalName:pfc_motOverSpdLv1, DataOrder:little_endian, startBit: 8, length: 1 */
+    pfc_motOverSpdLv1                =  ((uint8_t)(MCU_Errors3_buf[1] & 0x01u) >> 0u);
 }
 
 void Can0Msg_Unpack_0xcff71f0(void)
 {
-    /*signalName:pfc_MCUDCCurrent, DataOrder:little_endian, startBit: 0, length: 16 */
-    pfc_MCUDCCurrent                 =  ((uint16_t)(MCU_States1_buf[0] & 0xFFu) >> 0u);
-    pfc_MCUDCCurrent                 |= ((uint16_t)(MCU_States1_buf[1] & 0xFFu) << 8u);
-    /*signalName:pfc_MCUDCVoltage, DataOrder:little_endian, startBit: 16, length: 16 */
-    pfc_MCUDCVoltage                 =  ((uint16_t)(MCU_States1_buf[2] & 0xFFu) >> 0u);
-    pfc_MCUDCVoltage                 |= ((uint16_t)(MCU_States1_buf[3] & 0xFFu) << 8u);
-    /*signalName:pfc_MCUACCurrent, DataOrder:little_endian, startBit: 32, length: 16 */
-    pfc_MCUACCurrent                 =  ((uint16_t)(MCU_States1_buf[4] & 0xFFu) >> 0u);
-    pfc_MCUACCurrent                 |= ((uint16_t)(MCU_States1_buf[5] & 0xFFu) << 8u);
-    /*signalName:pfc_MotorTemperature, DataOrder:little_endian, startBit: 48, length: 8 */
-    pfc_MotorTemperature             =  ((uint8_t)(MCU_States1_buf[6] & 0xFFu) >> 0u);
-    /*signalName:pfc_MCUTemperature, DataOrder:little_endian, startBit: 56, length: 8 */
-    pfc_MCUTemperature               =  ((uint8_t)(MCU_States1_buf[7] & 0xFFu) >> 0u);
+    /*signalName:pfc_mcuDCCurrent, DataOrder:little_endian, startBit: 0, length: 16 */
+    pfc_mcuDCCurrent                 =  ((uint16_t)(MCU_States1_buf[0] & 0xFFu) >> 0u);
+    pfc_mcuDCCurrent                 |= ((uint16_t)(MCU_States1_buf[1] & 0xFFu) << 8u);
+    /*signalName:pfc_mcuDCVoltage, DataOrder:little_endian, startBit: 16, length: 16 */
+    pfc_mcuDCVoltage                 =  ((uint16_t)(MCU_States1_buf[2] & 0xFFu) >> 0u);
+    pfc_mcuDCVoltage                 |= ((uint16_t)(MCU_States1_buf[3] & 0xFFu) << 8u);
+    /*signalName:pfc_mcuACCurrent, DataOrder:little_endian, startBit: 32, length: 16 */
+    pfc_mcuACCurrent                 =  ((uint16_t)(MCU_States1_buf[4] & 0xFFu) >> 0u);
+    pfc_mcuACCurrent                 |= ((uint16_t)(MCU_States1_buf[5] & 0xFFu) << 8u);
+    /*signalName:pfc_motTemp, DataOrder:little_endian, startBit: 48, length: 8 */
+    pfc_motTemp                      =  ((uint8_t)(MCU_States1_buf[6] & 0xFFu) >> 0u);
+    /*signalName:pfc_mcuTemp, DataOrder:little_endian, startBit: 56, length: 8 */
+    pfc_mcuTemp                      =  ((uint8_t)(MCU_States1_buf[7] & 0xFFu) >> 0u);
 }
 
 void Can0Msg_Unpack_0xcff72f0(void)
 {
-    /*signalName:pfc_MCUPreChargeAllow, DataOrder:little_endian, startBit: 0, length: 2 */
-    pfc_MCUPreChargeAllow            =  ((uint8_t)(MCU_States2_buf[0] & 0x03u) >> 0u);
-    /*signalName:pfc_MCUActiveDisChargeFeedback, DataOrder:little_endian, startBit: 2, length: 2 */
-    pfc_MCUActiveDisChargeFeedback   =  ((uint8_t)(MCU_States2_buf[0] & 0x0Cu) >> 2u);
-    /*signalName:pfc_MCUIGBTEnableFeedback, DataOrder:little_endian, startBit: 4, length: 1 */
-    pfc_MCUIGBTEnableFeedback        =  ((uint8_t)(MCU_States2_buf[0] & 0x10u) >> 4u);
-    /*signalName:pfc_MCUFunctionsIndicate, DataOrder:little_endian, startBit: 5, length: 3 */
-    pfc_MCUFunctionsIndicate         =  ((uint8_t)(MCU_States2_buf[0] & 0xE0u) >> 5u);
-    /*signalName:pfc_MCUWorkMode, DataOrder:little_endian, startBit: 8, length: 4 */
-    pfc_MCUWorkMode                  =  ((uint8_t)(MCU_States2_buf[1] & 0x0Fu) >> 0u);
-    /*signalName:pfc_MCUFaultGrade, DataOrder:little_endian, startBit: 12, length: 4 */
-    pfc_MCUFaultGrade                =  ((uint8_t)(MCU_States2_buf[1] & 0xF0u) >> 4u);
-    /*signalName:pfc_MCUFaultCode, DataOrder:little_endian, startBit: 16, length: 8 */
-    pfc_MCUFaultCode                 =  ((uint8_t)(MCU_States2_buf[2] & 0xFFu) >> 0u);
-    /*signalName:pfc_MCUActualMotorSpeed, DataOrder:little_endian, startBit: 24, length: 16 */
-    pfc_MCUActualMotorSpeed          =  ((uint16_t)(MCU_States2_buf[3] & 0xFFu) >> 0u);
-    pfc_MCUActualMotorSpeed          |= ((uint16_t)(MCU_States2_buf[4] & 0xFFu) << 8u);
-    /*signalName:pfc_MCUActualMotorTorque, DataOrder:little_endian, startBit: 40, length: 16 */
-    pfc_MCUActualMotorTorque         =  ((uint16_t)(MCU_States2_buf[5] & 0xFFu) >> 0u);
-    pfc_MCUActualMotorTorque         |= ((uint16_t)(MCU_States2_buf[6] & 0xFFu) << 8u);
-    /*signalName:pfc_VCULife3ToMCU, DataOrder:little_endian, startBit: 56, length: 4 */
-    pfc_VCULife3ToMCU                =  ((uint8_t)(MCU_States2_buf[7] & 0x0Fu) >> 0u);
+    /*signalName:pfc_mcuPreChgAllow, DataOrder:little_endian, startBit: 0, length: 2 */
+    pfc_mcuPreChgAllow               =  ((uint8_t)(MCU_States2_buf[0] & 0x03u) >> 0u);
+    /*signalName:pfc_mcuActiveDisChgState, DataOrder:little_endian, startBit: 2, length: 2 */
+    pfc_mcuActiveDisChgState         =  ((uint8_t)(MCU_States2_buf[0] & 0x0Cu) >> 2u);
+    /*signalName:pfc_mcuIGBTEnableState, DataOrder:little_endian, startBit: 4, length: 1 */
+    pfc_mcuIGBTEnableState           =  ((uint8_t)(MCU_States2_buf[0] & 0x10u) >> 4u);
+    /*signalName:pfc_mcuFunctionsIndicate, DataOrder:little_endian, startBit: 5, length: 3 */
+    pfc_mcuFunctionsIndicate         =  ((uint8_t)(MCU_States2_buf[0] & 0xE0u) >> 5u);
+    /*signalName:pfc_mcuWorkMode, DataOrder:little_endian, startBit: 8, length: 4 */
+    pfc_mcuWorkMode                  =  ((uint8_t)(MCU_States2_buf[1] & 0x0Fu) >> 0u);
+    /*signalName:pfc_mcuFaultGrade, DataOrder:little_endian, startBit: 12, length: 4 */
+    pfc_mcuFaultGrade                =  ((uint8_t)(MCU_States2_buf[1] & 0xF0u) >> 4u);
+    /*signalName:pfc_mcuFaultCode, DataOrder:little_endian, startBit: 16, length: 8 */
+    pfc_mcuFaultCode                 =  ((uint8_t)(MCU_States2_buf[2] & 0xFFu) >> 0u);
+    /*signalName:pfc_motActualSpeed, DataOrder:little_endian, startBit: 24, length: 16 */
+    pfc_motActualSpeed               =  ((uint16_t)(MCU_States2_buf[3] & 0xFFu) >> 0u);
+    pfc_motActualSpeed               |= ((uint16_t)(MCU_States2_buf[4] & 0xFFu) << 8u);
+    /*signalName:pfc_motActualTorque, DataOrder:little_endian, startBit: 40, length: 16 */
+    pfc_motActualTorque              =  ((uint16_t)(MCU_States2_buf[5] & 0xFFu) >> 0u);
+    pfc_motActualTorque              |= ((uint16_t)(MCU_States2_buf[6] & 0xFFu) << 8u);
+    /*signalName:pfc_mcuLifeToVcu, DataOrder:little_endian, startBit: 56, length: 4 */
+    pfc_mcuLifeToVcu                 =  ((uint8_t)(MCU_States2_buf[7] & 0x0Fu) >> 0u);
 }
 
 void Can0Msg_Unpack_0xcff73f0(void)
 {
-    /*signalName:pfc_MCUMaxDriveTorqueAvailable, DataOrder:little_endian, startBit: 0, length: 16 */
-    pfc_MCUMaxDriveTorqueAvailable   =  ((uint16_t)(MCU_States3_buf[0] & 0xFFu) >> 0u);
-    pfc_MCUMaxDriveTorqueAvailable   |= ((uint16_t)(MCU_States3_buf[1] & 0xFFu) << 8u);
-    /*signalName:pfc_MCUMaxBrakeTorqueAvailable, DataOrder:little_endian, startBit: 16, length: 16 */
-    pfc_MCUMaxBrakeTorqueAvailable   =  ((uint16_t)(MCU_States3_buf[2] & 0xFFu) >> 0u);
-    pfc_MCUMaxBrakeTorqueAvailable   |= ((uint16_t)(MCU_States3_buf[3] & 0xFFu) << 8u);
+    /*signalName:pfc_mcuMaxDriveTorqueAvail, DataOrder:little_endian, startBit: 0, length: 16 */
+    pfc_mcuMaxDriveTorqueAvail       =  ((uint16_t)(MCU_States3_buf[0] & 0xFFu) >> 0u);
+    pfc_mcuMaxDriveTorqueAvail       |= ((uint16_t)(MCU_States3_buf[1] & 0xFFu) << 8u);
+    /*signalName:pfc_MCUMaxBrakeTorqueAvail, DataOrder:little_endian, startBit: 16, length: 16 */
+    pfc_MCUMaxBrakeTorqueAvail       =  ((uint16_t)(MCU_States3_buf[2] & 0xFFu) >> 0u);
+    pfc_MCUMaxBrakeTorqueAvail       |= ((uint16_t)(MCU_States3_buf[3] & 0xFFu) << 8u);
 }
 
 
