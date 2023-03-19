@@ -14,8 +14,8 @@
 #define __IO_VARS__
 
 /* CAN Message: VCU_BattPowerAllow_buf */
-extern uint8_t hld_can0_0xc00fefe_msgReady;                
-extern uint8_t hld_can0_0xc00fefe_msgTxFailed;             
+extern uint8_t hld_can0_0xcff6327_msgReady;                
+extern uint8_t hld_can0_0xcff6327_msgTxFailed;             
 
 /* CAN Message: VCU_MCU_Cmd_buf */
 extern uint8_t hld_can0_0xcff6127_msgReady;                
@@ -113,9 +113,21 @@ extern uint8_t hld_can1_0xcff4127_msgTxFailed;
 extern uint8_t hld_can1_0x18e1f3ef_msgReady;               
 extern uint8_t hld_can1_0x18e1f3ef_msgTxFailed;            
 
+/* CAN Message: VCU13_Meter_VIN_buf */
+extern uint8_t hld_can1_0x18102601_msgReady;               
+extern uint8_t hld_can1_0x18102601_msgTxFailed;            
+
+/* CAN Message: VCU15_MmData_Monitor_buf */
+extern uint8_t hld_can1_0x18102501_msgReady;               
+extern uint8_t hld_can1_0x18102501_msgTxFailed;            
+
 /* CAN Message: VCU_Battery_Control_buf */
 extern uint8_t hld_can1_0x1802f3ef_msgReady;               
 extern uint8_t hld_can1_0x1802f3ef_msgTxFailed;            
+
+/* CAN Message: VCU_Monitor_buf */
+extern uint8_t hld_can1_0x703_msgReady;                    
+extern uint8_t hld_can1_0x703_msgTxFailed;                 
 
 /* CAN Message: uds_tx_buf */
 extern uint8_t hld_can1_0x18102201_msgReady;               
@@ -128,10 +140,10 @@ extern uint8_t hld_can1_0x180b100b_timeout;
 extern uint8_t hld_can1_0x180b100b_msgValid;               
 
 /* CAN Message: B2V_CurrentLimit_buf */
-extern uint8_t hld_can1_0x18c4fef3_received;               
-extern uint8_t hld_can1_0x18c4fef3_msgOverRun;             
-extern uint8_t hld_can1_0x18c4fef3_timeout;                
-extern uint8_t hld_can1_0x18c4fef3_msgValid;               
+extern uint8_t hld_can1_0x18c4eff3_received;               
+extern uint8_t hld_can1_0x18c4eff3_msgOverRun;             
+extern uint8_t hld_can1_0x18c4eff3_timeout;                
+extern uint8_t hld_can1_0x18c4eff3_msgValid;               
 
 /* CAN Message: B2V_RQ_buf */
 extern uint8_t hld_can1_0x1801eff3_received;               
@@ -199,17 +211,35 @@ extern uint8_t hld_can1_0x18ffe742_msgOverRun;
 extern uint8_t hld_can1_0x18ffe742_timeout;                
 extern uint8_t hld_can1_0x18ffe742_msgValid;               
 
-/* CAN Message: LVOP_Status1_buf */
+/* CAN Message: LVOP_Status1_IN_C_CAN_buf */
 extern uint8_t hld_can1_0xcf603a1_received;                
 extern uint8_t hld_can1_0xcf603a1_msgOverRun;              
 extern uint8_t hld_can1_0xcf603a1_timeout;                 
 extern uint8_t hld_can1_0xcf603a1_msgValid;                
 
+/* CAN Message: Monitor_VCU_buf */
+extern uint8_t hld_can1_0x701_received;                    
+extern uint8_t hld_can1_0x701_msgOverRun;                  
+extern uint8_t hld_can1_0x701_timeout;                     
+extern uint8_t hld_can1_0x701_msgValid;                    
+
+/* CAN Message: Monitor_VCU2_buf */
+extern uint8_t hld_can1_0x702_received;                    
+extern uint8_t hld_can1_0x702_msgOverRun;                  
+extern uint8_t hld_can1_0x702_timeout;                     
+extern uint8_t hld_can1_0x702_msgValid;                    
+
 /* CAN Message: PDU_Status1_buf */
-extern uint8_t hld_can1_0xc00fefe_received;                
-extern uint8_t hld_can1_0xc00fefe_msgOverRun;              
-extern uint8_t hld_can1_0xc00fefe_timeout;                 
-extern uint8_t hld_can1_0xc00fefe_msgValid;                
+extern uint8_t hld_can1_0x1802f328_received;               
+extern uint8_t hld_can1_0x1802f328_msgOverRun;             
+extern uint8_t hld_can1_0x1802f328_timeout;                
+extern uint8_t hld_can1_0x1802f328_msgValid;               
+
+/* CAN Message: Tbox_VIN_buf */
+extern uint8_t hld_can1_0x18102101_received;               
+extern uint8_t hld_can1_0x18102101_msgOverRun;             
+extern uint8_t hld_can1_0x18102101_timeout;                
+extern uint8_t hld_can1_0x18102101_msgValid;               
 
 /* CAN Message: uds_rx_buf */
 extern uint8_t hld_can1_0x18102301_received;               
@@ -320,8 +350,10 @@ extern uint8_t EVCU_Status1_buf[8];
 extern uint8_t EVCU_Status2_buf[8];
 extern uint8_t EVCU_Status3_buf[8];
 extern uint8_t V2B_VIN_buf[8];
+extern uint8_t VCU13_Meter_VIN_buf[8];
+extern uint8_t VCU15_MmData_Monitor_buf[8];
 extern uint8_t VCU_Battery_Control_buf[8];
-extern uint8_t uds_tx[8];
+extern uint8_t VCU_Monitor_buf[8];
 extern uint8_t ABS1_VSO_buf[8];
 extern uint8_t B2V_CurrentLimit_buf[8];
 extern uint8_t B2V_RQ_buf[8];
@@ -335,10 +367,11 @@ extern uint8_t DS_AP1_buf[8];
 extern uint8_t EPB_Status_buf[8];
 extern uint8_t IC_Status1_buf[8];
 extern uint8_t IC_Status5_buf[8];
-extern uint8_t LVOP_Status1_buf[8];
+extern uint8_t LVOP_Status1_IN_C_CAN_buf[8];
+extern uint8_t Monitor_VCU_buf[8];
+extern uint8_t Monitor_VCU2_buf[8];
 extern uint8_t PDU_Status1_buf[8];
-extern uint8_t uds_rx[8];
-extern uint8_t uds_rx_func[8];
+extern uint8_t Tbox_VIN_buf[8];
 extern uint8_t LVOP_Control_buf[8];
 extern uint8_t ccp_daq_0[8];
 extern uint8_t ccp_daq_1[8];
@@ -350,12 +383,9 @@ extern uint8_t ccp_daq_6[8];
 extern uint8_t ccp_daq_7[8];
 extern uint8_t ccp_daq_8[8];
 extern uint8_t ccp_rx[8];
-extern uint8_t uds_tx[8];
 extern uint8_t vin_resp_buf[8];
 extern uint8_t LVOP_Status1_buf[8];
 extern uint8_t ccp_tx[8];
-extern uint8_t uds_rx[8];
-extern uint8_t uds_rx_func[8];
 
 /* VCU_BattPowerAllow Message Signals */
 extern uint16_t pfc_PackCurrent;
@@ -480,67 +510,67 @@ extern uint8_t  pfc_HandBrake;
 extern uint8_t  pfc_BrakeSwitch;
 
 /* EVCU3_EACCmd Message Signals */
-extern uint8_t  pfc_PDUAirConditionRelayCmd;
-extern uint8_t  pfc_PDUOilPumpRelayCmd;
-extern uint8_t  pfc_PDUDefrostingRelayCmd;
-extern uint8_t  pfc_PDUSUDCDCRelayCmd;
-extern uint8_t  pfc_PDUSDDCDCEnable;
-extern uint8_t  pfc_PDUAirPumpRelayCmd;
-extern uint8_t  pfc_PDUMainPositiveRelayCmd;
-extern uint8_t  pfc_PDUPreChargeRelayCmd;
-extern uint8_t  pfc_PDUOilPumpEnable;
-extern uint8_t  pfc_PDUPumpPreChargeRelayCmd;
-extern uint8_t  pfc_PDUAirPumpRelayCmd;
-extern uint8_t  pfc_PDUSDDCDCRelayCmd;
-extern uint8_t  pfc_PDUHeaterRelayCmd;
-extern uint8_t  pfc_PDUPTCRelayCmd;
+extern uint8_t  pfc_V10PDUAirConditionRelayCmd;
+extern uint8_t  pfc_V10PDUOilPumpRelayCmd;
+extern uint8_t  pfc_V10PDUDefrostingRelayCmd;
+extern uint8_t  pfc_V10PDUSUDCDCRelayCmd;
+extern uint8_t  pfc_V10PDUSDDCDCEnable;
+extern uint8_t  pfc_V10PDUAirPumpEnable;
+extern uint8_t  pfc_V10PDUMainPositiveRelayCmd;
+extern uint8_t  pfc_V10PDUPreChargeRelayCmd;
+extern uint8_t  pfc_V10PDUOilPumpEnable;
+extern uint8_t  pfc_V10PDUPumpPreChargeRelayCmd;
+extern uint8_t  pfc_V10PDUAirPumpRelayCmd;
+extern uint8_t  pfc_V10PDUSDDCDCRelayCmd;
+extern uint8_t  pfc_V10PDUHeaterRelayCmd;
+extern uint8_t  pfc_V10PDUPTCRelayCmd;
 
 /* EVCU_MCU1 Message Signals */
-extern uint16_t pfc_MCUDCCurrent;
-extern uint16_t pfc_MCUDCVoltage;
-extern uint16_t pfc_MCUACCurrent;
+extern uint16_t pfc_V04MCUDCCurrent;
+extern uint16_t pfc_V04MCUDCVoltage;
+extern uint16_t pfc_V04MCUACCurrent;
 
 /* EVCU_MCU2 Message Signals */
-extern uint16_t pfc_Motor1Speed;
-extern uint8_t  pfc_Motor1Temperature;
-extern uint8_t  pfc_MCU1Temperature;
-extern uint16_t pfc_Motor1Torque;
-extern uint8_t  pfc_Motor1TempAlarm;
-extern uint8_t  pfc_MCU1TempAlarm;
-extern uint8_t  pfc_MotorNumber;
-extern uint8_t  pfc_MotorOrderNumber;
-extern uint8_t  pfc_Motor1State;
-extern uint8_t  pfc_Motor1FunctionIndicate;
+extern uint16_t pfc_V05Motor1Speed;
+extern uint8_t  pfc_V05Motor1Temperature;
+extern uint8_t  pfc_V05MCU1Temperature;
+extern uint16_t pfc_V05Motor1Torque;
+extern uint8_t  pfc_V05Motor1TempAlarm;
+extern uint8_t  pfc_V05MCU1TempAlarm;
+extern uint8_t  pfc_V05MotorNumber;
+extern uint8_t  pfc_V05MotorOrderNumber;
+extern uint8_t  pfc_V05Motor1State;
+extern uint8_t  pfc_V05Motor1FunctionIndicate;
 
 /* EVCU_MCU3 Message Signals */
-extern uint8_t  pfc_MCUFaultCode;
+extern uint8_t  pfc_V06MCUFaultCode;
 
 /* EVCU_Status1 Message Signals */
-extern uint8_t  pfc_AccePedalState;
-extern uint8_t  pfc_RegenTorqueState;
-extern uint8_t  pfc_HandBrake;
-extern uint8_t  pfc_FootBrake;
-extern uint8_t  pfc_AccePedalPosition;
-extern uint8_t  pfc_BrakePedalPosition;
-extern uint8_t  pfc_DriveMode;
-extern uint8_t  pfc_ActualGearDNRState;
-extern uint8_t  pfc_ChargingMode;
-extern uint8_t  pfc_EVMode;
-extern uint8_t  pfc_ReadyState;
-extern uint8_t  pfc_MCUFaultGrade;
-extern uint8_t  pfc_DSFault;
-extern uint8_t  pfc_MCUState;
-extern uint8_t  pfc_VehicleInterLockState;
+extern uint8_t  pfc_V11AccePedalState;
+extern uint8_t  pfc_V11RegenTorqueState;
+extern uint8_t  pfc_V11HandBrake;
+extern uint8_t  pfc_V11FootBrake;
+extern uint8_t  pfc_V11AccePedalPosition;
+extern uint8_t  pfc_V11BrakePedalPosition;
+extern uint8_t  pfc_V11DriveMode;
+extern uint8_t  pfc_V11ActualGearDNRState;
+extern uint8_t  pfc_V11ChargingMode;
+extern uint8_t  pfc_V11EVMode;
+extern uint8_t  pfc_V11ReadyState;
+extern uint8_t  pfc_V11MCUFaultGrade;
+extern uint8_t  pfc_V11DSFault;
+extern uint8_t  pfc_V11MCUState;
+extern uint8_t  pfc_V11VehicleInterLockState;
 
 /* EVCU_Status2 Message Signals */
-extern uint8_t  pfc_VehicleFaultGrade;
-extern uint16_t pfc_VehicleFaultCode;
+extern uint8_t  pfc_V12VehicleFaultGrade;
+extern uint16_t pfc_V12VehicleFaultCode;
 
 /* EVCU_Status3 Message Signals */
-extern uint8_t  pfc_VCUWakeUpState;
-extern uint8_t  pfc_KeyStartRequest;
-extern uint8_t  pfc_MotorCoolFan;
-extern uint8_t  pfc_VCULife;
+extern uint8_t  pfc_V13VCUWakeUpState;
+extern uint8_t  pfc_V13KeyStartRequest;
+extern uint8_t  pfc_V13MotorCoolFan;
+extern uint8_t  pfc_V13VCULife;
 
 /* V2B_VIN Message Signals */
 extern uint8_t  pfc_SerialNumberOfFrameVIN;
@@ -552,33 +582,39 @@ extern uint8_t  pfc_VehicleVINCharacter512;
 extern uint8_t  pfc_VehicleVINCharacter613;
 extern uint8_t  pfc_VehicleVINCharacter714;
 
+/* VCU13_Meter_VIN Message Signals */
+
+/* VCU15_MmData_Monitor Message Signals */
+
 /* VCU_Battery_Control Message Signals */
-extern uint8_t  pfc_VCULife;
-extern uint8_t  pfc_BMSMainNegaRelayCmd;
-extern uint8_t  pfc_BMSDCACRelayCmd;
-extern uint8_t  pfc_BMSSUDCDCRelayCmd;
-extern uint8_t  pfc_BMSSDDCDCRelayCmd;
-extern uint8_t  pfc_VehicleVelocity;
-extern uint8_t  pfc_PDUMainPosiRelayState;
-extern uint8_t  pfc_PDUMainPosiRelayFault;
-extern uint8_t  pfc_BMSMainNegaRelayState;
-extern uint8_t  pfc_BMSMainNegaRelayFault;
-extern uint8_t  pfc_PDUChargePosiRelayState;
-extern uint8_t  pfc_PDUChargePosiRelayFault;
-extern uint8_t  pfc_PDUHeaterPosiRelayState;
-extern uint8_t  pfc_PDUHeaterPosiRelayFault;
-extern uint8_t  pfc_PDUHeaterNegaRelayState;
-extern uint8_t  pfc_PDUHeaterNegaRelayFault;
-extern uint8_t  pfc_PDUSDDCDCRelayState;
-extern uint8_t  pfc_PDUSDDCDCRelayFault;
-extern uint8_t  pfc_PDUOilPumpRelayState;
-extern uint8_t  pfc_PDUOilPumpRelayFault;
-extern uint8_t  pfc_PDUAirPumpRelayState;
-extern uint8_t  pfc_PDUAirPumpRelayFault;
-extern uint8_t  pfc_PDUPreChargeRelayState;
-extern uint8_t  pfc_PDUPreChargeRelayFault;
-extern uint8_t  pfc_PDUDefrostingRelayState;
-extern uint8_t  pfc_PDUDefrostingRelayFault;
+extern uint8_t  pfc_V07VCULife;
+extern uint8_t  pfc_V07BMSMainNegaRelayCmd;
+extern uint8_t  pfc_V07BMSDCACRelayCmd;
+extern uint8_t  pfc_V07BMSSUDCDCRelayCmd;
+extern uint8_t  pfc_V07BMSSDDCDCRelayCmd;
+extern uint8_t  pfc_V07VehicleVelocity;
+extern uint8_t  pfc_V07BMSMainPosiRelayState;
+extern uint8_t  pfc_V07BMSMainPosiRelayFault;
+extern uint8_t  pfc_V07BMSMainNegaRelayState;
+extern uint8_t  pfc_V07BMSMainNegaRelayFault;
+extern uint8_t  pfc_V07BMSChargePosiRelayState;
+extern uint8_t  pfc_V07BMSChargePosiRelayFault;
+extern uint8_t  pfc_V07BMSHeaterPosiRelayState;
+extern uint8_t  pfc_V07BMSHeaterPosiRelayFault;
+extern uint8_t  pfc_V07BMSHeaterNegaRelayState;
+extern uint8_t  pfc_V07BMSHeaterNegaRelayFault;
+extern uint8_t  pfc_V07BMSSDDCDCRelayState;
+extern uint8_t  pfc_V07BMSSDDCDCRelayFault;
+extern uint8_t  pfc_V07BMSOilPumpRelayState;
+extern uint8_t  pfc_V07BMSOilPumpRelayFault;
+extern uint8_t  pfc_V07BMSAirPumpRelayState;
+extern uint8_t  pfc_V07BMSAirPumpRelayFault;
+extern uint8_t  pfc_V07BMSPreChargeRelayState;
+extern uint8_t  pfc_V07BMSPreChargeRelayFault;
+extern uint8_t  pfc_V07BMSDefrostingRelayState;
+extern uint8_t  pfc_V07BMSDefrostingRelayFault;
+
+/* VCU_Monitor Message Signals */
 
 /* uds_tx Message Signals */
 
@@ -680,15 +716,19 @@ extern uint8_t  pfc_AccePedalInterLockState;
 /* IC_Status5 Message Signals */
 extern uint8_t  pfc_MotorInputCoolingWaterTemp;
 
-/* LVOP_Status1 Message Signals */
-extern uint8_t  pfc_LVOilPumpRunningState;
-extern uint8_t  pfc_LVOilPumpInputVoltage;
-extern uint8_t  pfc_LVOilPumpCurrent;
-extern uint8_t  pfc_LVOilPumpMotorSpeed;
-extern uint8_t  pfc_LVOilPumpLife;
-extern uint8_t  pfc_LVOilPumpMCUTemp;
-extern uint8_t  pfc_LVOilPumpFaultCode;
-extern uint8_t  pfc_LVOilPumpFaultGrade;
+/* LVOP_Status1_IN_C_CAN Message Signals */
+extern uint8_t  pfc_oLVOilPumpRunningState;
+extern uint8_t  pfc_oLVOilPumpInputVoltage;
+extern uint8_t  pfc_oLVOilPumpCurrent;
+extern uint8_t  pfc_oLVOilPumpMotorSpeed;
+extern uint8_t  pfc_oLVOilPumpLife;
+extern uint8_t  pfc_oLVOilPumpMCUTemp;
+extern uint8_t  pfc_oLVOilPumpFaultCode;
+extern uint8_t  pfc_oLVOilPumpFaultGrade;
+
+/* Monitor_VCU Message Signals */
+
+/* Monitor_VCU2 Message Signals */
 
 /* PDU_Status1 Message Signals */
 extern uint8_t  pfc_PDUSDDCDCRelayState;
@@ -714,6 +754,8 @@ extern uint8_t  pfc_PDUMainPosiRelayFault;
 extern uint8_t  pfc_PDUPreChargeRelayState;
 extern uint8_t  pfc_PDUPreChargeRelayFault;
 
+/* Tbox_VIN Message Signals */
+
 /* uds_rx Message Signals */
 
 /* uds_rx_func Message Signals */
@@ -721,7 +763,7 @@ extern uint8_t  pfc_PDUPreChargeRelayFault;
 /* LVOP_Control Message Signals */
 extern uint8_t  pfc_LVOilPumpEnable;
 extern uint8_t  pfc_VehicleVelocity;
-extern uint8_t  pfc_LVOilPumpLife;
+extern uint8_t  pfc_toLVOilPumpLife;
 
 /* ccp_daq_0 Message Signals */
 

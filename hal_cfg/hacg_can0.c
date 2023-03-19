@@ -13,7 +13,7 @@
 #include "io_vars.h"
 #include "hacg_can0.h"
 
-void Can0Msg_Pack_0xc00fefe(void)
+void Can0Msg_Pack_0xcff6327(void)
 {
     /*Clear Message Buffer first!*/
     VCU_BattPowerAllow_buf[0] = 0x00u;

@@ -13,7 +13,7 @@
 #ifndef __HACG_CAN0__
 #define __HACG_CAN0__
 
-extern void Can0Msg_Pack_0xc00fefe(void);
+extern void Can0Msg_Pack_0xcff6327(void);
 extern void Can0Msg_Pack_0xcff6127(void);
 extern void Can0Msg_Pack_0xcff6227(void);
 extern void Can0Msg_Unpack_0xcfff3f0(void);

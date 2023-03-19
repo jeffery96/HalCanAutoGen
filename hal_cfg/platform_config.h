@@ -33,7 +33,7 @@ typedef enum __CAN0_MSG_NAME_T__
 }can0msg_name_t;
 
 #define CAN0_MSGS_CONFIG \
-/* CAN0_MSG_VCU_BATTPOWERALLOW */       {  0xc00fefe, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,  ( 200/10 ),   ( 10/10 ),           VCU_BattPowerAllow_buf,                              NULL,                              NULL,                              NULL,                              NULL,      &hld_can0_0xc00fefe_msgReady,   &hld_can0_0xc00fefe_msgTxFailed,           Can0Msg_Pack_0xc00fefe},\
+/* CAN0_MSG_VCU_BATTPOWERALLOW */       {  0xcff6327, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,  ( 200/10 ),   ( 10/10 ),           VCU_BattPowerAllow_buf,                              NULL,                              NULL,                              NULL,                              NULL,      &hld_can0_0xcff6327_msgReady,   &hld_can0_0xcff6327_msgTxFailed,           Can0Msg_Pack_0xcff6327},\
 /* CAN0_MSG_VCU_MCU_CMD */              {  0xcff6127, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,   ( 10/10 ),   ( 10/10 ),                  VCU_MCU_Cmd_buf,                              NULL,                              NULL,                              NULL,                              NULL,      &hld_can0_0xcff6127_msgReady,   &hld_can0_0xcff6127_msgTxFailed,           Can0Msg_Pack_0xcff6127},\
 /* CAN0_MSG_VCU_VEHICLE_STATES */       {  0xcff6227, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,   ( 10/10 ),   ( 10/10 ),           VCU_Vehicle_States_buf,                              NULL,                              NULL,                              NULL,                              NULL,      &hld_can0_0xcff6227_msgReady,   &hld_can0_0xcff6227_msgTxFailed,           Can0Msg_Pack_0xcff6227},\
 /* CAN0_MSG_UDS_TX */                   { 0x18000701,   MSG_TYPE_DIAG,  TRUE,  TRUE, 8, 8, FALSE, FALSE,    ( 0/10 ),   ( 10/10 ),                           uds_tx,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can0_0x18000701_msgReady,  &hld_can0_0x18000701_msgTxFailed,                             NULL},\
@@ -61,7 +61,7 @@ typedef enum __CAN0_MSG_NAME_T__
 /* CAN0_MSG_UDS_RX_FUNC */              {FALSE, 0, 0, NULL},\
 
 /*CAN1 Message List Config:*/
-#define CAN1_MSGS_COUNT (28u)
+#define CAN1_MSGS_COUNT (34u)
 
 typedef enum __CAN1_MSG_NAME_T__
 {
@@ -74,7 +74,10 @@ typedef enum __CAN1_MSG_NAME_T__
     CAN1_MSG_EVCU_STATUS2,
     CAN1_MSG_EVCU_STATUS3,
     CAN1_MSG_V2B_VIN,
+    CAN1_MSG_VCU13_METER_VIN,
+    CAN1_MSG_VCU15_MMDATA_MONITOR,
     CAN1_MSG_VCU_BATTERY_CONTROL,
+    CAN1_MSG_VCU_MONITOR,
     CAN1_MSG_UDS_TX,
     CAN1_MSG_ABS1_VSO,
     CAN1_MSG_B2V_CURRENTLIMIT,
@@ -89,8 +92,11 @@ typedef enum __CAN1_MSG_NAME_T__
     CAN1_MSG_EPB_STATUS,
     CAN1_MSG_IC_STATUS1,
     CAN1_MSG_IC_STATUS5,
-    CAN1_MSG_LVOP_STATUS1,
+    CAN1_MSG_LVOP_STATUS1_IN_C_CAN,
+    CAN1_MSG_MONITOR_VCU,
+    CAN1_MSG_MONITOR_VCU2,
     CAN1_MSG_PDU_STATUS1,
+    CAN1_MSG_TBOX_VIN,
     CAN1_MSG_UDS_RX,
     CAN1_MSG_UDS_RX_FUNC,
 }can1msg_name_t;
@@ -105,10 +111,13 @@ typedef enum __CAN1_MSG_NAME_T__
 /* CAN1_MSG_EVCU_STATUS2 */             { 0x18ff4027, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,  ( 500/10 ),   ( 10/10 ),                 EVCU_Status2_buf,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x18ff4027_msgReady,  &hld_can1_0x18ff4027_msgTxFailed,          Can1Msg_Pack_0x18ff4027},\
 /* CAN1_MSG_EVCU_STATUS3 */             {  0xcff4127, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,   ( 50/10 ),   ( 10/10 ),                 EVCU_Status3_buf,                              NULL,                              NULL,                              NULL,                              NULL,      &hld_can1_0xcff4127_msgReady,   &hld_can1_0xcff4127_msgTxFailed,           Can1Msg_Pack_0xcff4127},\
 /* CAN1_MSG_V2B_VIN */                  { 0x18e1f3ef, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE, ( 1000/10 ),   ( 10/10 ),                      V2B_VIN_buf,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x18e1f3ef_msgReady,  &hld_can1_0x18e1f3ef_msgTxFailed,          Can1Msg_Pack_0x18e1f3ef},\
+/* CAN1_MSG_VCU13_METER_VIN */          { 0x18102601, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,    ( 0/10 ),   ( 10/10 ),              VCU13_Meter_VIN_buf,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x18102601_msgReady,  &hld_can1_0x18102601_msgTxFailed,          Can1Msg_Pack_0x18102601},\
+/* CAN1_MSG_VCU15_MMDATA_MONITOR */     { 0x18102501, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,    ( 0/10 ),   ( 10/10 ),         VCU15_MmData_Monitor_buf,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x18102501_msgReady,  &hld_can1_0x18102501_msgTxFailed,          Can1Msg_Pack_0x18102501},\
 /* CAN1_MSG_VCU_BATTERY_CONTROL */      { 0x1802f3ef, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,  ( 100/10 ),   ( 10/10 ),          VCU_Battery_Control_buf,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x1802f3ef_msgReady,  &hld_can1_0x1802f3ef_msgTxFailed,          Can1Msg_Pack_0x1802f3ef},\
+/* CAN1_MSG_VCU_MONITOR */              {      0x703, MSG_TYPE_NORMAL,  TRUE,  TRUE, 8, 8, FALSE, FALSE,    ( 0/10 ),   ( 10/10 ),                  VCU_Monitor_buf,                              NULL,                              NULL,                              NULL,                              NULL,          &hld_can1_0x703_msgReady,       &hld_can1_0x703_msgTxFailed,               Can1Msg_Pack_0x703},\
 /* CAN1_MSG_UDS_TX */                   { 0x18102201,   MSG_TYPE_DIAG,  TRUE,  TRUE, 8, 8, FALSE, FALSE,    ( 0/10 ),   ( 10/10 ),                           uds_tx,                              NULL,                              NULL,                              NULL,                              NULL,     &hld_can1_0x18102201_msgReady,  &hld_can1_0x18102201_msgTxFailed,                             NULL},\
 /* CAN1_MSG_ABS1_VSO */                 { 0x180b100b, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,   ( 20/10 ),   (  0/10 ),                     ABS1_VSO_buf,     &hld_can1_0x180b100b_received,   &hld_can1_0x180b100b_msgOverRun,      &hld_can1_0x180b100b_timeout,     &hld_can1_0x180b100b_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x180b100b},\
-/* CAN1_MSG_B2V_CURRENTLIMIT */         { 0x18c4fef3, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 200/10 ),   (  0/10 ),             B2V_CurrentLimit_buf,     &hld_can1_0x18c4fef3_received,   &hld_can1_0x18c4fef3_msgOverRun,      &hld_can1_0x18c4fef3_timeout,     &hld_can1_0x18c4fef3_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18c4fef3},\
+/* CAN1_MSG_B2V_CURRENTLIMIT */         { 0x18c4eff3, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 200/10 ),   (  0/10 ),             B2V_CurrentLimit_buf,     &hld_can1_0x18c4eff3_received,   &hld_can1_0x18c4eff3_msgOverRun,      &hld_can1_0x18c4eff3_timeout,     &hld_can1_0x18c4eff3_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18c4eff3},\
 /* CAN1_MSG_B2V_RQ */                   { 0x1801eff3, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 500/10 ),   (  0/10 ),                       B2V_RQ_buf,     &hld_can1_0x1801eff3_received,   &hld_can1_0x1801eff3_msgOverRun,      &hld_can1_0x1801eff3_timeout,     &hld_can1_0x1801eff3_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x1801eff3},\
 /* CAN1_MSG_B2V_ST1 */                  { 0x1883eff3, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 100/10 ),   (  0/10 ),                      B2V_ST1_buf,     &hld_can1_0x1883eff3_received,   &hld_can1_0x1883eff3_msgOverRun,      &hld_can1_0x1883eff3_timeout,     &hld_can1_0x1883eff3_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x1883eff3},\
 /* CAN1_MSG_B2V_ST2 */                  { 0x1884eff3, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 200/10 ),   (  0/10 ),                      B2V_ST2_buf,     &hld_can1_0x1884eff3_received,   &hld_can1_0x1884eff3_msgOverRun,      &hld_can1_0x1884eff3_timeout,     &hld_can1_0x1884eff3_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x1884eff3},\
@@ -120,8 +129,11 @@ typedef enum __CAN1_MSG_NAME_T__
 /* CAN1_MSG_EPB_STATUS */               { 0x18fe1264, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 100/10 ),   (  0/10 ),                   EPB_Status_buf,     &hld_can1_0x18fe1264_received,   &hld_can1_0x18fe1264_msgOverRun,      &hld_can1_0x18fe1264_timeout,     &hld_can1_0x18fe1264_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18fe1264},\
 /* CAN1_MSG_IC_STATUS1 */               { 0x18ffe342, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 100/10 ),   (  0/10 ),                   IC_Status1_buf,     &hld_can1_0x18ffe342_received,   &hld_can1_0x18ffe342_msgOverRun,      &hld_can1_0x18ffe342_timeout,     &hld_can1_0x18ffe342_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18ffe342},\
 /* CAN1_MSG_IC_STATUS5 */               { 0x18ffe742, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 500/10 ),   (  0/10 ),                   IC_Status5_buf,     &hld_can1_0x18ffe742_received,   &hld_can1_0x18ffe742_msgOverRun,      &hld_can1_0x18ffe742_timeout,     &hld_can1_0x18ffe742_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18ffe742},\
-/* CAN1_MSG_LVOP_STATUS1 */             {  0xcf603a1, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 200/10 ),   (  0/10 ),                 LVOP_Status1_buf,      &hld_can1_0xcf603a1_received,    &hld_can1_0xcf603a1_msgOverRun,       &hld_can1_0xcf603a1_timeout,      &hld_can1_0xcf603a1_msgValid,                              NULL,                              NULL,         Can1Msg_Unpack_0xcf603a1},\
-/* CAN1_MSG_PDU_STATUS1 */              {  0xc00fefe, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 100/10 ),   (  0/10 ),                  PDU_Status1_buf,      &hld_can1_0xc00fefe_received,    &hld_can1_0xc00fefe_msgOverRun,       &hld_can1_0xc00fefe_timeout,      &hld_can1_0xc00fefe_msgValid,                              NULL,                              NULL,         Can1Msg_Unpack_0xc00fefe},\
+/* CAN1_MSG_LVOP_STATUS1_IN_C_CAN */    {  0xcf603a1, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 200/10 ),   (  0/10 ),        LVOP_Status1_IN_C_CAN_buf,      &hld_can1_0xcf603a1_received,    &hld_can1_0xcf603a1_msgOverRun,       &hld_can1_0xcf603a1_timeout,      &hld_can1_0xcf603a1_msgValid,                              NULL,                              NULL,         Can1Msg_Unpack_0xcf603a1},\
+/* CAN1_MSG_MONITOR_VCU */              {      0x701, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,    ( 0/10 ),   (  0/10 ),                  Monitor_VCU_buf,          &hld_can1_0x701_received,        &hld_can1_0x701_msgOverRun,           &hld_can1_0x701_timeout,          &hld_can1_0x701_msgValid,                              NULL,                              NULL,             Can1Msg_Unpack_0x701},\
+/* CAN1_MSG_MONITOR_VCU2 */             {      0x702, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,    ( 0/10 ),   (  0/10 ),                 Monitor_VCU2_buf,          &hld_can1_0x702_received,        &hld_can1_0x702_msgOverRun,           &hld_can1_0x702_timeout,          &hld_can1_0x702_msgValid,                              NULL,                              NULL,             Can1Msg_Unpack_0x702},\
+/* CAN1_MSG_PDU_STATUS1 */              { 0x1802f328, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,  ( 100/10 ),   (  0/10 ),                  PDU_Status1_buf,     &hld_can1_0x1802f328_received,   &hld_can1_0x1802f328_msgOverRun,      &hld_can1_0x1802f328_timeout,     &hld_can1_0x1802f328_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x1802f328},\
+/* CAN1_MSG_TBOX_VIN */                 { 0x18102101, MSG_TYPE_NORMAL,  TRUE, FALSE, 8, 8, FALSE, FALSE,    ( 0/10 ),   (  0/10 ),                     Tbox_VIN_buf,     &hld_can1_0x18102101_received,   &hld_can1_0x18102101_msgOverRun,      &hld_can1_0x18102101_timeout,     &hld_can1_0x18102101_msgValid,                              NULL,                              NULL,        Can1Msg_Unpack_0x18102101},\
 /* CAN1_MSG_UDS_RX */                   { 0x18102301,   MSG_TYPE_DIAG,  TRUE, FALSE, 8, 8, FALSE, FALSE,    ( 0/10 ),   (  0/10 ),                           uds_rx,     &hld_can1_0x18102301_received,   &hld_can1_0x18102301_msgOverRun,      &hld_can1_0x18102301_timeout,     &hld_can1_0x18102301_msgValid,                              NULL,                              NULL,                             NULL},\
 /* CAN1_MSG_UDS_RX_FUNC */              { 0x18102401,   MSG_TYPE_DIAG,  TRUE, FALSE, 8, 8, FALSE, FALSE,    ( 0/10 ),   (  0/10 ),                      uds_rx_func,     &hld_can1_0x18102401_received,   &hld_can1_0x18102401_msgOverRun,      &hld_can1_0x18102401_timeout,     &hld_can1_0x18102401_msgValid,                              NULL,                              NULL,                             NULL},\
 
@@ -135,7 +147,10 @@ typedef enum __CAN1_MSG_NAME_T__
 /* CAN1_MSG_EVCU_STATUS2 */             {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_EVCU_STATUS3 */             {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_V2B_VIN */                  {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_VCU13_METER_VIN */          {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_VCU15_MMDATA_MONITOR */     {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_VCU_BATTERY_CONTROL */      {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_VCU_MONITOR */              {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_UDS_TX */                   {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_ABS1_VSO */                 {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_B2V_CURRENTLIMIT */         {FALSE, 0, 0, NULL},\
@@ -150,8 +165,11 @@ typedef enum __CAN1_MSG_NAME_T__
 /* CAN1_MSG_EPB_STATUS */               {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_IC_STATUS1 */               {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_IC_STATUS5 */               {FALSE, 0, 0, NULL},\
-/* CAN1_MSG_LVOP_STATUS1 */             {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_LVOP_STATUS1_IN_C_CAN */    {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_MONITOR_VCU */              {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_MONITOR_VCU2 */             {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_PDU_STATUS1 */              {FALSE, 0, 0, NULL},\
+/* CAN1_MSG_TBOX_VIN */                 {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_UDS_RX */                   {FALSE, 0, 0, NULL},\
 /* CAN1_MSG_UDS_RX_FUNC */              {FALSE, 0, 0, NULL},\
 

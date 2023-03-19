@@ -29,8 +29,8 @@ void Can2Msg_Pack_0x18f10527(void)
     LVOP_Control_buf[0] |= ((uint8_t)(pfc_LVOilPumpEnable << 0u) & 0xFFu);
     /*signalName:pfc_VehicleVelocity, DataOrder:little_endian, startBit: 48, length: 8 */
     LVOP_Control_buf[6] |= ((uint8_t)(pfc_VehicleVelocity << 0u) & 0xFFu);
-    /*signalName:pfc_LVOilPumpLife, DataOrder:little_endian, startBit: 56, length: 8 */
-    LVOP_Control_buf[7] |= ((uint8_t)(pfc_LVOilPumpLife << 0u) & 0xFFu);
+    /*signalName:pfc_toLVOilPumpLife, DataOrder:little_endian, startBit: 56, length: 8 */
+    LVOP_Control_buf[7] |= ((uint8_t)(pfc_toLVOilPumpLife << 0u) & 0xFFu);
 }
 
 void Can2Msg_Pack_0x18daf103(void)

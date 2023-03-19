@@ -77,7 +77,7 @@ BO_ 2364933025 LVOP_Status1: 8 Others
  SG_ LVOPStatus1_0B_LVOilPumpRunningS : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 2565932327 LVOP_Control: 8 VCU
- SG_ LVOP_Control_7B_LVOilPumpLife : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LVOP_Control_7B_toLVOilPumpLife : 56|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOP_Control_6B_VehicleVelocity : 48|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ LVOP_Control_0B_LVOilPumpEnable : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
@@ -150,7 +150,7 @@ BA_DEF_DEF_  "BusType" "CAN";
 BA_DEF_DEF_  "ProtocolType" "J1939";
 BA_DEF_DEF_  "VFrameFormat" "J1939PG";
 BA_DEF_DEF_  "SystemSignalLongSymbol" "";
-BA_ "DBName" "WSD5060HR1EV_C_CAN_v10";
+BA_ "DBName" "WSD5060HR1EV_B_CAN_v10";
 BA_ "NmStationAddress" BU_ Others 0;
 BA_ "NmStationAddress" BU_ VCU 0;
 BA_ "VFrameFormat" BO_ 2564485379 3;

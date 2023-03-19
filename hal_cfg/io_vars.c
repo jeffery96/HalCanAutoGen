@@ -13,8 +13,8 @@
 #include "io_vars.h"
 
 /* CAN Message: VCU_BattPowerAllow_buf */
-uint8_t  hld_can0_0xc00fefe_msgReady      = 0u;
-uint8_t  hld_can0_0xc00fefe_msgTxFailed   = 0u;
+uint8_t  hld_can0_0xcff6327_msgReady      = 0u;
+uint8_t  hld_can0_0xcff6327_msgTxFailed   = 0u;
 
 /* CAN Message: VCU_MCU_Cmd_buf */
 uint8_t  hld_can0_0xcff6127_msgReady      = 0u;
@@ -112,9 +112,21 @@ uint8_t  hld_can1_0xcff4127_msgTxFailed   = 0u;
 uint8_t  hld_can1_0x18e1f3ef_msgReady     = 0u;
 uint8_t  hld_can1_0x18e1f3ef_msgTxFailed  = 0u;
 
+/* CAN Message: VCU13_Meter_VIN_buf */
+uint8_t  hld_can1_0x18102601_msgReady     = 0u;
+uint8_t  hld_can1_0x18102601_msgTxFailed  = 0u;
+
+/* CAN Message: VCU15_MmData_Monitor_buf */
+uint8_t  hld_can1_0x18102501_msgReady     = 0u;
+uint8_t  hld_can1_0x18102501_msgTxFailed  = 0u;
+
 /* CAN Message: VCU_Battery_Control_buf */
 uint8_t  hld_can1_0x1802f3ef_msgReady     = 0u;
 uint8_t  hld_can1_0x1802f3ef_msgTxFailed  = 0u;
+
+/* CAN Message: VCU_Monitor_buf */
+uint8_t  hld_can1_0x703_msgReady          = 0u;
+uint8_t  hld_can1_0x703_msgTxFailed       = 0u;
 
 /* CAN Message: uds_tx_buf */
 uint8_t  hld_can1_0x18102201_msgReady     = 0u;
@@ -127,10 +139,10 @@ uint8_t  hld_can1_0x180b100b_timeout      = 0u;
 uint8_t  hld_can1_0x180b100b_msgValid     = 0u;
 
 /* CAN Message: B2V_CurrentLimit_buf */
-uint8_t  hld_can1_0x18c4fef3_received     = 0u;
-uint8_t  hld_can1_0x18c4fef3_msgOverRun   = 0u;
-uint8_t  hld_can1_0x18c4fef3_timeout      = 0u;
-uint8_t  hld_can1_0x18c4fef3_msgValid     = 0u;
+uint8_t  hld_can1_0x18c4eff3_received     = 0u;
+uint8_t  hld_can1_0x18c4eff3_msgOverRun   = 0u;
+uint8_t  hld_can1_0x18c4eff3_timeout      = 0u;
+uint8_t  hld_can1_0x18c4eff3_msgValid     = 0u;
 
 /* CAN Message: B2V_RQ_buf */
 uint8_t  hld_can1_0x1801eff3_received     = 0u;
@@ -198,17 +210,35 @@ uint8_t  hld_can1_0x18ffe742_msgOverRun   = 0u;
 uint8_t  hld_can1_0x18ffe742_timeout      = 0u;
 uint8_t  hld_can1_0x18ffe742_msgValid     = 0u;
 
-/* CAN Message: LVOP_Status1_buf */
+/* CAN Message: LVOP_Status1_IN_C_CAN_buf */
 uint8_t  hld_can1_0xcf603a1_received      = 0u;
 uint8_t  hld_can1_0xcf603a1_msgOverRun    = 0u;
 uint8_t  hld_can1_0xcf603a1_timeout       = 0u;
 uint8_t  hld_can1_0xcf603a1_msgValid      = 0u;
 
+/* CAN Message: Monitor_VCU_buf */
+uint8_t  hld_can1_0x701_received          = 0u;
+uint8_t  hld_can1_0x701_msgOverRun        = 0u;
+uint8_t  hld_can1_0x701_timeout           = 0u;
+uint8_t  hld_can1_0x701_msgValid          = 0u;
+
+/* CAN Message: Monitor_VCU2_buf */
+uint8_t  hld_can1_0x702_received          = 0u;
+uint8_t  hld_can1_0x702_msgOverRun        = 0u;
+uint8_t  hld_can1_0x702_timeout           = 0u;
+uint8_t  hld_can1_0x702_msgValid          = 0u;
+
 /* CAN Message: PDU_Status1_buf */
-uint8_t  hld_can1_0xc00fefe_received      = 0u;
-uint8_t  hld_can1_0xc00fefe_msgOverRun    = 0u;
-uint8_t  hld_can1_0xc00fefe_timeout       = 0u;
-uint8_t  hld_can1_0xc00fefe_msgValid      = 0u;
+uint8_t  hld_can1_0x1802f328_received     = 0u;
+uint8_t  hld_can1_0x1802f328_msgOverRun   = 0u;
+uint8_t  hld_can1_0x1802f328_timeout      = 0u;
+uint8_t  hld_can1_0x1802f328_msgValid     = 0u;
+
+/* CAN Message: Tbox_VIN_buf */
+uint8_t  hld_can1_0x18102101_received     = 0u;
+uint8_t  hld_can1_0x18102101_msgOverRun   = 0u;
+uint8_t  hld_can1_0x18102101_timeout      = 0u;
+uint8_t  hld_can1_0x18102101_msgValid     = 0u;
 
 /* CAN Message: uds_rx_buf */
 uint8_t  hld_can1_0x18102301_received     = 0u;
@@ -382,11 +412,19 @@ uint8_t V2B_VIN_buf[8] =
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
+uint8_t VCU13_Meter_VIN_buf[8] = 
+{
+    0, 0, 0, 0, 0, 0, 0, 0
+};
+uint8_t VCU15_MmData_Monitor_buf[8] = 
+{
+    0, 0, 0, 0, 0, 0, 0, 0
+};
 uint8_t VCU_Battery_Control_buf[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
-uint8_t uds_tx[8] = 
+uint8_t VCU_Monitor_buf[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
@@ -442,7 +480,15 @@ uint8_t IC_Status5_buf[8] =
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
-uint8_t LVOP_Status1_buf[8] = 
+uint8_t LVOP_Status1_IN_C_CAN_buf[8] = 
+{
+    0, 0, 0, 0, 0, 0, 0, 0
+};
+uint8_t Monitor_VCU_buf[8] = 
+{
+    0, 0, 0, 0, 0, 0, 0, 0
+};
+uint8_t Monitor_VCU2_buf[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
@@ -450,11 +496,7 @@ uint8_t PDU_Status1_buf[8] =
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
-uint8_t uds_rx[8] = 
-{
-    0, 0, 0, 0, 0, 0, 0, 0
-};
-uint8_t uds_rx_func[8] = 
+uint8_t Tbox_VIN_buf[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
@@ -502,10 +544,6 @@ uint8_t ccp_rx[8] =
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
-uint8_t uds_tx[8] = 
-{
-    0, 0, 0, 0, 0, 0, 0, 0
-};
 uint8_t vin_resp_buf[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
@@ -515,14 +553,6 @@ uint8_t LVOP_Status1_buf[8] =
     0, 0, 0, 0, 0, 0, 0, 0
 };
 uint8_t ccp_tx[8] = 
-{
-    0, 0, 0, 0, 0, 0, 0, 0
-};
-uint8_t uds_rx[8] = 
-{
-    0, 0, 0, 0, 0, 0, 0, 0
-};
-uint8_t uds_rx_func[8] = 
 {
     0, 0, 0, 0, 0, 0, 0, 0
 };
@@ -650,67 +680,67 @@ uint8_t  pfc_HandBrake                    =     0x0u;
 uint8_t  pfc_BrakeSwitch                  =     0x0u;
 
 /* EVCU3_EACCmd Message Signals */
-uint8_t  pfc_PDUAirConditionRelayCmd      =     0x0u;
-uint8_t  pfc_PDUOilPumpRelayCmd           =     0x0u;
-uint8_t  pfc_PDUDefrostingRelayCmd        =     0x0u;
-uint8_t  pfc_PDUSUDCDCRelayCmd            =     0x0u;
-uint8_t  pfc_PDUSDDCDCEnable              =     0x0u;
-uint8_t  pfc_PDUAirPumpRelayCmd           =     0x0u;
-uint8_t  pfc_PDUMainPositiveRelayCmd      =     0x0u;
-uint8_t  pfc_PDUPreChargeRelayCmd         =     0x0u;
-uint8_t  pfc_PDUOilPumpEnable             =     0x0u;
-uint8_t  pfc_PDUPumpPreChargeRelayCmd     =     0x0u;
-uint8_t  pfc_PDUAirPumpRelayCmd           =     0x0u;
-uint8_t  pfc_PDUSDDCDCRelayCmd            =     0x0u;
-uint8_t  pfc_PDUHeaterRelayCmd            =     0x0u;
-uint8_t  pfc_PDUPTCRelayCmd               =     0x0u;
+uint8_t  pfc_V10PDUAirConditionRelayCmd   =     0x0u;
+uint8_t  pfc_V10PDUOilPumpRelayCmd        =     0x0u;
+uint8_t  pfc_V10PDUDefrostingRelayCmd     =     0x0u;
+uint8_t  pfc_V10PDUSUDCDCRelayCmd         =     0x0u;
+uint8_t  pfc_V10PDUSDDCDCEnable           =     0x0u;
+uint8_t  pfc_V10PDUAirPumpEnable          =     0x0u;
+uint8_t  pfc_V10PDUMainPositiveRelayCmd   =     0x0u;
+uint8_t  pfc_V10PDUPreChargeRelayCmd      =     0x0u;
+uint8_t  pfc_V10PDUOilPumpEnable          =     0x0u;
+uint8_t  pfc_V10PDUPumpPreChargeRelayCmd  =     0x0u;
+uint8_t  pfc_V10PDUAirPumpRelayCmd        =     0x0u;
+uint8_t  pfc_V10PDUSDDCDCRelayCmd         =     0x0u;
+uint8_t  pfc_V10PDUHeaterRelayCmd         =     0x0u;
+uint8_t  pfc_V10PDUPTCRelayCmd            =     0x0u;
 
 /* EVCU_MCU1 Message Signals */
-uint16_t pfc_MCUDCCurrent                 =  0x2710u;
-uint16_t pfc_MCUDCVoltage                 =     0x0u;
-uint16_t pfc_MCUACCurrent                 =     0x0u;
+uint16_t pfc_V04MCUDCCurrent              =  0x2710u;
+uint16_t pfc_V04MCUDCVoltage              =     0x0u;
+uint16_t pfc_V04MCUACCurrent              =     0x0u;
 
 /* EVCU_MCU2 Message Signals */
-uint16_t pfc_Motor1Speed                  =  0x3a98u;
-uint8_t  pfc_Motor1Temperature            =    0x28u;
-uint8_t  pfc_MCU1Temperature              =    0x28u;
-uint16_t pfc_Motor1Torque                 =  0x7d00u;
-uint8_t  pfc_Motor1TempAlarm              =     0x0u;
-uint8_t  pfc_MCU1TempAlarm                =     0x0u;
-uint8_t  pfc_MotorNumber                  =     0x0u;
-uint8_t  pfc_MotorOrderNumber             =     0x0u;
-uint8_t  pfc_Motor1State                  =     0x0u;
-uint8_t  pfc_Motor1FunctionIndicate       =     0x0u;
+uint16_t pfc_V05Motor1Speed               =  0x3a98u;
+uint8_t  pfc_V05Motor1Temperature         =    0x28u;
+uint8_t  pfc_V05MCU1Temperature           =    0x28u;
+uint16_t pfc_V05Motor1Torque              =  0x7d00u;
+uint8_t  pfc_V05Motor1TempAlarm           =     0x0u;
+uint8_t  pfc_V05MCU1TempAlarm             =     0x0u;
+uint8_t  pfc_V05MotorNumber               =     0x0u;
+uint8_t  pfc_V05MotorOrderNumber          =     0x0u;
+uint8_t  pfc_V05Motor1State               =     0x0u;
+uint8_t  pfc_V05Motor1FunctionIndicate    =     0x0u;
 
 /* EVCU_MCU3 Message Signals */
-uint8_t  pfc_MCUFaultCode                 =     0x0u;
+uint8_t  pfc_V06MCUFaultCode              =     0x0u;
 
 /* EVCU_Status1 Message Signals */
-uint8_t  pfc_AccePedalState               =     0x0u;
-uint8_t  pfc_RegenTorqueState             =     0x0u;
-uint8_t  pfc_HandBrake                    =     0x0u;
-uint8_t  pfc_FootBrake                    =     0x0u;
-uint8_t  pfc_AccePedalPosition            =     0x0u;
-uint8_t  pfc_BrakePedalPosition           =     0x0u;
-uint8_t  pfc_DriveMode                    =     0x0u;
-uint8_t  pfc_ActualGearDNRState           =     0x0u;
-uint8_t  pfc_ChargingMode                 =     0x0u;
-uint8_t  pfc_EVMode                       =     0x0u;
-uint8_t  pfc_ReadyState                   =     0x0u;
-uint8_t  pfc_MCUFaultGrade                =     0x0u;
-uint8_t  pfc_DSFault                      =     0x0u;
-uint8_t  pfc_MCUState                     =     0x0u;
-uint8_t  pfc_VehicleInterLockState        =     0x0u;
+uint8_t  pfc_V11AccePedalState            =     0x0u;
+uint8_t  pfc_V11RegenTorqueState          =     0x0u;
+uint8_t  pfc_V11HandBrake                 =     0x0u;
+uint8_t  pfc_V11FootBrake                 =     0x0u;
+uint8_t  pfc_V11AccePedalPosition         =     0x0u;
+uint8_t  pfc_V11BrakePedalPosition        =     0x0u;
+uint8_t  pfc_V11DriveMode                 =     0x0u;
+uint8_t  pfc_V11ActualGearDNRState        =     0x0u;
+uint8_t  pfc_V11ChargingMode              =     0x0u;
+uint8_t  pfc_V11EVMode                    =     0x0u;
+uint8_t  pfc_V11ReadyState                =     0x0u;
+uint8_t  pfc_V11MCUFaultGrade             =     0x0u;
+uint8_t  pfc_V11DSFault                   =     0x0u;
+uint8_t  pfc_V11MCUState                  =     0x0u;
+uint8_t  pfc_V11VehicleInterLockState     =     0x0u;
 
 /* EVCU_Status2 Message Signals */
-uint8_t  pfc_VehicleFaultGrade            =     0x0u;
-uint16_t pfc_VehicleFaultCode             =     0x0u;
+uint8_t  pfc_V12VehicleFaultGrade         =     0x0u;
+uint16_t pfc_V12VehicleFaultCode          =     0x0u;
 
 /* EVCU_Status3 Message Signals */
-uint8_t  pfc_VCUWakeUpState               =     0x0u;
-uint8_t  pfc_KeyStartRequest              =     0x0u;
-uint8_t  pfc_MotorCoolFan                 =     0x0u;
-uint8_t  pfc_VCULife                      =     0x0u;
+uint8_t  pfc_V13VCUWakeUpState            =     0x0u;
+uint8_t  pfc_V13KeyStartRequest           =     0x0u;
+uint8_t  pfc_V13MotorCoolFan              =     0x0u;
+uint8_t  pfc_V13VCULife                   =     0x0u;
 
 /* V2B_VIN Message Signals */
 uint8_t  pfc_SerialNumberOfFrameVIN       =     0x0u;
@@ -722,33 +752,39 @@ uint8_t  pfc_VehicleVINCharacter512       =     0x0u;
 uint8_t  pfc_VehicleVINCharacter613       =     0x0u;
 uint8_t  pfc_VehicleVINCharacter714       =     0x0u;
 
+/* VCU13_Meter_VIN Message Signals */
+
+/* VCU15_MmData_Monitor Message Signals */
+
 /* VCU_Battery_Control Message Signals */
-uint8_t  pfc_VCULife                      =     0x0u;
-uint8_t  pfc_BMSMainNegaRelayCmd          =     0x0u;
-uint8_t  pfc_BMSDCACRelayCmd              =     0x0u;
-uint8_t  pfc_BMSSUDCDCRelayCmd            =     0x0u;
-uint8_t  pfc_BMSSDDCDCRelayCmd            =     0x0u;
-uint8_t  pfc_VehicleVelocity              =     0x0u;
-uint8_t  pfc_PDUMainPosiRelayState        =     0x0u;
-uint8_t  pfc_PDUMainPosiRelayFault        =     0x0u;
-uint8_t  pfc_BMSMainNegaRelayState        =     0x0u;
-uint8_t  pfc_BMSMainNegaRelayFault        =     0x0u;
-uint8_t  pfc_PDUChargePosiRelayState      =     0x0u;
-uint8_t  pfc_PDUChargePosiRelayFault      =     0x0u;
-uint8_t  pfc_PDUHeaterPosiRelayState      =     0x0u;
-uint8_t  pfc_PDUHeaterPosiRelayFault      =     0x0u;
-uint8_t  pfc_PDUHeaterNegaRelayState      =     0x0u;
-uint8_t  pfc_PDUHeaterNegaRelayFault      =     0x0u;
-uint8_t  pfc_PDUSDDCDCRelayState          =     0x0u;
-uint8_t  pfc_PDUSDDCDCRelayFault          =     0x0u;
-uint8_t  pfc_PDUOilPumpRelayState         =     0x0u;
-uint8_t  pfc_PDUOilPumpRelayFault         =     0x0u;
-uint8_t  pfc_PDUAirPumpRelayState         =     0x0u;
-uint8_t  pfc_PDUAirPumpRelayFault         =     0x0u;
-uint8_t  pfc_PDUPreChargeRelayState       =     0x0u;
-uint8_t  pfc_PDUPreChargeRelayFault       =     0x0u;
-uint8_t  pfc_PDUDefrostingRelayState      =     0x0u;
-uint8_t  pfc_PDUDefrostingRelayFault      =     0x0u;
+uint8_t  pfc_V07VCULife                   =     0x0u;
+uint8_t  pfc_V07BMSMainNegaRelayCmd       =     0x0u;
+uint8_t  pfc_V07BMSDCACRelayCmd           =     0x0u;
+uint8_t  pfc_V07BMSSUDCDCRelayCmd         =     0x0u;
+uint8_t  pfc_V07BMSSDDCDCRelayCmd         =     0x0u;
+uint8_t  pfc_V07VehicleVelocity           =     0x0u;
+uint8_t  pfc_V07BMSMainPosiRelayState     =     0x0u;
+uint8_t  pfc_V07BMSMainPosiRelayFault     =     0x0u;
+uint8_t  pfc_V07BMSMainNegaRelayState     =     0x0u;
+uint8_t  pfc_V07BMSMainNegaRelayFault     =     0x0u;
+uint8_t  pfc_V07BMSChargePosiRelayState   =     0x0u;
+uint8_t  pfc_V07BMSChargePosiRelayFault   =     0x0u;
+uint8_t  pfc_V07BMSHeaterPosiRelayState   =     0x0u;
+uint8_t  pfc_V07BMSHeaterPosiRelayFault   =     0x0u;
+uint8_t  pfc_V07BMSHeaterNegaRelayState   =     0x0u;
+uint8_t  pfc_V07BMSHeaterNegaRelayFault   =     0x0u;
+uint8_t  pfc_V07BMSSDDCDCRelayState       =     0x0u;
+uint8_t  pfc_V07BMSSDDCDCRelayFault       =     0x0u;
+uint8_t  pfc_V07BMSOilPumpRelayState      =     0x0u;
+uint8_t  pfc_V07BMSOilPumpRelayFault      =     0x0u;
+uint8_t  pfc_V07BMSAirPumpRelayState      =     0x0u;
+uint8_t  pfc_V07BMSAirPumpRelayFault      =     0x0u;
+uint8_t  pfc_V07BMSPreChargeRelayState    =     0x0u;
+uint8_t  pfc_V07BMSPreChargeRelayFault    =     0x0u;
+uint8_t  pfc_V07BMSDefrostingRelayState   =     0x0u;
+uint8_t  pfc_V07BMSDefrostingRelayFault   =     0x0u;
+
+/* VCU_Monitor Message Signals */
 
 /* uds_tx Message Signals */
 
@@ -850,15 +886,19 @@ uint8_t  pfc_AccePedalInterLockState      =     0x0u;
 /* IC_Status5 Message Signals */
 uint8_t  pfc_MotorInputCoolingWaterTemp   =    0x28u;
 
-/* LVOP_Status1 Message Signals */
-uint8_t  pfc_LVOilPumpRunningState        =     0x0u;
-uint8_t  pfc_LVOilPumpInputVoltage        =     0x0u;
-uint8_t  pfc_LVOilPumpCurrent             =     0x0u;
-uint8_t  pfc_LVOilPumpMotorSpeed          =     0x0u;
-uint8_t  pfc_LVOilPumpLife                =     0x0u;
-uint8_t  pfc_LVOilPumpMCUTemp             =    0x28u;
-uint8_t  pfc_LVOilPumpFaultCode           =     0x0u;
-uint8_t  pfc_LVOilPumpFaultGrade          =     0x0u;
+/* LVOP_Status1_IN_C_CAN Message Signals */
+uint8_t  pfc_oLVOilPumpRunningState       =     0x0u;
+uint8_t  pfc_oLVOilPumpInputVoltage       =     0x0u;
+uint8_t  pfc_oLVOilPumpCurrent            =     0x0u;
+uint8_t  pfc_oLVOilPumpMotorSpeed         =     0x0u;
+uint8_t  pfc_oLVOilPumpLife               =     0x0u;
+uint8_t  pfc_oLVOilPumpMCUTemp            =    0x28u;
+uint8_t  pfc_oLVOilPumpFaultCode          =     0x0u;
+uint8_t  pfc_oLVOilPumpFaultGrade         =     0x0u;
+
+/* Monitor_VCU Message Signals */
+
+/* Monitor_VCU2 Message Signals */
 
 /* PDU_Status1 Message Signals */
 uint8_t  pfc_PDUSDDCDCRelayState          =     0x0u;
@@ -884,6 +924,8 @@ uint8_t  pfc_PDUMainPosiRelayFault        =     0x0u;
 uint8_t  pfc_PDUPreChargeRelayState       =     0x0u;
 uint8_t  pfc_PDUPreChargeRelayFault       =     0x0u;
 
+/* Tbox_VIN Message Signals */
+
 /* uds_rx Message Signals */
 
 /* uds_rx_func Message Signals */
@@ -891,7 +933,7 @@ uint8_t  pfc_PDUPreChargeRelayFault       =     0x0u;
 /* LVOP_Control Message Signals */
 uint8_t  pfc_LVOilPumpEnable              =     0x0u;
 uint8_t  pfc_VehicleVelocity              =     0x0u;
-uint8_t  pfc_LVOilPumpLife                =     0x0u;
+uint8_t  pfc_toLVOilPumpLife              =     0x0u;
 
 /* ccp_daq_0 Message Signals */
 

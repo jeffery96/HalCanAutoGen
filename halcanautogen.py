@@ -91,6 +91,8 @@ class HalCanAutoGen(object):
                         f.write('uint8_t'.ljust(9) + var_name4.ljust(33) + '= ' + '0u;' + '\n')
                         f.write('\n')
 
+            # uds相关缓冲器只需要一个
+            uds_except_list = []
             for msg in self._messages:
                 buf_struct = f'uint8_t {msg.name}_buf[8] = \n' + \
                              '{\n' + \
@@ -98,6 +100,10 @@ class HalCanAutoGen(object):
                              '};\n'
                 if 'ccp' in msg.name or 'uds' in msg.name:
                     buf_struct = buf_struct.replace('_buf', '')
+                    if 'uds' in msg.name and buf_struct in uds_except_list:
+                        continue
+                    else:
+                        uds_except_list.append(buf_struct)
                 f.write(buf_struct)
             f.write('\n')
 
@@ -164,10 +170,16 @@ class HalCanAutoGen(object):
                         f.write('extern uint8_t ' + var_name3.ljust(44) + '\n')
                         f.write('extern uint8_t ' + var_name4.ljust(44) + '\n\n')
 
+            # uds相关缓冲器只需要一个
+            uds_except_list = []
             for msg in self._messages:
                 buf_struct = f'extern uint8_t {msg.name}_buf[8];\n'
                 if 'ccp' in msg.name or 'uds' in msg.name:
                     buf_struct = buf_struct.replace('_buf', '')
+                    if 'uds' in msg.name and buf_struct in uds_except_list:
+                        continue
+                    else:
+                        uds_except_list.append(buf_struct)
                 f.write(buf_struct)
             f.write('\n')
 

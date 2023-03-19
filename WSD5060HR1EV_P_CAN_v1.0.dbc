@@ -126,7 +126,7 @@ BO_ 2365551088 MCU_States1: 8 Others
  SG_ MCUStates1_23B_MCUDCVoltage : 16|16@1+ (0.1,0) [0|0] "MCU母线电压" Vector__XXX
  SG_ MCUStates1_01B_MCUDCCurrent : 0|16@1+ (0.1,-1000) [0|0] "MCU母线电流" Vector__XXX
 
-BO_ 2348875518 VCU_BattPowerAllow: 8 VCU
+BO_ 2365547303 VCU_BattPowerAllow: 8 VCU
  SG_ BattPowerAllow_67B_AllowMaxCharg : 48|16@1+ (0.1,-1000) [0|0] "允许最大充电电流" Vector__XXX
  SG_ BattPowerAllow_45B_AllowMaxDisch : 32|16@1+ (0.1,-1000) [0|0] "允许最大放电电流" Vector__XXX
  SG_ BattPowerAllow_23B_PackInsideVol : 16|16@1+ (0.1,0) [0|0] "电池包内侧电压" Vector__XXX
@@ -243,8 +243,8 @@ BA_ "GenMsgCycleTime" BO_ 2365551344 10;
 BA_ "VFrameFormat" BO_ 2365551344 3;
 BA_ "GenMsgCycleTime" BO_ 2365551088 200;
 BA_ "VFrameFormat" BO_ 2365551088 3;
-BA_ "GenMsgCycleTime" BO_ 2348875518 200;
-BA_ "VFrameFormat" BO_ 2348875518 3;
+BA_ "GenMsgCycleTime" BO_ 2365547303 200;
+BA_ "VFrameFormat" BO_ 2365547303 3;
 BA_ "GenMsgCycleTime" BO_ 2365547047 10;
 BA_ "VFrameFormat" BO_ 2365547047 3;
 BA_ "GenMsgCycleTime" BO_ 2365546791 10;
@@ -305,13 +305,13 @@ BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_6B_MotorTemperature 40;
 BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_45B_MCUACCurrent 0;
 BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_23B_MCUDCVoltage 0;
 BA_ "GenSigStartValue" SG_ 2365551088 MCUStates1_01B_MCUDCCurrent 10000;
-BA_ "GenSigStartValue" SG_ 2348875518 BattPowerAllow_67B_AllowMaxCharg 10000;
-BA_ "SystemSignalLongSymbol" SG_ 2348875518 BattPowerAllow_67B_AllowMaxCharg "BattPowerAllow_67B_AllowMaxChargeCurr";
-BA_ "GenSigStartValue" SG_ 2348875518 BattPowerAllow_45B_AllowMaxDisch 10000;
-BA_ "SystemSignalLongSymbol" SG_ 2348875518 BattPowerAllow_45B_AllowMaxDisch "BattPowerAllow_45B_AllowMaxDischargeCurr";
-BA_ "GenSigStartValue" SG_ 2348875518 BattPowerAllow_23B_PackInsideVol 0;
-BA_ "SystemSignalLongSymbol" SG_ 2348875518 BattPowerAllow_23B_PackInsideVol "BattPowerAllow_23B_PackInsideVoltage";
-BA_ "GenSigStartValue" SG_ 2348875518 BattPowerAllow_01B_PackCurrent 10000;
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_67B_AllowMaxCharg 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_67B_AllowMaxCharg "BattPowerAllow_67B_AllowMaxChargeCurr";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_45B_AllowMaxDisch 10000;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_45B_AllowMaxDisch "BattPowerAllow_45B_AllowMaxDischargeCurr";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_23B_PackInsideVol 0;
+BA_ "SystemSignalLongSymbol" SG_ 2365547303 BattPowerAllow_23B_PackInsideVol "BattPowerAllow_23B_PackInsideVoltage";
+BA_ "GenSigStartValue" SG_ 2365547303 BattPowerAllow_01B_PackCurrent 10000;
 BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_7B03b_VCULife2To "VCUVehiclStates_7B03b_VCULife2ToMCU";
 BA_ "GenSigStartValue" SG_ 2365547047 VCUVehiclStates_34B_VehicleSpeed 15000;
 BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_34B_VehicleSpeed "VCUVehiclStates_34B_VehicleSpeedLimitMotorSpeed";
@@ -324,13 +324,19 @@ BA_ "SystemSignalLongSymbol" SG_ 2365547047 VCUVehiclStates_0B_AccePedalPosi "VC
 BA_ "SystemSignalLongSymbol" SG_ 2365546791 VCUMCUCmd_0B24b_ParkingSystemSta "VCUMCUCmd_0B24b_ParkingSystemState";
 BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_45B_DemandSpeed 15000;
 BA_ "GenSigStartValue" SG_ 2365546791 VCUMCUCmd_23B_DemandTorque 30000;
+VAL_ 2365551344 MCUStates2_1B47b_MCUFaultGrade 4 "4级故障" 3 "3级故障" 2 "2级故障" 1 "1级故障" 0 "无故障等级" ;
+VAL_ 2365551344 MCUStates2_1B03b_MCUWorkMode 7 "故障" 6 "下低压电" 5 "主动放电" 4 "转矩模式运行" 3 "转速模式运行" 2 "电机运行中" 1 "低压上电正常" 0 "初始化" ;
+VAL_ 2365551344 MCUStates2_0B57b_MCUFunctionsInd 6 "限速运行指示" 5 "防溜运行指示" 4 "制动运行指示" 3 "蠕行运行指示" 2 "滑行运行指示" 1 "驱动运行指示" 0 "停机无指示" ;
+VAL_ 2365551344 MCUStates2_0B4b_MCUIGBTEnableFee 1 "使能无效" 0 "使能有效" ;
+VAL_ 2365551344 MCUStates2_0B23b_MCUActiveDisCha 1 "放电完成" 0 "放电未完成" ;
+VAL_ 2365551344 MCUStates2_0B01b_MCUPreChargeAll 1 "允许" 0 "不允许" ;
 VAL_ 2365547047 VCUVehiclStates_2B67b_VCUCrawlOf 1 "蠕行关闭有效" 0 "蠕行关闭无效" ;
 VAL_ 2365547047 VCUVehiclStates_2B45b_SlideSwitc 1 "开启" 0 "关闭" ;
 VAL_ 2365547047 VCUVehiclStates_2B01b_AntiRollBa 1 "开启" 0 "关闭" ;
 VAL_ 2365546791 VCUMCUCmd_0B24b_ParkingSystemSta 5 "自由状态" 4 "正在驻车状态" 3 "错误状态" 2 "正在释放状态" 1 "驻车状态" 0 "释放状态" ;
 VAL_ 2365546791 VCUMCUCmd_1B67b_MCUDirection 2 "后退方向" 1 "前进方向" ;
 VAL_ 2365546791 VCUMCUCmd_1B35b_MCUControlMode 3 "主动放电模式" 2 "转速模式" 1 "转矩模式" 0 "关闭模式" ;
-VAL_ 2365546791 VCUMCUCmd_1B12b_MCUEnable 1 "非使能" 0 "使能" ;
+VAL_ 2365546791 VCUMCUCmd_1B12b_MCUEnable 2 "非使能" 1 "使能" ;
 VAL_ 2365546791 VCUMCUCmd_1B0b_FootBrakeState 1 "脚刹有效" 0 "脚刹无效" ;
 VAL_ 2365546791 VCUMCUCmd_0B01b_SystemReady 2 "系统Ready无行车故障" 1 "系统处于高压状态" 0 "系统处于低压状态" ;
 
